@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box } from "@chakra-ui/core";
 
-const Home = () => {
+const Home = ({ isLoggedIn }) => {
     return (
         <>
             <h1>시각장애인의 눈과 발이 되어주세요.</h1>

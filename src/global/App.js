@@ -1,9 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import AppRouter from './Router';
+import firebase from '../firebase/Firebase';
 
 function App() {
+  const [init, setInit] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  useEffect((() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+      setInit(true);
+    });
+  }), []);
+
   return (<>
-      <AppRouter />
+      {init ? <AppRouter isLoggedIn={isLoggedIn} /> : "Initializing..."}
       <footer>&copy; {new Date().getFullYear()} Luminouss</footer>
       </>
   );

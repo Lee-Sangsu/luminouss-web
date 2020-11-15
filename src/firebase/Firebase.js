@@ -1,15 +1,16 @@
 import * as firebase from 'firebase/app';
-import 'firebase/auth';
+import "firebase/auth";
 import "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB8lMHhNpnne4RIWsB-r58xez39XyzIFBk",
-  authDomain: "fir-connect-b34ba.firebaseapp.com",
-  databaseURL: "https://fir-connect-b34ba.firebaseio.com",
-  projectId: "fir-connect-b34ba",
-  storageBucket: "fir-connect-b34ba.appspot.com",
-  messagingSenderId: "875098743944",
-  appId: "1:875098743944:web:83c3788769f20b6b7ceb3d"
+  apiKey: "AIzaSyDnnOxwXNnDwI5YkBn1hHPf5IPWOF_AsRM",
+  authDomain: "luminouss-web.firebaseapp.com",
+  databaseURL: "https://luminouss-web.firebaseio.com",
+  projectId: "luminouss-web",
+  storageBucket: "luminouss-web.appspot.com",
+  messagingSenderId: "96756233299",
+  appId: "1:96756233299:web:9656acaac90655a71d42a6",
+  measurementId: "G-X59RM3F71E"
 };
 
 
