@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navigation = () => (
+const Navigation = ({ isLoggedIn }) => (
   <nav>
     <ul>
       <li>
@@ -10,9 +10,16 @@ const Navigation = () => (
       <li>
         <Link to="/about-luminouss">About</Link>
       </li>
-      <li>
-        <Link to="/my-profile">My Profile</Link>
-      </li>
+      {isLoggedIn ? (
+        <li>
+          <Link to="/my-profile">My Profile</Link>
+        </li>
+      ) : (
+        <li>
+          <Link to="login">로그인</Link>
+        </li>
+      )}
+      
     </ul>
   </nav>
 );

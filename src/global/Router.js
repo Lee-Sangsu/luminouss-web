@@ -2,10 +2,10 @@ import React from 'react';
 import {HashRouter as Router, Route} from "react-router-dom";
 import Navigation from './GlobalNavigation';
 import Home from '../components/Main/Home';
-import About from '../components/About';
-import Profile from '../components/Profile';
-import AddRoad from "../components/AddRoad";
-import Auth from "../components/Auth";
+import About from '../components/About/About';
+import Profile from '../components/Profile/Profile';
+import AddRoad from "../components/AddRoad/AddRoad";
+import Auth from "../components/Auth/Auth";
 
 const AppRouter = ({ isLoggedIn }) => {
     return (<>
@@ -18,6 +18,9 @@ const AppRouter = ({ isLoggedIn }) => {
               <About />
             </Route>
             <Route exact path="/my-profile">
+              <Profile />
+            </Route>
+            <Route exact path="/login">
               <Auth />
             </Route>
             <Route exact path="/add-road-info">
