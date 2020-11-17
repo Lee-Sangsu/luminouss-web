@@ -1,0 +1,61 @@
+import React from "react";
+import {
+    useRecoilValue,
+  } from 'recoil';
+import SupportInfraItemCreator from 'functions/SupportInfraItemCreator';
+import SupportInfraItem from 'components/molecules/SupportInfraItem';
+import SupportInfraListState from 'recoilStates/SupportInfraListState';
+import InputAddress from 'components/molecules/InputAddress';
+import JustInput from 'components/molecules/JustInput';
+import SelectEnv from 'components/molecules/SelectEnv';
+
+import InfraListState from 'recoilStates/InfraListState';
+import InfraItem from 'components/molecules/InfraItem';
+import InfraItemCreator from 'functions/InfraItemCreator';
+
+import AroundEnvListState from 'recoilStates/AroundEnvListState';
+import AroundEnvItem from 'components/molecules/AroundEnvItem';
+import AroundItemCreator from 'functions/AroundItemCreator'
+
+const AddRoadForm = () => {
+    const supportInfraList = useRecoilValue(SupportInfraListState);
+    const infraList = useRecoilValue(InfraListState);
+    const aroundList = useRecoilValue(AroundEnvListState);
+    //정보등록 onclick으로 firebase.firestore 한번에 넣기
+
+    return (
+      <>
+        <JustInput placeholder="산책로 이름을 적어주세요" />
+        <h3>산책로 위치</h3>
+        <InputAddress />
+        <SelectEnv />
+
+        <h4>보조시설 추가</h4>
+        <SupportInfraItemCreator />
+        {supportInfraList.map((supportInfraItem) => (
+          <SupportInfraItem key={supportInfraItem.id} item={supportInfraItem} />
+        ))}
+
+
+        <h4>시설 추가</h4>
+        <InfraItemCreator />
+        {infraList.map((infraItem) => (
+          <InfraItem key={infraItem.id} item={infraItem} />
+        ))}
+
+        <h4>주변환경 추가</h4>
+        <AroundItemCreator />
+        {aroundList.map((aroundEnvItem) => (
+          <AroundEnvItem key={aroundEnvItem.id} item={aroundEnvItem} />
+        ))}
+
+        <h4>걸을 때 주의사항</h4>
+        <JustInput placeholder="걸을 때 주의사항을 적어주세요" />
+        
+        <h4>산책로 특징</h4>
+        <JustInput placeholder="산책로의 특징을 적어주세요" />
+      </>
+    );
+};
+
+export default AddRoadForm;

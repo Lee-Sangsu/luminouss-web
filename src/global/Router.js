@@ -1,12 +1,12 @@
 import React from 'react';
 import {HashRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from './GlobalNavigation';
-import Home from 'components/Main/Home';
-import About from 'components/About/About';
-import Profile from 'components/Profile/Profile';
-import AddRoad from "components/AddRoad/AddRoad";
-import Register from "components/Auth/SignUp";
-import SignIn from "components/Auth/SignIn";
+import Home from 'components/pages/Home';
+import About from 'components/pages/About';
+import Profile from 'components/pages/Profile';
+import AddRoad from "components/pages/AddRoad";
+import Register from "components/pages/SignUp";
+import SignIn from "components/pages/SignIn";
 import {
   RecoilRoot
 } from 'recoil';
