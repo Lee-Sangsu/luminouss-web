@@ -16,7 +16,7 @@ const Navigation = ({ isLoggedIn }) => (
         </li>
       ) : (
         <li>
-          <Link to="login">로그인</Link>
+          <Link to="sign-in">로그인</Link>
         </li>
       )}
       

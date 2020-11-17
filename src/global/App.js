@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import AppRouter from './Router';
-import firebase from '../firebase/Firebase';
+import firebase from './fbase';
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
+import About from 'components/About/About';
 
 function App() {
   const [init, setInit] = useState(false);
@@ -19,7 +27,8 @@ function App() {
   return (<>
       {init ? <AppRouter isLoggedIn={isLoggedIn} /> : "Initializing..."}
       <footer>&copy; {new Date().getFullYear()} Luminouss</footer>
-      </>
+    </>
+
   );
 };
 
