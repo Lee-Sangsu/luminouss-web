@@ -1450,19 +1450,6 @@
   "resolved" "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.4.tgz"
   "version" "0.7.4"
 
-"@emotion/react@^11.0.0-rc.0":
-  "integrity" "sha512-mMQOuJcCVHUHUKZMamCbNnuUEgEff1W1JL3/1jGXFN52Ik5R/2ccVb3FherYFkSJkkjkPC3dUfFSeisXVh9Spg=="
-  "resolved" "https://registry.npmjs.org/@emotion/react/-/react-11.0.0.tgz"
-  "version" "11.0.0"
-  dependencies:
-    "@babel/runtime" "^7.7.2"
-    "@emotion/cache" "^11.0.0"
-    "@emotion/serialize" "^1.0.0"
-    "@emotion/sheet" "^1.0.0"
-    "@emotion/utils" "^1.0.0"
-    "@emotion/weak-memoize" "^0.2.5"
-    "hoist-non-react-statics" "^3.3.1"
-
 "@emotion/serialize@^0.11.15", "@emotion/serialize@^0.11.16":
   "integrity" "sha512-G3J4o8by0VRrO+PFeSc3js2myYNOXVJ3Ya+RGVxnshRYgsvErfAOglKAiy1Eo1vhzxqtUvjCyS5gtewzkmvSSg=="
   "resolved" "https://registry.npmjs.org/@emotion/serialize/-/serialize-0.11.16.tgz"
@@ -5420,10 +5407,6 @@
   "resolved" "https://registry.yarnpkg.com/emojis-list/-/emojis-list-3.0.0.tgz"
   "version" "3.0.0"
 
-"emotion-theming@10.x":
-  "integrity" "sha512-OhYpCGBjaLcD9c4ptwCr9SxHjfRTDqeqdzMobusJ+a/drlfnJ3AT9gmGKIhNHiXtr6626h6fsvLY22Or9CxUqw=="
-  "resolved" "https://registry.npmjs.org/emotion-theming/-/emotion-theming-11.0.0.tgz"
-  "version" "11.0.0"
 
 "encodeurl@~1.0.2":
   "integrity" "sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k="
