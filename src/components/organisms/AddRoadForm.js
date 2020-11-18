@@ -6,9 +6,12 @@ import SupportInfraItemCreator from 'functions/SupportInfraItemCreator';
 import SupportInfraItem from 'components/molecules/SupportInfraItem';
 import SupportInfraListState from 'recoilStates/SupportInfraListState';
 import InputAddress from 'components/molecules/InputAddress';
-import JustInput from 'components/molecules/JustInput';
-import SelectEnv from 'components/molecules/SelectEnv';
+import RoadNameInput from 'components/molecules/RoadNameInput';
+import WarningInput from 'components/molecules/WarningInput';
+import FeaturesInput from 'components/molecules/FeaturesInput';
 
+import SelectEnv from 'components/molecules/SelectEnv';
+import SelectPavement from 'components/molecules/SelectPavement';
 import InfraListState from 'recoilStates/InfraListState';
 import InfraItem from 'components/molecules/InfraItem';
 import InfraItemCreator from 'functions/InfraItemCreator';
@@ -25,10 +28,11 @@ const AddRoadForm = () => {
 
     return (
       <>
-        <JustInput placeholder="산책로 이름을 적어주세요" />
+        <RoadNameInput placeholder="산책로 이름을 적어주세요" />
         <h3>산책로 위치</h3>
         <InputAddress />
         <SelectEnv />
+        <SelectPavement />
 
         <h4>보조시설 추가</h4>
         <SupportInfraItemCreator />
@@ -50,10 +54,10 @@ const AddRoadForm = () => {
         ))}
 
         <h4>걸을 때 주의사항</h4>
-        <JustInput placeholder="걸을 때 주의사항을 적어주세요" />
+        <WarningInput placeholder="걸을 때 주의사항을 적어주세요" />
         
         <h4>산책로 특징</h4>
-        <JustInput placeholder="산책로의 특징을 적어주세요" />
+        <FeaturesInput placeholder="산책로의 특징을 적어주세요" />
       </>
     );
 };

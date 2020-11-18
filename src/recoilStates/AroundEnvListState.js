@@ -3,7 +3,7 @@ import React from 'react';
 import {atom} from 'recoil';
 
 const AroundEnvListState = atom({
-    key: 'AroundEnvListState',
+    key: 'aroundEnvListState',
     default: [],
 });
 

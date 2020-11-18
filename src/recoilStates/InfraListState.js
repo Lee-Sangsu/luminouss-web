@@ -3,7 +3,7 @@ import React from 'react';
 import {atom} from 'recoil';
 
 const InfraListState = atom({
-    key: 'InfraListState',
+    key: 'infraListState',
     default: [],
 });
 

@@ -3,7 +3,7 @@ import React from 'react';
 import {atom} from 'recoil';
 
 const SupportInfraListState = atom({
-    key: 'SupportInfraListState',
+    key: 'supportInfraListState',
     default: [],
 });
 
