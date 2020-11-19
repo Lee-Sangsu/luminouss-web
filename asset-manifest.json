@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/luminouss-admin/static/js/main.a5779c0e.chunk.js",
+    "main.js.map": "/luminouss-admin/static/js/main.a5779c0e.chunk.js.map",
+    "runtime-main.js": "/luminouss-admin/static/js/runtime-main.dd70704e.js",
+    "runtime-main.js.map": "/luminouss-admin/static/js/runtime-main.dd70704e.js.map",
+    "static/css/2.fe708519.chunk.css": "/luminouss-admin/static/css/2.fe708519.chunk.css",
+    "static/js/2.9be1f39a.chunk.js": "/luminouss-admin/static/js/2.9be1f39a.chunk.js",
+    "static/js/2.9be1f39a.chunk.js.map": "/luminouss-admin/static/js/2.9be1f39a.chunk.js.map",
+    "index.html": "/luminouss-admin/index.html",
+    "static/css/2.fe708519.chunk.css.map": "/luminouss-admin/static/css/2.fe708519.chunk.css.map",
+    "static/js/2.9be1f39a.chunk.js.LICENSE.txt": "/luminouss-admin/static/js/2.9be1f39a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dd70704e.js",
+    "static/css/2.fe708519.chunk.css",
+    "static/js/2.9be1f39a.chunk.js",
+    "static/js/main.a5779c0e.chunk.js"
+  ]
+}
