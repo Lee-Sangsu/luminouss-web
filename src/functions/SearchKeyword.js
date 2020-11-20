@@ -12,8 +12,8 @@ export const SearchKeyword = (keyword) => {
         },
         params: { query: `${keyword}`}
     }
-    ).then((res) => setSearchState(res.data.documents)).catch((e) => {
-        setSearchState(e); // occurs Invalid hook call error
+    ).then((res) => setSearchState(res.data)).catch((e) => {
+        console.log(e); // occurs Invalid hook call error
     })
 };
 
