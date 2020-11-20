@@ -1,10 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import {useSetRecoilState, useRecoilValue} from 'recoil';
 import RoadNameState from 'recoilStates/RoadNameState';
+import { SearchKeyword } from 'functions/SearchKeyword';
+// import axios from 'axios';
+// import kakaoAuthKey from 'global/authKey';
+import SearchedResultState from 'recoilStates/SearchedResultState'
+
 
 const RoadNameInput = ( {placeholder} ) => {
     const setRoadName = useSetRecoilState(RoadNameState);
     const roadName = useRecoilValue(RoadNameState);
+    const [fuck, setFuck] = useState('');
+
+
 
     const onChange = (event) => {
       const {
@@ -13,13 +21,15 @@ const RoadNameInput = ( {placeholder} ) => {
           }
       } = event;
       if (name === "just") {
-        setRoadName(value);
+        setFuck(value);
+        SearchKeyword(value)
       }
   }; 
+
   return (
-    <>
-      <input name="just" onChange={onChange} value={roadName} placeholder={placeholder} required/>
-    </>
+    <form>
+      <input name="just" onChange={onChange} value={fuck} placeholder={placeholder} required/>
+    </form>
   );
 };
 

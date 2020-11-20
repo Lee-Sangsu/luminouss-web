@@ -19,6 +19,7 @@ import InfraItemCreator from 'functions/InfraItemCreator';
 import AroundEnvListState from 'recoilStates/AroundEnvListState';
 import AroundEnvItem from 'components/molecules/AroundEnvItem';
 import AroundItemCreator from 'functions/AroundItemCreator'
+import SearchResults from 'components/molecules/SearchResults';
 
 const AddRoadForm = () => {
     const supportInfraList = useRecoilValue(SupportInfraListState);
@@ -31,6 +32,7 @@ const AddRoadForm = () => {
         <RoadNameInput placeholder="산책로 이름을 적어주세요" />
         <h3>산책로 위치</h3>
         <InputAddress />
+        <SearchResults />
         <SelectEnv />
         <SelectPavement />
 

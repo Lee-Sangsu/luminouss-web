@@ -4,14 +4,17 @@ import useConfirm from 'hooks/useConfirm';
 // import { useRecoilValue } from 'recoil';
 import SetEntireStates from 'functions/SetEntireStates';
 import firebase from 'global/fbase';
+import {useHistory} from 'react-router-dom';
 
 const AddRoad = () => {
+  const history = useHistory();
   const a = SetEntireStates();
     const submitConfirm = async () => {
       // recoil value 다 가져와서 firestore에 한번에 저장
-      await firebase.firestore().collection("SimpleCollection").add(a)
+      await firebase.firestore().collection("WalkRoad").doc(a.roadName).set(a)
       .then(() => {
           window.alert("Document successfully written!");;               
+          history.push('/');
       })
       .catch(function(documentError) {
         window.alert(documentError);
