@@ -2,7 +2,7 @@ import React from "react";
 import {useSetRecoilState, useRecoilState} from 'recoil';
 import RoadNameState from 'recoilStates/RoadNameState';
 import axios from 'axios';
-import kakaoAuthKey from 'global/authKey';
+import kakaoAuthKey from 'global/KakaoAuthKey';
 import SearchedResultState from 'recoilStates/SearchedResultState'
 
 

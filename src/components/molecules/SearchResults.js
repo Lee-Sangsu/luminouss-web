@@ -2,7 +2,7 @@ import React from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import AddressState from 'recoilStates/AddressState';
 import axios from 'axios';
-import kakaoAuthKey from 'global/authKey';
+import kakaoAuthKey from 'global/KakaoAuthKey';
 import AroundSubwayState from 'recoilStates/AroundSubwayState';
 
 const SearchResults = ( {data} ) => {
@@ -35,7 +35,6 @@ const SearchResults = ( {data} ) => {
 
         document.getElementById("search-results").style.display = 'none';
         document.getElementById("road-head").style.display = 'block';
-        
     };
 
     return (
