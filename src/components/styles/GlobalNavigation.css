@@ -1,0 +1,39 @@
+.nav {
+  all: unset;
+}
+
+.ul {
+  display: flex;
+  width: 100%; /* 전체 너비 */
+  list-style: none;
+  color: black;
+  border: 2px solid black;
+  margin: 0;
+  padding: 20px;
+}
+
+.link {
+  font-size: 15px;
+  color: black;
+  text-decoration: none;
+}
+
+.luminouss {
+  flex-grow: 7;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.about {
+  flex-grow: 1;
+}
+
+.profile {
+  flex-grow: 1;
+  margin-right: -18px;
+}
+
+.login {
+  flex-grow: 1;
+  margin-right: -18px;
+}

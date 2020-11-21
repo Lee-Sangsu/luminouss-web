@@ -25,12 +25,25 @@ const AddRoad = () => {
 	
 
     return (
-      <>
-        <h3>AddRoad Page</h3>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+        justifyContent:'center',
+        alignItems: 'center'
+      }}>
+        <h2>AddRoad Page</h2>
         <AddRoadForm />
-        <button onClick={confirmSubmit}> 정보 등록하기 </button>
-
-      </>
+        <button onClick={confirmSubmit} style={{
+          width:'200px',
+          height:'40px',
+          borderWidth:'3px',
+          marginTop:'15px',
+          fontSize: '15px',
+          fontWeight: '500'
+        }}> 정보 등록하기 </button>
+      </div>
     );
 };
 

@@ -32,7 +32,8 @@ const AddRoadForm = () => {
    
     return (
       <>
-        <RoadNameInput placeholder="산책로 이름을 검색하고 위치를 추가해주세요" />
+        <h3>새로운 산책로을 검색하고 위치를 추가해주세요</h3>
+        <RoadNameInput placeholder="산책로 이름" />
         <h3 id="road-head" style={{
           display: "none"
         }}>산책로 위치</h3>

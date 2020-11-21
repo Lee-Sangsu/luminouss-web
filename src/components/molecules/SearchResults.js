@@ -39,7 +39,6 @@ const SearchResults = ( {data} ) => {
 
     return (
         <button onClick={onClick}>
-            <h5>{console.log(data)}</h5>
             <h5>{data.place_name}</h5>
             <h5>{data.address_name}</h5>
         </button>
