@@ -3,8 +3,9 @@ import React from 'react';
 import {atom} from 'recoil';
 
 const SearchedResultState = atom({
-    key: 'searchedNameState',
-    default: [],
+    key: 'searchedResultState',
+    default: []
+    // items: []
 });
 
 export default SearchedResultState;

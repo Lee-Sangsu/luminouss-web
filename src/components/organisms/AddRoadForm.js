@@ -19,6 +19,7 @@ import InfraItemCreator from 'functions/InfraItemCreator';
 import AroundEnvListState from 'recoilStates/AroundEnvListState';
 import AroundEnvItem from 'components/molecules/AroundEnvItem';
 import AroundItemCreator from 'functions/AroundItemCreator'
+import SearchedResultState from 'recoilStates/SearchedResultState';
 import SearchResults from 'components/molecules/SearchResults';
 
 const AddRoadForm = () => {
@@ -26,13 +27,21 @@ const AddRoadForm = () => {
     const infraList = useRecoilValue(InfraListState);
     const aroundList = useRecoilValue(AroundEnvListState);
     //정보등록 onclick으로 firebase.firestore 한번에 넣기
-
+    const searchResults = useRecoilValue(SearchedResultState);
+    
+   
     return (
       <>
-        <RoadNameInput placeholder="산책로 이름을 적어주세요" />
-        <h3>산책로 위치</h3>
+        <RoadNameInput placeholder="산책로 이름을 검색하고 위치를 추가해주세요" />
+        <h3 id="road-head" style={{
+          display: "none"
+        }}>산책로 위치</h3>
         <InputAddress />
-        <SearchResults />
+        <div id="search-results">
+        {searchResults.map((data) => (
+          <SearchResults key={data.id} data={data} />
+        ))}
+        </div>
         <SelectEnv />
         <SelectPavement />
 

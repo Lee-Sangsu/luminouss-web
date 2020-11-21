@@ -4,8 +4,10 @@ import {atom} from 'recoil';
 
 const AdressState = atom({
     key: 'adressState',
-    addressOption: '',
-    detailedAddress: ''
+    default: '',
+    address_name: '',
+    latitude: '',
+    longitude: ''
 });
 
 export default AdressState;
