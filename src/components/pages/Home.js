@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link, useHistory } from "react-router-dom";
 import "components/styles/Home.css"
-// import firebase from "global/fbase";
+import firebase from "global/fbase";
 // import FirestoreData from 'components/molecules/FirestoreData';
 
 
-const Home  = ({ isLoggedIn }) => {
+const Home  = ({ isLoggedIn }) => { //prop 바뀌면 리렌더링 isLoggedIn state 바뀌어서
     const history = useHistory();
     //login 안 된 경우, 로그인 필요합니다 알러트 띄우기
     const onClick = (event) => {
@@ -15,26 +15,26 @@ const Home  = ({ isLoggedIn }) => {
         } else {
             window.alert("Login required");
             history.push('sign-in');
-            // return (<Route path="/sign-in" component={SignIn} />);
         }
     };
-    // const [arr, setArr]= useState([]);
+    const [arr, setArr]= useState([]);
      
     // 화면 켜질때 딱 한번만 array에 담는걸 어떻게 할까.. 
-    // useEffect((  ) => {
-    //     const a = [];
-    //     firebase.firestore().collection('WalkRoad')
-    //     .get()
-    //     .then((res) => {
-    //         res.forEach((doc) => {
-    //             a.push(doc.data().roadName);
-    //         });
-    //         setArr(a);
-    //     })
-    //     .catch((error) => {
-    //         console.log(error);
-    //     })
-    // }, [])
+    useEffect((  ) => {
+        const a = [];
+        firebase.firestore().collection('WalkRoad')
+        .get()
+        .then((res) => {
+            res.forEach((doc) => {
+                a.push(doc.data().roadName);
+            });
+            setArr(a);
+            console.log(res); // 여러번 들어가면 위험
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    }, [])
  
     return (
         <>
@@ -54,7 +54,7 @@ const Home  = ({ isLoggedIn }) => {
                 </div>
                 {/* {arr.map((roadName, index) => <FirestoreData key={index} item={roadName} />)} */}
                 {/* {console.log(newArr)} */}
-                {/* {console.log(arr)} */}
+                {console.log(arr)}
             </div>
         </>
     );

@@ -24,7 +24,7 @@
 .luminouss {
   flex-grow: 7;
   font-weight: bold;
-  margin-left: 30px;
+  /* margin-left: 30px; */
 }
 
 .about {

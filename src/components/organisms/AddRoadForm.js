@@ -33,7 +33,7 @@ const AddRoadForm = () => {
     return (
       <>
         <div className="input-form" style={{
-          width:"400px",
+          width:"350px",
           height:"fit-content"
         }}>
           <h3>새로운 산책로을 검색하고 위치를 추가해주세요</h3>

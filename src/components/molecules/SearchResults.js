@@ -16,6 +16,8 @@ const SearchResults = ( {data} ) => {
             latitude: data.y,
             longitude: data.x
         });
+        
+        //백엔드에서 보통 api key들을 함, || 서버에서 데이터 렌더링 후 주던가
 
         axios.get('https://dapi.kakao.com/v2/local/search/category.json', {
             headers : {

@@ -8,6 +8,7 @@ import InfraListState from '../recoilStates/InfraListState';
 import SupportInfraListState from '../recoilStates/SupportInfraListState';
 import AroundEnvListState from '../recoilStates/AroundEnvListState';
 import AddressState from '../recoilStates/AddressState';
+import AroundSubwayState from '../recoilStates/AroundSubwayState';
 
 
 
@@ -19,6 +20,7 @@ const SetEntireStates = () => {
     const supportInfraList = useRecoilValue(SupportInfraListState);
     const aroundEnvList = useRecoilValue(AroundEnvListState);
     const address = useRecoilValue(AddressState);
+    const aroundSubway = useRecoilValue(AroundSubwayState);
 
 
     
@@ -31,7 +33,8 @@ const SetEntireStates = () => {
         infraList: infraList,
         supportInfraList: supportInfraList,
         aroundEnvList: aroundEnvList,
-        address: address
+        address: address,
+        aroundSubway: aroundSubway
     };
     return EntireState;
 };
