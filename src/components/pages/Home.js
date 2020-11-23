@@ -2,10 +2,10 @@ import React, {useEffect, useState} from "react";
 import { Link, useHistory } from "react-router-dom";
 import "components/styles/Home.css"
 import firebase from "global/fbase";
-// import FirestoreData from 'components/molecules/FirestoreData';
 
+const Home  = ({ isLoggedIn }) => {
+    //prop 바뀌면 리렌더링 isLoggedIn state 바뀜
 
-const Home  = ({ isLoggedIn }) => { //prop 바뀌면 리렌더링 isLoggedIn state 바뀌어서
     const history = useHistory();
     //login 안 된 경우, 로그인 필요합니다 알러트 띄우기
     const onClick = (event) => {
@@ -17,23 +17,24 @@ const Home  = ({ isLoggedIn }) => { //prop 바뀌면 리렌더링 isLoggedIn sta
             history.push('sign-in');
         }
     };
+    
     const [arr, setArr]= useState([]);
+
+    const getWalkRoadInfo = async () => {
+            const res = await firebase.firestore().collection('WalkRoad').get()
+    
+            res.forEach((doc) => {
+                const arrObj = {
+                    ...doc.data(),
+                    id: doc.id,
+                };
+                setArr((prev) => [arrObj, ...prev]);
+            });
+    };
      
     // 화면 켜질때 딱 한번만 array에 담는걸 어떻게 할까.. 
-    useEffect((  ) => {
-        const a = [];
-        firebase.firestore().collection('WalkRoad')
-        .get()
-        .then((res) => {
-            res.forEach((doc) => {
-                a.push(doc.data().roadName);
-            });
-            setArr(a);
-            console.log(res); // 여러번 들어가면 위험
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+    useEffect(() => {
+        getWalkRoadInfo();
     }, [])
  
     return (
@@ -52,9 +53,10 @@ const Home  = ({ isLoggedIn }) => { //prop 바뀌면 리렌더링 isLoggedIn sta
                         +
                     </Link>
                 </div>
-                {/* {arr.map((roadName, index) => <FirestoreData key={index} item={roadName} />)} */}
-                {/* {console.log(newArr)} */}
-                {console.log(arr)}
+                {arr ? arr.map((data) => <div key={data.id}>
+                    <h4>{data.roadName}</h4>
+                </div> ):<h5>산책로 정보 불러오는 중..</h5>}
+                
             </div>
         </>
     );

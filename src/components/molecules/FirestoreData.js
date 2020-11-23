@@ -2,10 +2,8 @@ import React from 'react';
 
 
 const FirestoreData = ( {data} ) => {
-    
-
     return (
-            <h3>{data}</h3>
+        <h3>{data} 정보보기</h3>
     )
 };
 
