@@ -4,8 +4,8 @@ import {
 import React, {useState} from 'react';
 import SupportInfraListState from 'recoilStates/SupportInfraListState';
 import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
-
+import 'components/styles/Dropdown.css';
+import 'components/styles/AddingList.css'
 
 let id = 0;
   
@@ -48,7 +48,8 @@ const SupportInfraItemCreator = () => {
   
     return (
       <div>
-        <Dropdown options={options} onChange={onSelect} value={state} placeholder="Select an option" />
+        <Dropdown options={options} onChange={onSelect} value={state} placeholder="보조시설 종류" />
+        
         <input name="lat" type="text" value={latitude} placeholder="위도" onChange={onChange} />
         <input name="lng" type="text" value={longitude} placeholder="경도" onChange={onChange} />
         <button onClick={addItem}>Add</button>

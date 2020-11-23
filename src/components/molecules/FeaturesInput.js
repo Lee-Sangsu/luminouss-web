@@ -18,7 +18,12 @@ const FeaturesInput = ( {placeholder} ) => {
   }; 
   return (
     <>
-      <input name="just" onChange={onChange} value={feature} placeholder={placeholder} required/>
+      <input name="just" onChange={onChange} value={feature} placeholder={placeholder} style={{
+        width:'350px',
+        height:'60px',
+        textIndent: '20px',
+        wordBreak:'break-all'
+      }} required/>
     </>
   );
 };

@@ -19,7 +19,11 @@ const SelectEnv = () => {
     return (
         <>
             <h3>산책로 환경</h3>
-            <Dropdown options={options} onChange={onSelect} value={state} placeholder="Select an option" />
+            <div style={{
+                width:'200px'
+            }}>
+                <Dropdown className='road-env' options={options} onChange={onSelect} value={state} placeholder='환경' />
+            </div>
         </>
     )
 };

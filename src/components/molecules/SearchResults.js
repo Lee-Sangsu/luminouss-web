@@ -4,6 +4,7 @@ import AddressState from 'recoilStates/AddressState';
 import axios from 'axios';
 import kakaoAuthKey from 'global/KakaoAuthKey';
 import AroundSubwayState from 'recoilStates/AroundSubwayState';
+import 'components/styles/SearchResultList.css'
 
 const SearchResults = ( {data} ) => {
     const [address, setAddress] = useRecoilState(AddressState);
@@ -38,8 +39,17 @@ const SearchResults = ( {data} ) => {
     };
 
     return (
-        <button onClick={onClick}>
-            <h5>{data.place_name}</h5>
+        <button onClick={onClick} style={{
+            width:"350px",
+            textAlign:"start",
+            textIndent:"15px",
+            backgroundColor:'white',
+            // borderBottomWidth:'0px',
+            marginTop:'-2px',
+            borderRadius:'3px',
+            borderColor:'black'
+        }}>
+            <h3>{data.place_name}</h3>
             <h5>{data.address_name}</h5>
         </button>
     )

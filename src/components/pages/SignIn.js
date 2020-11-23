@@ -36,19 +36,32 @@ const SignIn = () => {
 
 
     return (
-    <>
-        <span>로그인 PAGE</span>
-        <h2>계정을 만들고 산책로를 추가해보세요</h2>
-        <form onSubmit={onSubmit}>
+    <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems:'center',
+        flexDirection: 'column'
+    }}>
+        <h2>로그인하고 새로운 산책로를 추가해보세요</h2>
+        <form onSubmit={onSubmit} style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems:'center',
+            flexDirection: 'column'
+        }}>
             <h4>이메일</h4>
             <input name="email" type="email" value={email} onChange={onChange} required></input>
             <h4>비밀번호</h4>
             <input name="password" type="password" value={password} onChange={onChange} required></input>
-            <input type="submit" value="로그인"></input>
+            <input type="submit" value="로그인" style={{
+                marginTop: '20px',
+                width: '200px',
+                height: '30px'
+            }}></input>
             {error}
         </form>
         <h3>아직 계정이 없으신가요?</h3> <Link to="/sign-up">회원가입하기</Link>
-    </>
+    </div>
     );
 };
 

@@ -4,7 +4,7 @@ import {
 import React, {useState} from 'react';
 import InfraListState from 'recoilStates/InfraListState';
 import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
+import 'components/styles/Dropdown.css';
 
 
 let id = 0;

@@ -1,9 +1,41 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "components/styles/Home.css"
+// import firebase from "global/fbase";
+// import FirestoreData from 'components/molecules/FirestoreData';
 
-const Home = ({ isLoggedIn }) => {
+
+const Home  = ({ isLoggedIn }) => {
+    const history = useHistory();
     //login 안 된 경우, 로그인 필요합니다 알러트 띄우기
+    const onClick = (event) => {
+        event.preventDefault();
+        if (isLoggedIn){
+            return;
+        } else {
+            window.alert("Login required");
+            history.push('sign-in');
+            // return (<Route path="/sign-in" component={SignIn} />);
+        }
+    };
+    // const [arr, setArr]= useState([]);
+     
+    // 화면 켜질때 딱 한번만 array에 담는걸 어떻게 할까.. 
+    // useEffect((  ) => {
+    //     const a = [];
+    //     firebase.firestore().collection('WalkRoad')
+    //     .get()
+    //     .then((res) => {
+    //         res.forEach((doc) => {
+    //             a.push(doc.data().roadName);
+    //         });
+    //         setArr(a);
+    //     })
+    //     .catch((error) => {
+    //         console.log(error);
+    //     })
+    // }, [])
+ 
     return (
         <>
             <div className="mainContainer">
@@ -16,10 +48,13 @@ const Home = ({ isLoggedIn }) => {
 
                 <div className="linkBox">
                     <div className="addWalkway_text">산책로 정보 추가하기</div>
-                    <Link to="/add-road-info" className="addWalkway">
+                    <Link to="/add-road-info" className="addWalkway" onClick={onClick}>
                         +
                     </Link>
                 </div>
+                {/* {arr.map((roadName, index) => <FirestoreData key={index} item={roadName} />)} */}
+                {/* {console.log(newArr)} */}
+                {/* {console.log(arr)} */}
             </div>
         </>
     );

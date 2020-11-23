@@ -33,10 +33,10 @@ const AroundEnvItem = ({item}) => {
     };
   
   return (
-    <div>
-      <h4>{item.supportInfra}</h4>
-      <input type="text" value={item.text} onChange={editItemText} />
-      <button onClick={deleteItem}>X</button>
+    <div style={{width:'700px'}}>
+      <h4 style={{display:'inline-block', marginRight:'10px'}}>{item.supportInfra}</h4>
+      <input style={{display:'inline-block'}} type="text" value={item.text} onChange={editItemText} />
+      <button style={{display:'inline-block'}} onClick={deleteItem}>X</button>
     </div>
   );
 };
