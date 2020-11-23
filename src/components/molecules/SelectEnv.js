@@ -3,7 +3,7 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
 const SelectEnv = () => {
-    const [state, setState] = useState(''); // 이 친구도 리코일로 바꿔야 할까..?
+    const [state, setState] = useState(''); 
     const options = [
         "천변",
         "공원",

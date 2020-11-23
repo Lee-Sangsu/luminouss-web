@@ -4,12 +4,15 @@
 
 .ul {
   display: flex;
-  width: 100%; /* 전체 너비 */
+  /* width: 100%; 전체 너비 */
   list-style: none;
   color: black;
   border: 2px solid black;
   margin: 0;
-  padding: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-block-start: 0;
 }
 
 .link {
@@ -30,10 +33,8 @@
 
 .profile {
   flex-grow: 1;
-  margin-right: -18px;
 }
 
 .login {
   flex-grow: 1;
-  margin-right: -18px;
 }

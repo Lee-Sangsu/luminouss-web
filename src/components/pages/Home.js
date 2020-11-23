@@ -48,9 +48,9 @@ const Home  = ({ isLoggedIn }) => {
 
                 <div className="linkBox">
                     <div className="addWalkway_text">산책로 정보 추가하기</div>
-                    <a href="/add-road-info" className="addWalkway" onClick={onClick}>
+                    <Link to="/add-road-info" className="addWalkway" onClick={onClick}>
                         +
-                    </a>
+                    </Link>
                 </div>
                 {/* {arr.map((roadName, index) => <FirestoreData key={index} item={roadName} />)} */}
                 {/* {console.log(newArr)} */}

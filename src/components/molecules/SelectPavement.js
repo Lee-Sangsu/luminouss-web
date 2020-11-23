@@ -3,7 +3,7 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
 const SelectPavement = () => {
-    const [state, setState] = useState(''); // 이 친구도 리코일로 바꿔야 할까..?
+    const [state, setState] = useState(''); 
     const [exceptValue, setExceptValue] = useState('');
     const options = [
         "시멘트",

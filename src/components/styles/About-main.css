@@ -1,0 +1,171 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  background-color: #efefef;
+  align-items: center;
+}
+
+.introduction {
+  display: inline-flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-vision {
+  font-weight: bold;
+}
+
+.team-name {
+  width: auto;
+  height: 70px;
+}
+
+.team-vision-mean {
+  text-align: center;
+}
+
+.logo-image {
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+  height: 180px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 480px;
+  background-color: white;
+}
+
+img {
+  width: auto;
+  height: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.problem-tit {
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+  height: 300px;
+  /* margin-top: 580px; */
+  justify-content: center;
+  align-items: center;
+}
+
+.problem-tit .prob-tit {
+  width: 200px;
+  height: auto;
+  position: absolute;
+}
+.problem-tit .prob-pic {
+  width: 100%;
+  height: 100%;
+}
+
+.problem-body {
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+  height: 340px;
+  /* margin-top: 580px; */
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.team-vision-mean {
+  text-align: center;
+}
+
+pre {
+  letter-spacing: 1px;
+  line-height: 200%;
+  font-size: 17px;
+  font-weight: 300;
+  font-family: "NanumSquareRoundL", sans-serif;
+  text-decoration: none;
+}
+
+.solution-tit {
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+  height: 300px;
+  /* margin-top: 580px; */
+  justify-content: center;
+  align-items: center;
+}
+
+.solution-tit .sol-tit {
+  width: 200px;
+  height: auto;
+  position: absolute;
+}
+.solution-tit .sol-pic {
+  width: 100%;
+  height: 100%;
+}
+
+.solution-body {
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+  height: 500px;
+  justify-content: center; /*around로 바꿔야 해*/
+  align-content: center;
+  background-color: white;
+}
+
+.solution-body-wrap {
+  display: flex;
+  position: relative;
+  width: 1180px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.image-space {
+  display: inline-flex;
+  position: relative;
+  width: 220px;
+  height: auto;
+  margin-right: 100px;
+}
+
+.solution-body-text {
+  display: inline-block;
+  position: relative;
+  width: 600px;
+  height: auto;
+  margin-left: 80px;
+}
+
+.solution-body-text > img {
+  width: auto;
+  height: 50px;
+  padding-bottom: 5px;
+}
+.is-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.explaining-wrap {
+  text-align: left;
+}
+
+.explaining-wrap > pre {
+  text-align: left;
+}
