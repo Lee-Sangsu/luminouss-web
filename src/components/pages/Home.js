@@ -53,7 +53,10 @@ const Home  = ({ isLoggedIn }) => {
                         +
                     </Link>
                 </div>
-                {arr ? arr.map((data) => <div key={data.id}>
+                {arr ? arr.map((data) => <div key={data.id} style={{
+                    marginTop:"20px",
+                    marginBottom:"30px"
+                }}>
                     <h4>{data.roadName}</h4>
                 </div> ):<h5>산책로 정보 불러오는 중..</h5>}
                 

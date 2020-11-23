@@ -7,7 +7,6 @@ import Profile from 'components/pages/Profile';
 import AddRoad from "components/pages/AddRoad";
 import Register from "components/pages/SignUp";
 import SignIn from "components/pages/SignIn";
-import AboutMain from 'components/organisms/AboutMain';
 import AboutTeam from 'components/organisms/AboutTeam';
 import AboutSolution from 'components/organisms/AboutSolution';
 import {
@@ -25,13 +24,10 @@ const AppRouter = ({ isLoggedIn }) => {
               <Route path="/about-luminouss">
                 <About />
               </Route>
-              <Route path='/about-luminouss/main'>
-                <AboutMain />
-              </Route>
-              <Route path='/about-luminouss/team'>
+              <Route path='/about-luminouss-team'>
                 <AboutTeam />
               </Route>
-              <Route path='/about-luminouss/solution'>
+              <Route path='/about-luminouss-solution'>
                 <AboutSolution />
               </Route>
               <Route path="/my-profile">

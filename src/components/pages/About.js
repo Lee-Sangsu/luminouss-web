@@ -2,53 +2,37 @@ import React from "react";
 import AboutMain from 'components/organisms/AboutMain';
 import 'components/styles/AboutNav.css';
 import { Link } from 'react-router-dom';
+import OnSolutionClick from 'functions/NavigationFunctions/OnSolutionClick';
+import OnTeamClick from 'functions/NavigationFunctions/OnTeamClick';
+import OnVisionClick from 'functions/NavigationFunctions/OnVisionClick';
+
 
 const About = () => {
-  
-  const onVisionClick = () => {
     var vision = document.getElementById('vision');
     var team = document.getElementById('team');
     var solution = document.getElementById('solution');
+      
     vision.style.color = 'green';
     team.style.color = 'black';
     solution.style.color = 'black';
-  };
-  
-  const onTeamClick = () => {
-    var vision = document.getElementById('vision');
-    var team = document.getElementById('team');
-    var solution = document.getElementById('solution');
-      
-    vision.style.color = 'black';
-    team.style.color = 'green';
-    solution.style.color = 'black';
-  };
-
-  const onSolutionClick = () => {
-    var vision = document.getElementById('vision');
-    var team = document.getElementById('team');
-    var solution = document.getElementById('solution');
-      
-    vision.style.color = 'black';
-    team.style.color = 'black';
-    solution.style.color = 'green';
-  };
 
   return (
+    <>
     <nav>
        <ul className="about-ul">
          <li className='list'>
-          <Link to='/about-luminouss/main' id="vision" onClick={onVisionClick}> Vision&Mission </Link>
+          <Link to='/about-luminouss' id="vision" onClick={OnVisionClick}> Vision&Mission </Link>
          </li>
          <li className='list'>
-          <Link to='/about-luminouss/team' id="team" onClick={onTeamClick}> Team </Link>
+          <Link to='/about-luminouss-team' id="team" onClick={OnTeamClick}> Team </Link>
          </li>
          <li className='list'>
-          <Link to='/about-luminouss/solution' id="solution" onClick={onSolutionClick}> Solution </Link>
+          <Link to='/about-luminouss-solution' id="solution" onClick={OnSolutionClick}> Solution </Link>
          </li>
        </ul>
-       <AboutMain />
     </nav>
+    <AboutMain />
+    </>
   );
 }
 
