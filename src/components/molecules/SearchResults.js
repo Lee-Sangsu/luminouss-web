@@ -28,6 +28,7 @@ const SearchResults = ( {data} ) => {
                 category_group_code: 'SW8',
                 x: address.longitude,
                 y: address.latitude,
+                radius: 1500,
                 size: 2
             } 
         }).then((res) => {
@@ -38,6 +39,7 @@ const SearchResults = ( {data} ) => {
 
         document.getElementById("search-results").style.display = 'none';
         document.getElementById("road-head").style.display = 'block';
+        document.getElementById("road-address").style.display = 'block';
     };
 
     return (

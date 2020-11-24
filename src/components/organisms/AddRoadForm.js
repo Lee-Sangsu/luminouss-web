@@ -18,9 +18,11 @@ import InfraItemCreator from 'functions/InfraItemCreator';
 
 import AroundEnvListState from 'recoilStates/AroundEnvListState';
 import AroundEnvItem from 'components/molecules/AroundEnvItem';
-import AroundItemCreator from 'functions/AroundItemCreator'
 import SearchedResultState from 'recoilStates/SearchedResultState';
 import SearchResults from 'components/molecules/SearchResults';
+import SearchAroundEnv from 'components/molecules/SearchAroundEnv';
+import EnvSearchState from 'recoilStates/EnvSearchState';
+import EnvSearchResults from 'components/molecules/EnvSearchResult';
 
 const AddRoadForm = () => {
     const supportInfraList = useRecoilValue(SupportInfraListState);
@@ -28,6 +30,7 @@ const AddRoadForm = () => {
     const aroundList = useRecoilValue(AroundEnvListState);
     //정보등록 onclick으로 firebase.firestore 한번에 넣기
     const searchResults = useRecoilValue(SearchedResultState);
+    const envSearchResults = useRecoilValue(EnvSearchState);
     
    
     return (
@@ -61,10 +64,19 @@ const AddRoadForm = () => {
           ))}
 
           <h4>주변환경 추가</h4>
-          <AroundItemCreator />
-          {aroundList.map((aroundEnvItem) => (
-            <AroundEnvItem key={aroundEnvItem.id} item={aroundEnvItem} />
-          ))}
+          <SearchAroundEnv placeholder="음식점 이름 등을 입력하세요" />
+          <div id="aroundenv">
+            {envSearchResults.map((data) => (
+              <EnvSearchResults key={data.id} data={data} />
+            ))}
+          </div>
+
+          <div id="aroundEnvList">
+            {aroundList.map((aroundEnvItem) => (
+              <AroundEnvItem key={aroundEnvItem.id} item={aroundEnvItem} />
+            ))}
+          </div>
+
 
           <h4>걸을 때 주의사항</h4>
           <WarningInput placeholder="걸을 때 주의사항을 적어주세요" />

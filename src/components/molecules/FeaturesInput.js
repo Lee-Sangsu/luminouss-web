@@ -1,10 +1,10 @@
 import React from "react";
-import {useSetRecoilState, useRecoilValue} from 'recoil';
+import {useRecoilState} from 'recoil';
 import FeatureState from 'recoilStates/FeatureState';
 
 const FeaturesInput = ( {placeholder} ) => {
-    const setFeature = useSetRecoilState(FeatureState);
-    const feature = useRecoilValue(FeatureState);
+    const [feature, setFeature] = useRecoilState(FeatureState);
+
 
     const onChange = (event) => {
       const {

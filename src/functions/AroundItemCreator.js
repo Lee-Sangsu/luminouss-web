@@ -3,8 +3,7 @@ import {
   } from 'recoil';
 import React, {useState} from 'react';
 import AroundEnvListState from 'recoilStates/AroundEnvListState';
-import Dropdown from 'react-dropdown';
-import 'components/styles/Dropdown.css';
+
 
 
 let id = 0;
@@ -14,15 +13,8 @@ function getId() {
 }
 
 const AroundItemCreator = () => {
-    const [address, setAddress] = useState('');
     const [name, setName] = useState('');
-    const [state, setState] = useState(''); // 이 친구도 리코일로 바꿔야 할까..?
-    const options = [
-        "음식점", "카페", "랜드마크"
-    ];
-    const onSelect = (event) => {
-        setState(event.value);
-    };
+ 
     const setInfraList = useSetRecoilState(AroundEnvListState);
   
     const addItem = () => {
@@ -30,27 +22,21 @@ const AroundItemCreator = () => {
         ...oldInfraList,
         {
           id: getId(),
-          text: `${address}, ${name}`,
-          supportInfra: state,
+          text: `${name}`,
         },
       ]);
-      setAddress('');
       setName('');
     };
   
     const onChange = ({target: {name, value}}) => {
-      if (name === "address"){ 
-        setAddress(value);
-      } else if (name === "name") {
+      if (name === "name") {
         setName(value);
       }
     };
   
     return (
       <div>
-        <Dropdown options={options} onChange={onSelect} value={state} placeholder="Select an option" />
-        <input name="address" type="text" value={address} placeholder="이름" onChange={onChange} />
-        <input name="name" type="text" value={name} placeholder="주소" onChange={onChange} />
+        <input name="address" type="text" value={name} placeholder="이름" onChange={onChange} />
         <button onClick={addItem}>Add</button>
       </div>
     );

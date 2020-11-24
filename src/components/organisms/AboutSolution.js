@@ -2,9 +2,6 @@ import React from 'react';
 import 'components/styles/About-Solution.css';
 import { Link } from 'react-router-dom';
 import 'components/styles/AboutNav.css';
-import OnSolutionClick from 'functions/NavigationFunctions/OnSolutionClick';
-import OnTeamClick from 'functions/NavigationFunctions/OnTeamClick';
-import OnVisionClick from 'functions/NavigationFunctions/OnVisionClick';
 
 
 const AboutSolution = () => {
@@ -13,13 +10,19 @@ const AboutSolution = () => {
         <nav>
         <ul className="about-ul">
             <li className='list'>
-                <Link to='/about-luminouss' id="vision" onClick={OnVisionClick}> Vision&Mission </Link>
+                <Link to='/about-luminouss' id="vision" style={{
+                    color:'black'
+                }}> Vision&Mission </Link>
             </li>
             <li className='list'>
-                <Link to='/about-luminouss-team' id="team" onClick={OnTeamClick}> Team </Link>
+                <Link to='/about-luminouss-team' id="team" style={{
+                    color:"black"
+                }}> Team </Link>
             </li>
             <li className='list'>
-                <Link to='/about-luminouss-solution' id="solution" onClick={OnSolutionClick}> Solution </Link>
+                <Link  ink to='/about-luminouss-solution' id="solution" style={{
+                    color:"green"
+                }}> Solution </Link>
             </li>
         </ul>
         </nav>

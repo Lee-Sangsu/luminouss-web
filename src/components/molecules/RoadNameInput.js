@@ -24,17 +24,26 @@ const RoadNameInput = ( {placeholder} ) => {
   }; 
 
   const onClick = async ()  => {
-    axios.get('https://dapi.kakao.com/v2/local/search/keyword.json', {
-      headers: {
-          'Authorization': `KakaoAK ${kakaoAuthKey}`,
-          'content-type': 'application/x-www-form-urlencoded'
-      },
-      params: { query: `${input}`}
-    }).then( (results) => {
+    if (input) {
+      axios.get('https://dapi.kakao.com/v2/local/search/keyword.json', {
+        headers: {
+            'Authorization': `KakaoAK ${kakaoAuthKey}`,
+            'content-type': 'application/x-www-form-urlencoded'
+        },
+        params: { query: `${input}`}
+    
+      }).then( (results) => {
+        const itemList = JSON.parse(JSON.stringify(results.data));
+        setSearchState(itemList.documents);
 
-      const itemList = JSON.parse(JSON.stringify(results.data));
-      setSearchState(itemList.documents);
-    }).catch(error => console.log(error))
+      }).catch(error => console.log(error))
+      document.getElementById("search-results").style.display = 'inline-block';
+      document.getElementById("road-head").style.display = 'none';
+      document.getElementById("road-address").style.display = 'none';
+    } else {
+      window.alert('검색어를 입력해주세요.');
+    }
+    
   };
 
   return (

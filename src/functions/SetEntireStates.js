@@ -9,7 +9,7 @@ import SupportInfraListState from '../recoilStates/SupportInfraListState';
 import AroundEnvListState from '../recoilStates/AroundEnvListState';
 import AddressState from '../recoilStates/AddressState';
 import AroundSubwayState from '../recoilStates/AroundSubwayState';
-
+import firebase from 'global/fbase';
 
 
 const SetEntireStates = () => {
@@ -20,10 +20,8 @@ const SetEntireStates = () => {
     const supportInfraList = useRecoilValue(SupportInfraListState);
     const aroundEnvList = useRecoilValue(AroundEnvListState);
     const address = useRecoilValue(AddressState);
-    const aroundSubway = useRecoilValue(AroundSubwayState);
-
-
-    
+    const aroundSubway = useRecoilValue(AroundSubwayState); 
+    var userUid =  firebase.auth().currentUser.uid;
 
 
     const EntireState = {
@@ -34,7 +32,8 @@ const SetEntireStates = () => {
         supportInfraList: supportInfraList,
         aroundEnvList: aroundEnvList,
         address: address,
-        aroundSubway: aroundSubway
+        aroundSubway: aroundSubway,
+        user: userUid
     };
     return EntireState;
 };

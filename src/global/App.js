@@ -19,34 +19,37 @@ function App() {
   }), []);
 
   return (<>
-      {init ? <AppRouter isLoggedIn={isLoggedIn} /> : "Initializing..."}
+      {init ? (<>
+      <AppRouter isLoggedIn={isLoggedIn} /> 
       <footer>
-      <div id="footer">
-          <div class="footer-wrap">
-              <img class="footer-logo" src={require("images/심볼로고.png").default} alt="로고"></img>
-              <div class="footer-body">
-                  <div class="info-wrap">
-                      <div class="info-key">
+       <div id="footer">
+          <div className="footer-wrap">
+              <img className="footer-logo" src={require("images/심볼로고.png").default} alt="로고"></img>
+              <div className="footer-body">
+                  <div className="info-wrap">
+                      <div className="info-key">
                           <h4>주소</h4>
                           <h4>대표</h4>
                           <h4>전화</h4>
                           <h4>이메일</h4>
                       </div>
-                      <div class="info-value">
+                      <div className="info-value">
                           <h4>서울시 종로구 이화동 대학로 116</h4>
                           <h4>이소현</h4>
                           <h4>010-5874-5988</h4>
                           <h4>sohyeon10051@gmail.com</h4>
                       </div>
                   </div>
-                  <div class="rights">
+                  <div className="rights">
                       <h4>CopyrightⒸ Luminouss. All Rights Reserved.</h4>
                   </div>
               </div>
           </div>
         </div>
       </footer>
-    </>
+      </>
+      ) :  "Initializing..."}
+      </>
 
   );
 };
