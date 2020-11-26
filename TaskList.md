@@ -1,9 +1,8 @@
-1. 주변 환경 추가할 때 KakaoMap API로 검색해서 리스트 추가하게 하기 [AroundItemCreator.js]
-2. 입력된 정보 보기 스타일링 [Home.js, Profile.js]
+1. 입력된 정보 보기 스타일링 [Home.js, Profile.js]
 
 희종쌤께 질문:
 
-1. Query Routing 하는 법 궁금함.
+- Query Routing 하는 법 궁금함.
 
 희종썜 피드백:
 
