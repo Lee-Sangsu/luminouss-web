@@ -1,3 +1,12 @@
+@keyframes appearing-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .mainContainer {
   display: flex;
   flex-direction: column;
@@ -22,22 +31,188 @@
   margin-bottom: 50px;
 }
 
-.linkBox {
-  flex-grow: 7;
+.test {
+  opacity: 0;
+  display: flex;
+  background-color: black;
+  width: 100%;
+  height: calc(100vh + 150px);
+  transition: opacity 1s ease-in;
+  z-index: 2;
+  position: initial;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 }
-.addWalkway_text {
-  font-size: 17px;
-  font-weight: bold;
+
+.test:hover {
+  opacity: 1;
 }
-.addWalkway {
-  display: inline-block;
-  color: black;
-  text-decoration: none;
-  border: 4px solid black;
-  border-radius: 20px;
+
+.first-test-box {
+  margin-top: 100px;
+  width: 100%;
+  height: 100px;
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: appearing-opacity;
+  animation-duration: 1s;
+}
+
+#first-sound-btn {
+  display: inline-flex;
+  height: 80px;
+  border-color: yellow;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 3px;
+  background: none;
+  width: 35%;
+  animation-name: appearing-opacity;
+  animation-duration: 1s;
+}
+
+#first-h4 {
+  flex-wrap: wrap;
+  white-space: pre;
+  margin-block-end: 0;
+  color: white;
+  margin-right: 40px;
+  animation-name: appearing-opacity;
+  animation-duration: 1s;
+}
+
+#second-test-box {
+  display: none;
+  width: 100%;
+  height: 100px;
+  /* background-color: white; */
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: appearing-opacity;
+  animation-duration: 1s;
+}
+
+#second-sound-btn {
+  display: none;
+  height: 80px;
+  border-color: yellow;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 3px;
+  background: none;
+  width: 35%;
+  animation-name: appearing-opacity;
+  animation-duration: 1s;
+}
+
+#second-h4 {
+  display: none;
+  flex-wrap: wrap;
+  white-space: pre;
+  margin-block-end: 0;
+  color: white;
+  margin-right: 40px;
+  animation-name: appearing-opacity;
+  animation-duration: 1s;
+}
+
+#third-test-box {
+  display: none;
+  width: 100%;
+  height: 100px;
+  /* background-color: white; */
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: appearing-opacity;
+  animation-duration: 1s;
+}
+
+#third-sound-btn {
+  display: none;
+  height: 80px;
+  border-color: yellow;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 3px;
+  background: none;
+  width: 35%;
+  animation-name: appearing-opacity;
+  animation-duration: 1s;
+}
+
+#third-h4 {
+  display: none;
+  flex-wrap: wrap;
+  white-space: pre;
+  margin-block-end: 0;
+  color: white;
+  margin-right: 40px;
+  animation-name: appearing-opacity;
+  animation-duration: 1s;
+}
+
+#down-arrow {
+  padding-top: 200px;
+  /* height: 30px;
+  width: 65px; */
+  display: none;
+  z-index: 3;
+  color: white;
+  animation-name: appearing-opacity;
+  animation-duration: 0.8s;
+  cursor: pointer;
+}
+
+#semi-title {
+  display: flex;
+  height: 250px;
+  width: 100%;
+  background-image: linear-gradient(pink, lightpink, pink);
+  justify-content: center;
+  align-items: center;
+}
+
+#semi-title-text {
+  font-size: 1.7em;
+  font-weight: 400;
+}
+
+#semi-second-title {
+  height: 350px;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+#semi-second-first-title {
+  white-space: pre;
+  word-spacing: 1.5px;
   text-align: center;
-  padding: 0px 95px;
-  margin-top: 15px;
-  font-size: 80px;
-  line-height: 100px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  margin-top: 30px;
+}
+
+#semi-second-second-title {
+  font-size: 1.8em;
+  font-weight: 400;
+  margin: 0;
+  word-spacing: 1.8px;
+}
+
+#link-to-about {
+  margin-top: 20px;
 }

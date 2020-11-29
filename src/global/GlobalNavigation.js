@@ -8,13 +8,13 @@ const Navigation = ({ isLoggedIn }) => (
     <ul className="ul">
       <li className="luminouss">
         <Link to="/" className="link">
-          루미너스
+          <img src={require('images/titles/luminous.png').default} alt='루미너스' id='luminouss-img'/>
         </Link>
       </li>
 
       <li className="about">
         <Link to="/about-luminouss" className="link">
-          About
+          About us
         </Link>
       </li>
 
