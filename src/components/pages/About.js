@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AboutMain from 'components/organisms/AboutMain';
 import 'components/styles/AboutNav.css';
 import { Link } from 'react-router-dom';
@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom';
 
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
   return (
     <>
     <nav>

@@ -1,7 +1,6 @@
 import React, {useRef} from "react";
 import { Link, useHistory } from "react-router-dom";
 import "components/styles/Home.css"
-// import firebase from "global/fbase";
 import useH1FadeIn from 'hooks/useH1FadeIn';
 import useH3FadeIn from 'hooks/useH3FadeIn';
 import onSoundBtnClick from 'functions/onSoundBtnClick';
@@ -38,26 +37,6 @@ const Home  = ({ isLoggedIn }) => {
 
 
     
-    
-    // const [arr, setArr]= useState([]);
-
-    // const getWalkRoadInfo = async () => {
-    //         const res = await firebase.firestore().collection('WalkRoad').get()
-    
-    //         res.forEach((doc) => {
-    //             const arrObj = {
-    //                 ...doc.data(),
-    //                 id: doc.id,
-    //             };
-    //             setArr((prev) => [arrObj, ...prev]);
-    //         });
-    // };
-     
-    // // 화면 켜질때 딱 한번만 array에 담는걸 어떻게 할까.. 
-    // useEffect(() => {
-    //     getWalkRoadInfo();
-    // }, [])
-
     return (
         <>
             <div id="first-container" style={{
@@ -169,11 +148,11 @@ const Home  = ({ isLoggedIn }) => {
                 display: 'flex',
                 width:window.innerWidth,
                 height:'150px',
-                alignItems:'center'
+                alignItems:'center',
+                justifyContent:'center'
             }}>
                 <h4 style={{
-                    marginRight:'15%',
-                    marginLeft: "15%",
+                    marginRight:'13%',
                     marginTop:'0',
                     fontSize:'20px',
                     whiteSpace: 'pre',
@@ -223,7 +202,7 @@ const Home  = ({ isLoggedIn }) => {
                 <h3 id='semi-second-second-title'>
                     저희는 ‘시각장애인의 불편한 산책 경험’을 해결하려 합니다.
                 </h3>
-                <Link to='/about-luminouss' id='link-to-about'>루미너스 팀 더 알아보기</Link>
+                <Link to='/about-luminouss' id='link-to-about'>루미너스 팀 더 알아보기</Link> {/* component로 */}
             </div>
         
         </>

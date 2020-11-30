@@ -48,7 +48,7 @@ function App() {
         </div>
       </footer>
       </>
-      ) :  "Initializing..."}
+      ) : <img src={require('images/titles/luminous.png').default} id='luminouss-img' alt='루미너스' />}
       </>
 
   );
