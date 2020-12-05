@@ -44,7 +44,7 @@ const Home  = ({ isLoggedIn }) => {
                 flexDirection:'row',
                 height: `${window.innerHeight - 140}px`,
                 flexWrap:'wrap',
-                width:window.innerWidth,
+                width:'100%',
                 backgroundColor:'#EFEFEF',
                 justifyContent: 'flex-start',
                 alignItems: 'center'
@@ -120,6 +120,9 @@ const Home  = ({ isLoggedIn }) => {
                 }} />
             </div>
             <div ref={imgRef} className="test">
+                <div id="clova">
+                    <img id="clova-img" src={require('images/CLOVA_dubbing_watermark_white.png').default} alt='클로바 더빙에서 제공된 음성입니다.' />
+                </div>
                 <div className="first-test-box">
                     <h4 id='first-h4'>
 {`이곳을 눌러 
@@ -141,7 +144,7 @@ const Home  = ({ isLoggedIn }) => {
 }</h4>    
                     <button id="third-sound-btn" onClick={onSoundBtnClick} />
                 </div> 
-                {/* <img src={require('images/down-arrow.png').default} alt='스크롤을 내려보세요' id='down-arrow' /> */}
+
                 <h5 onClick={moveScroll} id="down-arrow">테스트가 종료되었습니다</h5>
             </div>
             <div ref={divRef} style={{

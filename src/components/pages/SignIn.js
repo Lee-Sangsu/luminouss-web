@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import firebase from "global/fbase";
 import { useHistory, Link } from "react-router-dom";
+import Kakao from 'kakaojs';
+import {useSetRecoilState} from 'recoil';
+import InitializeState from 'recoilStates/InitializeState';
+import useRecoilState from 'recoilStates/IsLoggedInState';
 
 const SignIn = () => {
     const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const setInit = useSetRecoilState(InitializeState);
+    const setLoggedIn = useSetRecoilState(useRecoilState);
 
     const onChange = (event) => { 
         const {
@@ -33,6 +39,33 @@ const SignIn = () => {
             console.log(error.message);
         }
     };
+    const loginWithKaKao = () => {
+        Kakao.Auth.login({
+            scope: 'profile',
+            success: (res) => {
+                Kakao.API.request({
+                    url: '/v2/user/me',
+                    success: function(res) {
+                     console.log(JSON.stringify(res))
+                     setInit(true);
+                     setLoggedIn(true);
+                     history.push("/");
+                    },
+                    fail: function(error) {
+                        alert(
+                            'login success, but failed to request user information: ' +
+                            JSON.stringify(error)
+                        )
+                    },
+                })
+            }, 
+            fail: (err) => {
+                console.error(err);
+            }
+        });
+    }; // 동의 항목 추가하고 코드 짜면 끝
+    
+
 
 
     return (
@@ -60,6 +93,7 @@ const SignIn = () => {
             }}></input>
             {error}
         </form>
+        <button onClick={loginWithKaKao}> kakao check</button>
         <h3>아직 계정이 없으신가요?</h3> <Link to="/sign-up">회원가입하기</Link>
     </div>
     );

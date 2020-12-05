@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import AppRouter from './Router';
 import 'components/styles/Footer.css'
-import firebase from 'firebase';
+import firebase from './fbase';
+import {useRecoilState} from 'recoil';
+import InitializeState from 'recoilStates/InitializeState';
+import IsLoggedInState from 'recoilStates/IsLoggedInState';
 
 function App() {
-  const [init, setInit] = useState(false);
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [init, setInit] = useRecoilState(InitializeState);
+  const [isLoggedIn, setLoggedIn] = useRecoilState(IsLoggedInState);
 
   useEffect((() => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -16,7 +19,7 @@ function App() {
       }
       setInit(true);
     });
-  }), []);
+  }), [setLoggedIn, setInit]);
 
   return (<>
       {init ? (<>

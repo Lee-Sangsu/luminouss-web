@@ -1,0 +1,37 @@
+{
+    "road-name":"불광천",
+    "road-env":"천변",
+    "entire-length":9,
+    "address":{
+        "address-name":"서울 서대문구 봉원동",
+        "latitude": "126.923778562273",
+        "longitude": "37.5568707448873"
+    },
+    "around-subway":[{
+        "place-name":"증산역 6호선",
+        "walk-time": 4
+    }, {
+        "place-name":"새절역 6호선",
+        "walk-time": 4
+    }],
+    "voice_induction":0,
+    "side_walk_block":0,
+    "braille_notice":0,
+    "safety_fence":0,
+    "pavement": "놀이터 바닥 포장재",
+    "stair_number":14,
+    "stair_feature":"산책로 길이에 비해서",
+    "warning":"주의할 사항",
+    "toilet":"5m 마다~",
+    "bench_and_rest":"30m 마다~~",
+    "walking-people":"평일 오전에도 꽤 있는 편입니다.",
+    "feature":"멋진 야경 ~~",
+    "around-env-list":[{
+        "id":0,
+        "category_group_name":"카페",
+        "place_name":"운중동 카페",
+        "address_name":"주소",
+        "latitude":"126.923778562273",
+        "longitude":"37.5568707448873"
+    }]
+}

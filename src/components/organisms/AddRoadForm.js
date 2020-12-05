@@ -18,11 +18,12 @@ import InfraItemCreator from 'functions/InfraItemCreator';
 
 import AroundEnvListState from 'recoilStates/AroundEnvListState';
 import AroundEnvItem from 'components/molecules/AroundEnvItem';
-import SearchedResultState from 'recoilStates/SearchedResultState';
+import SearchedResultState from 'recoilStates/searched/SearchedResultState';
 import SearchResults from 'components/molecules/SearchResults';
 import SearchAroundEnv from 'components/molecules/SearchAroundEnv';
-import EnvSearchState from 'recoilStates/EnvSearchState';
+import EnvSearchState from 'recoilStates/searched/EnvSearchState';
 import EnvSearchResults from 'components/molecules/EnvSearchResult';
+import PeopleInput from 'components/molecules/PeopleInput';
 
 const AddRoadForm = () => {
     const supportInfraList = useRecoilValue(SupportInfraListState);
@@ -83,6 +84,9 @@ const AddRoadForm = () => {
           
           <h4>산책로 특징</h4>
           <FeaturesInput placeholder="산책로의 특징을 적어주세요" />
+
+          <h4>유동 인구</h4>
+          <PeopleInput placeholder="유동인구 많은 정도 적어주세요" />
         </div>
       </>
     );

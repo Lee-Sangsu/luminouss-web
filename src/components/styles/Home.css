@@ -62,6 +62,20 @@
   animation-duration: 1s;
 }
 
+#clova {
+  display: flex;
+  height: 30px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#clova-img {
+  height: 25px;
+  width: auto;
+  padding: 20px;
+}
+
 #first-sound-btn {
   display: inline-flex;
   height: 80px;

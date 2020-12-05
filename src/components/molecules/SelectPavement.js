@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import { useRecoilState } from 'recoil';
+import PavementState from 'recoilStates/PavementState';
 
 const SelectPavement = () => {
-    const [state, setState] = useState(''); 
-    const [exceptValue, setExceptValue] = useState('');
+    const [state, setState] = useRecoilState(PavementState); 
+    const [exceptState, setExceptState] = useState('');
+
     const options = [
         "시멘트",
         "흙, 돌",
@@ -17,8 +20,12 @@ const SelectPavement = () => {
     };
     const onChange = ({target: {name, value}}) => {
         if (name === "except value"){ 
-            setExceptValue(value);
+            setExceptState(value);
         } 
+    };
+
+    const onClick = () => {
+        setState(exceptState);
     };
 
     return (
@@ -28,7 +35,10 @@ const SelectPavement = () => {
                 width:'300px'
             }}>
                 <Dropdown options={options} onChange={onSelect} value={state} placeholder="길 포장 재질" />
-                {state === options[4] ? <input onChange={onChange} name="except value" value={exceptValue} placeholder='포장 재질을 직접 입력해주세요' /> : <></>}
+                {state === options[4] ? <>
+                 <input onChange={onChange} name="except value" value={exceptState} placeholder='포장 재질을 직접 입력해주세요' /> 
+                 <button onClick={onClick}>submit</button> 
+                 </>: <></>}
             </div>      
         </>
     )

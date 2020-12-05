@@ -1,16 +1,10 @@
-1. [AboutMain.js] [Home.js]로 옮기지 말고 웹사이트에 대한 설명 기재
-2. [Home.js] xd 디자인에 맞춰서 수정하기
+1. [SelectEnv.js] [SelectPavement.js] ->[SetEntireStates.js]에 넣기
+2. [SetEntireStates.js] json 문서에 맞게 구현
 3. 산책로 정보 수정하기 구현하기
-
-희종쌤께 질문:
-
-- Query Routing 하는 법 궁금함.
+4. 스타일링
+5. 음성 api 구현
 
 희종썜 피드백:
 
 - key값(= document 이름)에 한글을 입력하는게 위험할 수 았음(에러 발생 가능성)
   -> 필드로 산책로 이름 불러오고 키값들은(= 문서 이름) uuid 사용해서 넣거나 영문으로 표시하면 ㄱㅊ.
-
-낑깡 피드백:
-
-- 정보 추가 버튼의 CTA가 불명확하다.

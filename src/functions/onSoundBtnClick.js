@@ -1,5 +1,5 @@
 const onSoundBtnClick = (event) => {
-    const firstAudio = new Audio(require('voice/firstvoice.m4a').default);
+    const firstAudio = new Audio(require('voice/Namsan.mp3').default);
 
     // event.preventDefault();
     if (event.target.id === 'first-sound-btn') {

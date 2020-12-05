@@ -3,7 +3,7 @@ import {useSetRecoilState, useRecoilState} from 'recoil';
 import RoadNameState from 'recoilStates/RoadNameState';
 import axios from 'axios';
 import kakaoAuthKey from 'global/KakaoAuthKey';
-import SearchedResultState from 'recoilStates/SearchedResultState'
+import SearchedResultState from 'recoilStates/searched/SearchedResultState'
 
 
 const RoadNameInput = ( {placeholder} ) => {

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useSetRecoilState} from 'recoil';
 import axios from 'axios';
 import kakaoAuthKey from 'global/KakaoAuthKey';
-import EnvSearchState from 'recoilStates/EnvSearchState';
+import EnvSearchState from 'recoilStates/searched/EnvSearchState';
 
 const SearchAroundEnv = ( {placeholder} ) => {
     const setSearchState = useSetRecoilState(EnvSearchState);

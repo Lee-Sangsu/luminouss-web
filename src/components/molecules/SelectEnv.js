@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import { useRecoilState } from 'recoil';
+import EnvState from 'recoilStates/EnvState';
 
 const SelectEnv = () => {
-    const [state, setState] = useState(''); 
+    const [state, setState] = useRecoilState(EnvState); 
     const options = [
         "천변",
         "공원",

@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter as Router, Route, Switch } from "react-router-dom";
+import {BrowserRouter,  Route, Switch } from "react-router-dom";
 import Navigation from './GlobalNavigation';
 import Home from 'components/pages/Home';
 import About from 'components/pages/About';
@@ -9,13 +9,14 @@ import Register from "components/pages/SignUp";
 import SignIn from "components/pages/SignIn";
 import AboutTeam from 'components/organisms/AboutTeam';
 import AboutSolution from 'components/organisms/AboutSolution';
+
 import {
   RecoilRoot
 } from 'recoil';
 
 const AppRouter = ({ isLoggedIn }) => {
     return (<RecoilRoot>
-          <Router>
+          <BrowserRouter >
             <Navigation isLoggedIn={isLoggedIn}/>
             <Switch>
               <Route exact path="/">
@@ -43,7 +44,7 @@ const AppRouter = ({ isLoggedIn }) => {
                 <AddRoad />
               </Route>
             </Switch>
-          </Router>
+          </BrowserRouter>
         </RecoilRoot>
       )
   };
