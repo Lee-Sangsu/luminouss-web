@@ -4,10 +4,12 @@ import "components/styles/Home.css"
 import useH1FadeIn from 'hooks/useH1FadeIn';
 import useH3FadeIn from 'hooks/useH3FadeIn';
 import onSoundBtnClick from 'functions/onSoundBtnClick';
+// import useScroll from 'hooks/useScroll';
 
 const Home  = ({ isLoggedIn }) => {
     //prop 바뀌면 리렌더링 isLoggedIn state 바뀜
     const history = useHistory();
+
     //login 안 된 경우, 로그인 필요합니다 알러트 띄우기
     const onRoadInfoClick = (event) => {
         event.preventDefault();
@@ -19,11 +21,11 @@ const Home  = ({ isLoggedIn }) => {
         }
     };
     
-
+    // 글자들 페이드인 효과
     const h1FadeIn = useH1FadeIn();
     const h3FadeIn = useH3FadeIn();
 
-    
+    // 아래로 내려가는 버튼 눌렀을 때
     const divRef = useRef(null);
     const imgRef = useRef();
 
@@ -34,6 +36,19 @@ const Home  = ({ isLoggedIn }) => {
     const firstmoveScroll = () => {
         imgRef.current.scrollIntoView({ behavior: 'smooth' });
     };
+
+    // 앱 체험하기 부분 useEffect 말고 react-scroll로 구현
+
+    // const {y} = useScroll();
+    // useEffect(() => {
+    //     if (y > 2 && y < 4) {
+    //         firstmoveScroll();
+    //     } else if (y > 765 && y < 766) {
+    //         moveScroll();
+    //     }
+    // });
+    // 걸을 때 주의사항 넣고 ~~이러한 정보들이 시각장애인에게 제공됩니다라는 문구 넣기
+
 
 
     

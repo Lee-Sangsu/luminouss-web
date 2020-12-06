@@ -1,8 +1,13 @@
-1. [SelectEnv.js] [SelectPavement.js] ->[SetEntireStates.js]에 넣기
+-- 회의 필요한 것 --
+
+1. 낑깡님과 정보 등록하기 방식 수정 등 비즈니스 로직 세우기
 2. [SetEntireStates.js] json 문서에 맞게 구현
-3. 산책로 정보 수정하기 구현하기
-4. 스타일링
-5. 음성 api 구현
+3. 산책로 정보 수정하기 구현
+4. [Profile.js]에서 user.uid null 에러 뜨는 부분 디펜던시 때문에 어쩔 수 없으니까 '카카오 vs 이메일 로그인', 하나는 포기하기 혹은 useEffect를 if로 핸들링..?
+5. [Home.js] react-scroll 사용하고, 더미데이터에 따라 나머지 두개 버튼에 음성 채우기
+
+희종썜 질문:
+네이버 검색처럼 검색 구현하려면 onClick 말고 useEffect로 input 스테이트가 바뀔 때마다 검색하는 걸로 검색 구현하면 네트워크 너무 많이 발생하지 않나요? 보통 그렇게 구현하나요..?
 
 희종썜 피드백:
 

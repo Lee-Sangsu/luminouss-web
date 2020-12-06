@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import 'components/styles/GlobalNavigation.css'
+import {useRecoilValue} from 'recoil';
+import IsLoggedInState from 'recoilStates/IsLoggedInState';
 
 
-const Navigation = ({ isLoggedIn }) => (
-  <nav className="nav">
+const Navigation = ({ isLoggedIn }) => {
+  const loggedIn = useRecoilValue(IsLoggedInState);
+  return (<nav className="nav">
     <ul className="ul">
       <li className="luminouss">
         <Link to="/" className="link">
@@ -18,7 +21,7 @@ const Navigation = ({ isLoggedIn }) => (
         </Link>
       </li>
 
-      {isLoggedIn ? (
+      {isLoggedIn || loggedIn ? (
         <li className="profile">
           <Link to="/my-profile" className="link">
             My Profile
@@ -34,5 +37,6 @@ const Navigation = ({ isLoggedIn }) => (
       
     </ul>
   </nav>
-);
+  );
+}
 export default Navigation;

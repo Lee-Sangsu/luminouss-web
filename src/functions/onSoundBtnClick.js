@@ -13,7 +13,7 @@ const onSoundBtnClick = (event) => {
         document.getElementById('third-test-box').style.display = 'inline-flex';
         document.getElementById('third-sound-btn').style.display = 'inline-flex';
         document.getElementById('third-h4').style.display = 'inline-flex';
-        setTimeout(() => document.getElementById('down-arrow').style.display = 'block', 2000)
+        setTimeout(() => document.getElementById('down-arrow').style.display = 'block', 600)
     } 
 };
 
