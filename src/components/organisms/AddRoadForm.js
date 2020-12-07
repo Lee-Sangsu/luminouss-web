@@ -3,27 +3,27 @@ import {
     useRecoilValue,
   } from 'recoil';
 import SupportInfraItemCreator from 'functions/SupportInfraItemCreator';
-import SupportInfraItem from 'components/molecules/SupportInfraItem';
+import SupportInfraItem from 'components/molecules/ForAddRoad/SupportInfraItem';
 import SupportInfraListState from 'recoilStates/SupportInfraListState';
-import InputAddress from 'components/molecules/InputAddress';
-import RoadNameInput from 'components/molecules/RoadNameInput';
-import WarningInput from 'components/molecules/WarningInput';
-import FeaturesInput from 'components/molecules/FeaturesInput';
+import InputAddress from 'components/molecules/ForAddRoad/InputAddress';
+import RoadNameInput from 'components/molecules/ForAddRoad/RoadNameInput';
+import WarningInput from 'components/molecules/ForAddRoad/WarningInput';
+import FeaturesInput from 'components/molecules/ForAddRoad/FeaturesInput';
 
-import SelectEnv from 'components/molecules/SelectEnv';
-import SelectPavement from 'components/molecules/SelectPavement';
+import SelectEnv from 'components/molecules/ForAddRoad/SelectEnv';
+import SelectPavement from 'components/molecules/ForAddRoad/SelectPavement';
 import InfraListState from 'recoilStates/InfraListState';
-import InfraItem from 'components/molecules/InfraItem';
+import InfraItem from 'components/molecules/ForAddRoad/InfraItem';
 import InfraItemCreator from 'functions/InfraItemCreator';
 
 import AroundEnvListState from 'recoilStates/AroundEnvListState';
-import AroundEnvItem from 'components/molecules/AroundEnvItem';
+import AroundEnvItem from 'components/molecules/ForAddRoad/AroundEnvItem';
 import SearchedResultState from 'recoilStates/searched/SearchedResultState';
-import SearchResults from 'components/molecules/SearchResults';
-import SearchAroundEnv from 'components/molecules/SearchAroundEnv';
+import SearchResults from 'components/molecules/ForAddRoad/SearchResults';
+import SearchAroundEnv from 'components/molecules/ForAddRoad/SearchAroundEnv';
 import EnvSearchState from 'recoilStates/searched/EnvSearchState';
-import EnvSearchResults from 'components/molecules/EnvSearchResult';
-import PeopleInput from 'components/molecules/PeopleInput';
+import EnvSearchResults from 'components/molecules/ForAddRoad/EnvSearchResult';
+import PeopleInput from 'components/molecules/ForAddRoad/PeopleInput';
 
 const AddRoadForm = () => {
     const supportInfraList = useRecoilValue(SupportInfraListState);

@@ -43,6 +43,7 @@ const SignIn = () => {
         Kakao.Auth.login({
             scope: 'profile',
             success: (res) => {
+                Kakao.Auth.setAccessToken(res.access_token);
                 Kakao.API.request({
                     url: '/v2/user/me',
                     success: function(res) {

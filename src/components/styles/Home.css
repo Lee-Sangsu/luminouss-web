@@ -36,7 +36,7 @@
   display: flex;
   background-color: black;
   width: 100%;
-  height: calc(100vh + 150px);
+  height: 100vh;
   transition: opacity 1s ease;
   z-index: 2;
   position: initial;
