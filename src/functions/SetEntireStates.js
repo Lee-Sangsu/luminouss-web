@@ -1,15 +1,15 @@
 // eslint-disable-next-line
 import React from "react";
 import { useRecoilValue } from 'recoil';
-import WarningState from '../recoilStates/WarningState';
-import RoadNameState from '../recoilStates/RoadNameState';
-import FeatureState from '../recoilStates/FeatureState';
-import InfraListState from '../recoilStates/InfraListState';
-import SupportInfraListState from '../recoilStates/SupportInfraListState';
-import AroundEnvListState from '../recoilStates/AroundEnvListState';
-import AddressState from '../recoilStates/AddressState';
-import AroundSubwayState from '../recoilStates/AroundSubwayState';
-import firebase from 'global/fbase';
+import WarningState from 'recoilStates/Addroad/WarningState';
+import RoadNameState from 'recoilStates/Addroad/RoadNameState';
+import FeatureState from 'recoilStates/Addroad/FeatureState';
+import InfraListState from 'recoilStates/Addroad/InfraListState';
+import SupportInfraListState from 'recoilStates/Addroad/SupportInfraListState';
+import AroundEnvListState from 'recoilStates/Addroad/AroundEnvListState';
+import AddressState from 'recoilStates/Addroad/AddressState';
+import AroundSubwayState from 'recoilStates/Addroad/AroundSubwayState';
+// import firebase from 'global/fbase';
 
 
 const SetEntireStates = () => {
@@ -21,7 +21,7 @@ const SetEntireStates = () => {
     const aroundEnvList = useRecoilValue(AroundEnvListState);
     const address = useRecoilValue(AddressState);
     const aroundSubway = useRecoilValue(AroundSubwayState); 
-    var userUid =  firebase.auth().currentUser.uid;
+    // var userUid =  firebase.auth().currentUser.uid;
 
 
     const EntireState = {
@@ -32,8 +32,7 @@ const SetEntireStates = () => {
         supportInfraList: supportInfraList,
         aroundEnvList: aroundEnvList,
         address: address,
-        aroundSubway: aroundSubway,
-        user: userUid
+        aroundSubway: aroundSubway
     };
     return EntireState;
 };

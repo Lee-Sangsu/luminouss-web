@@ -1,7 +1,7 @@
 import React from 'react';
 import onSoundBtnClick from 'functions/onSoundBtnClick';
 
-export default ({ moveScroll, imgRef}) => {
+const Test = ({ moveScroll, imgRef}) => {
     //ref={imgRef} 
     return (
         <div ref={imgRef} className="test">
@@ -35,3 +35,5 @@ export default ({ moveScroll, imgRef}) => {
     )
 };
 
+
+export default Test;

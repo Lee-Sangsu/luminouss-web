@@ -5,12 +5,20 @@ import FirstIntroduction from 'components/molecules/ForHome/FirstIntroduction';
 import Test from 'components/molecules/ForHome/Test';
 import SecondIntroduction from 'components/molecules/ForHome/SecondIntroduction';
 import ReactPageScroller from 'react-page-scroller';
+import { useRecoilValue } from 'recoil';
+import IsLoggedInState from 'recoilStates/IsLoggedInState';
 
-const Home  = ({ isLoggedIn }) => {
+
+const Home  = () => {
     const [currentPage, setCurrentPage] = useState(0);
 
-    const handlePageChane = number => {
+    const isLoggedIn = useRecoilValue(IsLoggedInState);
+
+    const handlePageChange = number => {
         setCurrentPage(number);
+    };
+    
+    const onBeforePageScroll = number => {
         if (number === 1) {
             document.getElementById('nav').style.display = 'none';
         } else if (number === 0 || number === 2 || number === 3)  {
@@ -45,11 +53,9 @@ const Home  = ({ isLoggedIn }) => {
         imgRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
-    // 앱 체험하기 부분 useEffect 말고 react-scroll로 구현
-    
     return (
         <>
-            <ReactPageScroller pageOnChange={handlePageChane} customPageNumber={currentPage}>
+            <ReactPageScroller pageOnChange={handlePageChange} onBeforePageScroll={onBeforePageScroll} customPageNumber={currentPage}>
                 <FirstIntroduction onRoadInfoClick={onRoadInfoClick} firstmoveScroll={firstmoveScroll} />
                 
                 <Test moveScroll={moveScroll} imgRef={imgRef} />

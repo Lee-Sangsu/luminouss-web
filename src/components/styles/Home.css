@@ -37,12 +37,16 @@
   background-color: black;
   width: 100%;
   height: 100vh;
-  transition: opacity 1s ease;
   z-index: 2;
-  position: initial;
+  position: relative;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
 }
 
 .test:hover {
