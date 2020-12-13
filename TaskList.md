@@ -1,10 +1,7 @@
-회의 필요한 것:
-
-1. 정보 등록하기 방식 수정 등 비즈니스 로직 세우기
-2. [SetEntireStates.js] [example.json]에 맞게 구현
-3. 산책로 정보 수정하기 구현
-4. 프로필에 어떤거 넣을지 정하고, 그에 따라 구현
-5. around-subway 부분에서 'walk-time' 부분 계산 어떻게 할지 생각
+1. 정보 등록하기 코딩
+2. 답변 끝날때마다 useRef 써서 아래로 내리기 혹은 스크롤 내리라고 moveScroll 버튼 띄우기
+3. [SetEntireStates.js] [example.json]에 맞게 구현
+4. 산책로 정보 수정하기 구현
 
 희종썜 질문:
 

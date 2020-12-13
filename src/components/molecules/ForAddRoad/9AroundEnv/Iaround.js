@@ -3,12 +3,12 @@ import {
   useRecoilValue,
 } from 'recoil';
 import AroundEnvListState from 'recoilStates/Addroad/AroundEnvListState';
-import AroundEnvItem from 'components/molecules/ForAddRoad/6AroundEnv/AroundEnvItem';
-import SearchAroundEnv from 'components/molecules/ForAddRoad/6AroundEnv/SearchAroundEnv';
+import AroundEnvItem from 'components/molecules/ForAddRoad/9AroundEnv/AroundEnvItem';
+import SearchAroundEnv from 'components/molecules/ForAddRoad/9AroundEnv/SearchAroundEnv';
 import EnvSearchState from 'recoilStates/Addroad/searched/EnvSearchState';
-import EnvSearchResults from 'components/molecules/ForAddRoad/6AroundEnv/EnvSearchResult';
+import EnvSearchResults from 'components/molecules/ForAddRoad/9AroundEnv/EnvSearchResult';
 
-const Faround = () => {
+const Iaround = () => {
     const aroundList = useRecoilValue(AroundEnvListState);
     const envSearchResults = useRecoilValue(EnvSearchState);
 
@@ -38,4 +38,4 @@ const Faround = () => {
     )
 };
 
-export default Faround;
+export default Iaround;

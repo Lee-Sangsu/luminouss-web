@@ -1,8 +1,8 @@
 import React from "react";
-import WarningInput from 'components/molecules/ForAddRoad/7WarnFeature/WarningInput';
-import FeaturesInput from 'components/molecules/ForAddRoad/7WarnFeature/FeaturesInput';
+import WarningInput from 'components/molecules/ForAddRoad/10WarnFeature/WarningInput';
+import FeaturesInput from 'components/molecules/ForAddRoad/10WarnFeature/FeaturesInput';
 
-const GwarnFeat = () => {
+const JwarnFeat = () => {
     return (
         <div style={{
           display:'flex',
@@ -21,4 +21,4 @@ const GwarnFeat = () => {
     )
 };
 
-export default GwarnFeat;
+export default JwarnFeat;
