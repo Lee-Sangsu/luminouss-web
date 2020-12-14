@@ -24,7 +24,7 @@ const Iaround = () => {
           <h4>산책로 근처에는 어떤 것들이 있었나요?</h4>
           <SearchAroundEnv placeholder="음식점 이름 등을 입력하세요" />
           <div id="aroundenv">
-            {envSearchResults.map((data) => (
+            {envSearchResults.slice(0, 5).map((data) => (
               <EnvSearchResults key={data.id} data={data} />
             ))}
           </div>

@@ -4,7 +4,7 @@ import AddressState from 'recoilStates/Addroad/AddressState';
 import axios from 'axios';
 import kakaoAuthKey from 'global/KakaoAuthKey';
 import AroundSubwayState from 'recoilStates/Addroad/AroundSubwayState';
-import 'components/styles/SearchResultList.css'
+import 'components/styles/Addroad/SearchResultList.css'
 
 const SearchResults = ( {data} ) => {
     const [address, setAddress] = useRecoilState(AddressState);
@@ -38,6 +38,7 @@ const SearchResults = ( {data} ) => {
 
 
         document.getElementById("search-results").style.display = 'none';
+        document.getElementById("road-res-entire").style.display = 'block';
         document.getElementById("road-head").style.display = 'block';
         document.getElementById("road-address").style.display = 'block';
     };
@@ -53,8 +54,8 @@ const SearchResults = ( {data} ) => {
             borderRadius:'3px',
             borderColor:'black'
         }}>
-            <h3>{data.place_name}</h3>
-            <h5>{data.address_name}</h5>
+            <h4 id='place-h4'>{data.place_name}</h4>
+            <h6 id='place-h6'>{data.address_name}</h6>
         </button>
     )
 };

@@ -28,7 +28,9 @@ const SearchAroundEnv = ( {placeholder} ) => {
             'Authorization': `KakaoAK ${kakaoAuthKey}`,
             'content-type': 'application/x-www-form-urlencoded'
         },
-        params: { query: `${input}`}
+        params: { 
+          query: `${input}`
+        }
     
       }).then( (results) => {
         const itemList = JSON.parse(JSON.stringify(results.data));

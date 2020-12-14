@@ -38,7 +38,6 @@ const AddRoad = () => {
       justifyContent:'center',
       alignItems: 'center'
     }}>
-      <h2>AddRoad Page</h2>
       <AddRoadForm />
       <button onClick={confirmSubmit} style={{
         width:'200px',

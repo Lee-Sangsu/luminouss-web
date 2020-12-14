@@ -14,12 +14,23 @@ const Eothersup = () => {
     };
 
     return (
-        <>
-        <h4>산책로 내부나 산책로 주변 횡단보도에 몇 개의 음성유도기가 있었나요?</h4>
-        <input type="number" name="voice" onChange={onChange} value={voice} required />개
-        <h4>산책로 내부에 몇 개의 점자 표지판이 있었나요?</h4>
-        <input type="number" name="braille" onChange={onChange} value={braille} required />개
-        </>
+        <div style={{
+            display:'flex',
+            width:'100%',
+            height:'100%',
+            justifyContent:'center',
+            alignItems:'center',
+            flexDirection:'column'
+        }}>
+            <h4>산책로 내부나 산책로 주변 횡단보도에 몇 개의 음성유도기가 있었나요?</h4>
+            <label>
+                <input type="number" name="voice" onChange={onChange} value={voice} required />개
+            </label>
+            <h4>산책로 내부에 몇 개의 점자 표지판이 있었나요?</h4>
+            <label>
+                <input type="number" name="braille" onChange={onChange} value={braille} required />개
+            </label>
+        </div>
 
     )
 };

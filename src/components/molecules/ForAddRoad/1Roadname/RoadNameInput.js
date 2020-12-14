@@ -30,14 +30,17 @@ const RoadNameInput = ( {placeholder} ) => {
             'Authorization': `KakaoAK ${kakaoAuthKey}`,
             'content-type': 'application/x-www-form-urlencoded'
         },
-        params: { query: `${input}`}
+        params: { 
+          query: `${input}`
+        }
     
       }).then( (results) => {
         const itemList = JSON.parse(JSON.stringify(results.data));
         setSearchState(itemList.documents);
 
       }).catch(error => console.log(error))
-      document.getElementById("search-results").style.display = 'inline-block';
+      document.getElementById("search-results").style.display = 'flex';
+      document.getElementById("road-res-entire").style.display = 'none';
       document.getElementById("road-head").style.display = 'none';
       document.getElementById("road-address").style.display = 'none';
     } else {
@@ -50,7 +53,8 @@ const RoadNameInput = ( {placeholder} ) => {
     <div style={{
       display:"flex",
       width:"340px",
-      height:"35px"
+      height:"35px",
+      position:'relative'
     }}>
       <input name="just" onChange={onChange} value={input} placeholder={placeholder} style={{
         display:"flex",

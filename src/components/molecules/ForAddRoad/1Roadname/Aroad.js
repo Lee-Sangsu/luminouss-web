@@ -6,7 +6,7 @@ import InputAddress from 'components/molecules/ForAddRoad/1Roadname/InputAddress
 import RoadNameInput from 'components/molecules/ForAddRoad/1Roadname/RoadNameInput';
 import SearchedResultState from 'recoilStates/Addroad/searched/SearchedResultState';
 import SearchResults from 'components/molecules/ForAddRoad/1Roadname/SearchResults';
-
+import 'components/styles/Addroad/Aroad.css';
 const Aroad = () => {
     const searchResults = useRecoilValue(SearchedResultState);
 
@@ -23,9 +23,9 @@ const Aroad = () => {
           <RoadNameInput placeholder="산책로 이름" />
           <InputAddress />
           <div id="search-results">
-          {searchResults.map((data) => (
-            <SearchResults key={data.id} data={data} />
-          ))}
+            {searchResults.slice(0, 5).map((data) => (
+              <SearchResults key={data.id} data={data} />
+            ))}
           </div>
         </div>
     )

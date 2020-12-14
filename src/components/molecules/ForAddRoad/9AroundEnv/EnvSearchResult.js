@@ -41,8 +41,10 @@ const SearchResults = ( {data} ) => {
             borderRadius:'3px',
             borderColor:'black'
         }}>
-            <h3>{data.place_name}</h3>
-            <h5>{data.category_group_name}</h5>
+            <div style={{display:'flex', flexDirection:'row', alignItems:"center"}}>
+                <h3>{data.place_name}</h3>
+                <h5 style={{marginBlockStart:'1em', marginBlockEnd:'0.5em'}}>{data.category_group_name}</h5>
+            </div>
             <h5>{data.address_name}</h5>
         </button>
 

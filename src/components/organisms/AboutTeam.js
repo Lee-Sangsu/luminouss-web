@@ -1,7 +1,7 @@
 import React from 'react';
-import 'components/styles/About-Team.css';
+import 'components/styles/About/About-Team.css';
 import { Link } from 'react-router-dom';
-import 'components/styles/AboutNav.css';
+import 'components/styles/About/AboutNav.css';
 
 const AboutTeam = () => {
     return (

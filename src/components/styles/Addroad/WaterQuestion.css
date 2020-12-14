@@ -1,0 +1,44 @@
+.fence-page {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fence-title {
+  text-align: center;
+}
+
+.fence-notice {
+  margin-block-start: 0;
+  text-align: center;
+}
+
+.yes-no {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 35.5%;
+}
+
+.questions-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 36%;
+}
+
+.question {
+  margin-right: 30px;
+}
+
+.yes-no-yes {
+  margin-right: 4%;
+}
+
+.yes-input {
+  margin-right: 5%;
+}

@@ -13,12 +13,13 @@ function App() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         setLoggedIn(true);
+        setInit(true);
       } else {
         setLoggedIn(false);
+        setInit(true);
       }
-      setInit(true);
     });
-  }), [setLoggedIn, setInit]);
+  }), [setInit, setLoggedIn]);
 
   return (<>
       {init ? (<>

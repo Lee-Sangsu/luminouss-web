@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import AboutMain from 'components/organisms/AboutMain';
-import 'components/styles/AboutNav.css';
+import 'components/styles/About/AboutNav.css';
 import { Link } from 'react-router-dom';
 
 

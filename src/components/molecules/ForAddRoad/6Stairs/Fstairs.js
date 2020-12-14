@@ -11,10 +11,20 @@ const Fstairs = () => {
         setStairs(event.target.value);
     }
     return (
-        <>
+        <div style={{
+            display:'flex',
+            width:'100%',
+            height:'100%',
+            justifyContent:'center',
+            alignItems:'center',
+            flexDirection:'column'
+        }}>
             <h3>계단 특성</h3>
-            <input type="text" onChange={onChange} value={stairs} required /> 
-        </>
+            <input style={{
+                width:'40%',
+                height:'30%'
+            }} type="text" onChange={onChange} value={stairs} required /> 
+        </div>
     )
 };
 
