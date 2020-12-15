@@ -11,13 +11,18 @@ const BroadEnv = () => {
           height:'100%',
           flexDirection:'column',
           width:'100%',
-          justifyContent:'center',
+          justifyContent:'flex-start',
           alignItems:'center'
         }}>
           <h2>산책로의 환경은 어땠나요?</h2>
           <EntireLength />
-          <SelectEnv />
-          <SelectPavement />
+          <div style={{
+            display:'flex',
+            flexDirection:'row'
+          }}>
+            <SelectEnv />
+            <SelectPavement />
+          </div>
         </div>
     )
 };

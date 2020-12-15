@@ -5,16 +5,22 @@ import axios from 'axios';
 import kakaoAuthKey from 'global/KakaoAuthKey';
 import AroundSubwayState from 'recoilStates/Addroad/AroundSubwayState';
 import 'components/styles/Addroad/SearchResultList.css'
+import distanceInKmBetweenEarthCoordinates from 'functions/GetDistance';
 
-const SearchResults = ( {data} ) => {
+const SearchResults = ( { data } ) => {
     const [address, setAddress] = useRecoilState(AddressState);
     const setSubways = useSetRecoilState(AroundSubwayState);
 
+    const roadAddress = data.address_name;
+    const arr = roadAddress.split(' ');
+
+
     const onClick = async () => {
         setAddress({
-            address_name: data.address_name,
+            address_name: roadAddress,
             latitude: data.y,
-            longitude: data.x
+            longitude: data.x,
+            address_area: arr[1]
         });
         
         //백엔드에서 보통 api key들을 함, || 서버에서 데이터 렌더링 후 주던가
@@ -33,7 +39,15 @@ const SearchResults = ( {data} ) => {
             } 
         }).then((res) => {
             const subwayList = JSON.parse(JSON.stringify(res.data));
-            setSubways(subwayList.documents);
+            subwayList.documents.forEach( (i) => { 
+                const km = distanceInKmBetweenEarthCoordinates(data.x, data.y, i.x, i.y);
+ 
+                setSubways((prev) => [...prev, {
+                    place_name: i.place_name,
+                    walk_time: km * 20 + 15
+                }])
+            });          
+            
         }).catch(error => console.log(error))
 
 
@@ -42,6 +56,7 @@ const SearchResults = ( {data} ) => {
         document.getElementById("road-head").style.display = 'block';
         document.getElementById("road-address").style.display = 'block';
     };
+    
 
     return (
         <button onClick={onClick} style={{

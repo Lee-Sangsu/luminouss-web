@@ -13,7 +13,25 @@ const AddRoad = () => {
   const submitConfirm = async () => {
     // recoil value 다 가져와서 firestore에 한번에 저장, -> try catch
     try {
-      if (a.roadName && a.address && a.warning && a.feature && a.aroundSubway) {
+      if (a.road_name 
+      && a.road_env 
+      && a.entire_length 
+      && a.address_name 
+      && a.latitude 
+      && a.longitude 
+      && a.around_subway 
+      && a.voice_induction 
+      && a.side_walk_block 
+      && a.braille_notice
+      && a.safety_fence
+      && a.pavement
+      && a.stair_feature
+      && a.warning
+      && a.toilet
+      && a.bench_and_rest
+      && a.walking_people
+      && a.feature
+      && a.around_env_list) {
         await firebase.firestore().collection("WalkRoad").doc(uuid.v4()).set(a)
         window.alert("Document successfully written!");              
         history.push('/');

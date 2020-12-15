@@ -1,8 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {useRecoilState} from 'recoil';
+import VoiceState from 'recoilStates/Addroad/VoiceState';
+import BrailleState from 'recoilStates/Addroad/BrailleState';
 
 const Eothersup = () => {
-    const [voice, setVoice] = useState(0);
-    const [braille, setBraille] = useState(0);
+    const [voice, setVoice] = useRecoilState(VoiceState);
+    const [braille, setBraille] = useRecoilState(BrailleState);
 
     const onChange = (event) => {
         event.preventDefault();

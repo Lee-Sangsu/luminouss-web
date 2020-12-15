@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import {useRecoilState} from 'recoil';
+import FenceState from 'recoilStates/Addroad/FenceState';
 
 const FourQ = ({firstQ, secondQ, thirdQ, fourthQ}) => {
     //[]로 바꾸기 ts 문제 가능한데, js에선 ㄱㅊ
-    const [input, setInput] = useState({});
+    const [input, setInput] = useRecoilState(FenceState);
 
     const handleOptionChange = (event) => {
 
         if (event.target.name === 'first-yes'){
             setInput({
-                ...input, first: 2
+                ...input, first: 2.5
             });
         } else if (event.target.name === 'first-no') {
             setInput({
@@ -18,7 +20,7 @@ const FourQ = ({firstQ, secondQ, thirdQ, fourthQ}) => {
         
         else if (event.target.name === 'second-yes') {
             setInput({
-                ...input, second: 2
+                ...input, second: 2.5
             });
         } else if (event.target.name === 'second-no') {
             setInput({
@@ -28,7 +30,7 @@ const FourQ = ({firstQ, secondQ, thirdQ, fourthQ}) => {
 
         else if (event.target.name === 'third-yes') {
             setInput({
-                ...input, third: 2
+                ...input, third: 2.5
             });
         } else if (event.target.name === 'third-no') {
             setInput({
@@ -38,7 +40,7 @@ const FourQ = ({firstQ, secondQ, thirdQ, fourthQ}) => {
 
         else if (event.target.name === 'fourth-yes') {
             setInput({
-                ...input, fourth: 2
+                ...input, fourth: 2.5
             });
         } else if (event.target.name === 'fourth-no') {
             setInput({
@@ -59,22 +61,22 @@ const FourQ = ({firstQ, secondQ, thirdQ, fourthQ}) => {
                 </div>
                 <div className="questions-form">
                     <h5 className='question'>{firstQ}</h5>
-                    <input className="yes-input" type="radio" name="first-yes" checked={input.first === 2} onChange={handleOptionChange} />
+                    <input className="yes-input" type="radio" name="first-yes" checked={input.first === 2.5} onChange={handleOptionChange} />
                     <input type="radio" name="first-no" checked={input.first === 0} onChange={handleOptionChange} /> 
                 </div>
                 <div className="questions-form">
                     <h5 className='question'>{secondQ}</h5>
-                    <input className="yes-input" type="radio" name="second-yes" checked={input.second === 2} onChange={handleOptionChange} />
+                    <input className="yes-input" type="radio" name="second-yes" checked={input.second === 2.5} onChange={handleOptionChange} />
                     <input type="radio" name="second-no" checked={input.second === 0} onChange={handleOptionChange} /> 
                 </div>
                 <div className="questions-form">
                     <h5 className='question'>{thirdQ}</h5>
-                    <input className="yes-input" type="radio"  name="third-yes" checked={input.third === 2} onChange={handleOptionChange} />
+                    <input className="yes-input" type="radio"  name="third-yes" checked={input.third === 2.5} onChange={handleOptionChange} />
                     <input type="radio" name="third-no" checked={input.third === 0} onChange={handleOptionChange} /> 
                 </div>
                 <div className="questions-form">
                     <h5 className='question'>{fourthQ}</h5>
-                    <input className="yes-input" type="radio" name="fourth-yes" checked={input.fourth === 2} onChange={handleOptionChange} />
+                    <input className="yes-input" type="radio" name="fourth-yes" checked={input.fourth === 2.5} onChange={handleOptionChange} />
                     <input type="radio" name="fourth-no" checked={input.fourth === 0} onChange={handleOptionChange} /> 
                 </div>
                 

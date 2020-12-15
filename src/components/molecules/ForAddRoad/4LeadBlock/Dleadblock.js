@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {useRecoilState} from 'recoil';
+import LeadBlockState from 'recoilStates/Addroad/LeadBlockState';
 
 const Dleadblock = () => {
-    const [input, setInput] = useState({});
+    const [input, setInput] = useRecoilState(LeadBlockState);
 
     const handleOptionChange = (event) => {
 

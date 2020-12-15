@@ -4,7 +4,7 @@ import {atom} from 'recoil';
 
 const PeopleState = atom({
     key: 'peopleState',
-    default: '',
+    default: {}
 });
 
 export default PeopleState;

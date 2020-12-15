@@ -7,7 +7,8 @@ const AdressState = atom({
     default: '',
     address_name: '',
     latitude: '',
-    longitude: ''
+    longitude: '',
+    address_area: []
 });
 
 export default AdressState;

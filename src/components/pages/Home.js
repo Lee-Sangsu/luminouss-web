@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useRef, useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import "components/styles/Home.css"
 import FirstIntroduction from 'components/molecules/ForHome/FirstIntroduction';
@@ -14,18 +14,17 @@ const Home  = () => {
 
     const isLoggedIn = useRecoilValue(IsLoggedInState);
 
-    const handlePageChange = number => {
+    const handlePageChange = number =>() => {
         setCurrentPage(number);
     };
     
-    const onBeforePageScroll = number => {
-        if (number === 1) {
-            document.getElementById('nav').style.display = 'none';
-        } else if (number === 0 || number === 2 || number === 3)  {
+    useEffect(() => {
+        if (currentPage === 0 || currentPage === 2) {
             document.getElementById('nav').style.display = 'block';
+        } else if (currentPage === 1) {
+            document.getElementById('nav').style.display = 'none';
         }
-        console.log(number);
-    };
+    }, [currentPage])
 
     //prop 바뀌면 리렌더링 isLoggedIn state 바뀜
     const history = useHistory();
@@ -55,7 +54,7 @@ const Home  = () => {
 
     return (
         <>
-            <ReactPageScroller pageOnChange={handlePageChange} onBeforePageScroll={onBeforePageScroll} customPageNumber={currentPage}>
+            <ReactPageScroller pageOnChange={handlePageChange} customPageNumber={currentPage}>
                 <FirstIntroduction onRoadInfoClick={onRoadInfoClick} firstmoveScroll={firstmoveScroll} />
                 
                 <Test moveScroll={moveScroll} imgRef={imgRef} />

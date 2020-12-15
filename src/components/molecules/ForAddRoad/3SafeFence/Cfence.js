@@ -6,7 +6,6 @@ import EnvState from 'recoilStates/Addroad/EnvState';
 import FenceQuestions from './FenceQuestions';
 
 const Csupport = ({handlePageChange}) => {
-    // const supportInfraList = useRecoilValue(SupportInfraListState);
     const env = useRecoilValue(EnvState);
     return (
         <>

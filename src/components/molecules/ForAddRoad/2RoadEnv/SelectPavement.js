@@ -29,7 +29,12 @@ const SelectPavement = () => {
     };
 
     return (
-        <>
+        <div style={{
+            display:'flex',
+            flexDirection:'column',
+            alignItems:'center',
+            marginLeft:'20px'
+        }}>
             <h3> 포장재질 </h3>
             <div style={{
                 width:'200px'
@@ -40,7 +45,7 @@ const SelectPavement = () => {
                  <button onClick={onClick}>submit</button> 
                  </>: <></>}
             </div>      
-        </>
+        </div>
     )
 };
 

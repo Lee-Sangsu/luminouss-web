@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'components/styles/Addroad/WaterQuestion.css';
+import {useRecoilState} from 'recoil';
+import FenceState from 'recoilStates/Addroad/FenceState';
 
 const WaterQuestions = () => {
     //[]로 바꾸기 ts 문제 가능한데, js에선 ㄱㅊ
-    const [input, setInput] = useState({});
+    const [input, setInput] = useRecoilState(FenceState);
 
     const handleOptionChange = (event) => {
 
