@@ -12,13 +12,12 @@ const AddRoad = () => {
   const a = SetEntireStates();
   const submitConfirm = async () => {
     // recoil value 다 가져와서 firestore에 한번에 저장, -> try catch
+    console.log(a);
     try {
       if (a.road_name 
       && a.road_env 
       && a.entire_length 
       && a.address_name 
-      && a.latitude 
-      && a.longitude 
       && a.around_subway 
       && a.voice_induction 
       && a.side_walk_block 

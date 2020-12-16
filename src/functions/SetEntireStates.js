@@ -1,5 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import AddressState from 'recoilStates/Addroad/AddressState';
+import AddressArea from 'recoilStates/Addroad/AddressAreaState';
 import AroundEnvListState from 'recoilStates/Addroad/AroundEnvListState';
 import AroundSubwayState from 'recoilStates/Addroad/AroundSubwayState';
 import BenchState from 'recoilStates/Addroad/BenchState';
@@ -20,6 +21,7 @@ import WarningState from 'recoilStates/Addroad/WarningState';
 
 const SetEntireStates = () => {
     const address = useRecoilValue(AddressState);
+    const addressArea = useRecoilValue(AddressArea);
     const aroundEnvList = useRecoilValue(AroundEnvListState);
     const aroundSubway = useRecoilValue(AroundSubwayState); 
     const bench = useRecoilValue(BenchState);
@@ -81,7 +83,7 @@ const SetEntireStates = () => {
         road_env: env,
         entire_length: length,
         address_name: address.address_name,
-        // 걸쳐진 행정 구역들 만들어야 해 여기다
+        address_area: addressArea,
         latitude: address.latitude,
         longitude: address.longitude,
         around_subway: aroundSubway,

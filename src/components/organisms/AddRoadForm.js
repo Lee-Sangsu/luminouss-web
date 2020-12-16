@@ -35,28 +35,53 @@ const AddRoadForm = () => {
           backgroundColor: "black"
         }}></div>
 
+        {leadBlock ?  <>
+          <ReactPageScroller 
+          containerWidth={window.innerWidth * 0.8} 
+          containerHeight={window.innerHeight * 0.8}
+          customPageNumber={pageNum}
+          pageOnChange={handlePageChange} > 
+            <AddRoadStart handlePageChange={handlePageChange} />
+
+            <Aroad />
+            <BroadEnv />
+            <Cfence handlePageChange={handlePageChange} />
+
+            <CheckExist handlePageChange={handlePageChange} setLeadBlock={setLeadBlock} />
+            
+              <Dleadblock />  
+              <Eothersup />
+              <Fstairs />
+              <Grest />
+              <Hpeople />
+              <Iaround />
+              <JwarnFeat />
+
+          </ReactPageScroller>
+      </>: 
+      <>
         <ReactPageScroller 
-        containerWidth={window.innerWidth * 0.8} 
-        containerHeight={window.innerHeight * 0.8}
-        customPageNumber={pageNum}
-        pageOnChange={handlePageChange} > 
-          <AddRoadStart handlePageChange={handlePageChange} />
+          containerWidth={window.innerWidth * 0.8} 
+          containerHeight={window.innerHeight * 0.8}
+          customPageNumber={pageNum}
+          pageOnChange={handlePageChange} > 
+            <AddRoadStart handlePageChange={handlePageChange} />
 
-          <Aroad />
-          <BroadEnv />
-          <Cfence handlePageChange={handlePageChange} />
+            <Aroad />
+            <BroadEnv />
+            <Cfence handlePageChange={handlePageChange} />
 
-          <CheckExist handlePageChange={handlePageChange} setLeadBlock={setLeadBlock} />
-          
-          {leadBlock ? <> <Dleadblock /> <Eothersup /> </> : <Eothersup />}
+            <CheckExist handlePageChange={handlePageChange} setLeadBlock={setLeadBlock} />
+              
+              <Eothersup />
+              <Fstairs />
+              <Grest />
+              <Hpeople />
+              <Iaround />
+              <JwarnFeat />
 
-          <Fstairs />
-          <Grest />
-          <Hpeople />
-          <Iaround />
-          <JwarnFeat />
-
-        </ReactPageScroller>
+          </ReactPageScroller>
+      </>}
       </div>
     );
 };

@@ -4,24 +4,36 @@ import AddressState from 'recoilStates/Addroad/AddressState';
 import axios from 'axios';
 import kakaoAuthKey from 'global/KakaoAuthKey';
 import AroundSubwayState from 'recoilStates/Addroad/AroundSubwayState';
-import 'components/styles/Addroad/SearchResultList.css'
 import distanceInKmBetweenEarthCoordinates from 'functions/GetDistance';
+import AddressAreaState from 'recoilStates/Addroad/AddressAreaState';
+import 'components/styles/Addroad/SearchResultList.css'
+
+let id = 0;
+  
+function getId() {
+   return id++;
+}
 
 const SearchResults = ( { data } ) => {
     const [address, setAddress] = useRecoilState(AddressState);
     const setSubways = useSetRecoilState(AroundSubwayState);
+    const setAddressArea = useSetRecoilState(AddressAreaState);
 
     const roadAddress = data.address_name;
     const arr = roadAddress.split(' ');
-
 
     const onClick = async () => {
         setAddress({
             address_name: roadAddress,
             latitude: data.y,
             longitude: data.x,
-            address_area: arr[1]
         });
+        setAddressArea([
+            {
+                id: getId(),
+                area: arr[1]
+            }
+        ]);
         
         //백엔드에서 보통 api key들을 함, || 서버에서 데이터 렌더링 후 주던가
 
