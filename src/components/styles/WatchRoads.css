@@ -1,0 +1,52 @@
+#road-entire {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #efefef;
+}
+
+#road-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  height: auto;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+#road-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 3px solid black;
+  align-items: center;
+  width: 37%;
+  height: 173px;
+  margin-top: 60px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+#road-watch {
+  text-decoration: none;
+  width: 60%;
+  height: 40%;
+  vertical-align: middle;
+  text-align: center;
+  color: black;
+}
+
+#road-edit {
+  position: absolute;
+  margin-top: 125px;
+  margin-left: 25%;
+}
+
+#road-edit-img {
+  width: 20px;
+  height: 20px;
+}

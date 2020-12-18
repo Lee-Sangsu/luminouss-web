@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import AddressState from 'recoilStates/Addroad/AddressState';
 import axios from 'axios';
 import kakaoAuthKey from 'global/KakaoAuthKey';
@@ -15,7 +15,7 @@ function getId() {
 }
 
 const SearchResults = ( { data } ) => {
-    const [address, setAddress] = useRecoilState(AddressState);
+    const setAddress = useSetRecoilState(AddressState);
     const setSubways = useSetRecoilState(AroundSubwayState);
     const setAddressArea = useSetRecoilState(AddressAreaState);
 
@@ -44,10 +44,10 @@ const SearchResults = ( { data } ) => {
             },
             params : {
                 category_group_code: 'SW8',
-                x: address.longitude,
-                y: address.latitude,
-                radius: 1500,
-                size: 2
+                x: data.x,
+                y: data.y,
+                size: 2,
+                sort: 'distance'
             } 
         }).then((res) => {
             const subwayList = JSON.parse(JSON.stringify(res.data));
@@ -56,7 +56,7 @@ const SearchResults = ( { data } ) => {
  
                 setSubways((prev) => [...prev, {
                     place_name: i.place_name,
-                    walk_time: km * 20 + 15
+                    walk_time: parseInt(km * 20) 
                 }])
             });          
             

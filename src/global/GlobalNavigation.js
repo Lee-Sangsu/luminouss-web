@@ -7,6 +7,7 @@ import IsLoggedInState from 'recoilStates/IsLoggedInState';
 
 const Navigation = ({ isLoggedIn }) => {
   const loggedIn = useRecoilValue(IsLoggedInState);
+
   return (<nav id="nav">
     <ul className="ul">
       <li className="luminouss">
@@ -18,6 +19,12 @@ const Navigation = ({ isLoggedIn }) => {
       <li className="about">
         <Link to="/about-luminouss" className="link">
           About us
+        </Link>
+      </li>
+      
+      <li className="about">
+        <Link to="/watch-roads" className="link">
+          산책로 보기
         </Link>
       </li>
 

@@ -11,8 +11,8 @@ import Grest from 'components/molecules/ForAddRoad/7RestPlace/Grest';
 import Hpeople from 'components/molecules/ForAddRoad/8FloatingPop/Hpeople';
 import Iaround from 'components/molecules/ForAddRoad/9AroundEnv/Iaround';
 import JwarnFeat from 'components/molecules/ForAddRoad/10WarnFeature/JwarnFeat';
-
 import ReactPageScroller from 'react-page-scroller';
+import Informations from 'components/molecules/ForAddRoad/Informations';
 
 const AddRoadForm = () => {
   const [ pageNum, setPageNum ] = React.useState(0);
@@ -26,19 +26,16 @@ const AddRoadForm = () => {
       <div style={{
         display:'flex',
         width:'100%',
+        height:'100%'
 
       }}>
-        <div style={{
-          display:"flex",
-          width: window.innerWidth * 0.2,
-          height: window.innerHeight * 0.8,
-          backgroundColor: "black"
-        }}></div>
+
+        <Informations />
 
         {leadBlock ?  <>
           <ReactPageScroller 
-          containerWidth={window.innerWidth * 0.8} 
-          containerHeight={window.innerHeight * 0.8}
+          containerWidth={window.innerWidth * 0.7} 
+          containerHeight={'100%'}
           customPageNumber={pageNum}
           pageOnChange={handlePageChange} > 
             <AddRoadStart handlePageChange={handlePageChange} />
@@ -48,21 +45,21 @@ const AddRoadForm = () => {
             <Cfence handlePageChange={handlePageChange} />
 
             <CheckExist handlePageChange={handlePageChange} setLeadBlock={setLeadBlock} />
-            
-              <Dleadblock />  
-              <Eothersup />
-              <Fstairs />
-              <Grest />
-              <Hpeople />
-              <Iaround />
-              <JwarnFeat />
+          
+            <Dleadblock />  
+            <Eothersup />
+            <Fstairs />
+            <Grest />
+            <Hpeople />
+            <Iaround />
+            <JwarnFeat />
 
           </ReactPageScroller>
       </>: 
       <>
         <ReactPageScroller 
           containerWidth={window.innerWidth * 0.8} 
-          containerHeight={window.innerHeight * 0.8}
+          containerHeight={'100%'}
           customPageNumber={pageNum}
           pageOnChange={handlePageChange} > 
             <AddRoadStart handlePageChange={handlePageChange} />

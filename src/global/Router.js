@@ -9,6 +9,9 @@ import Register from "components/pages/SignUp";
 import SignIn from "components/pages/SignIn";
 import AboutTeam from 'components/organisms/AboutTeam';
 import AboutSolution from 'components/organisms/AboutSolution';
+import WatchRoads from 'components/pages/WatchRoads';
+import WatchRoad from 'components/pages/WatchRoad';
+import EditRoad from 'components/pages/EditRoad';
 
 import {
   RecoilRoot
@@ -42,6 +45,15 @@ const AppRouter = ({ isLoggedIn }) => {
               </Route>
               <Route path="/add-road-info">
                 <AddRoad />
+              </Route>
+              <Route exact path="/watch-roads">
+                <WatchRoads />
+              </Route>
+              <Route path="/road/:item?">
+                <WatchRoad />
+              </Route>
+              <Route path="/road-edit/:item?">
+                <EditRoad />
               </Route>
             </Switch>
           </BrowserRouter>
