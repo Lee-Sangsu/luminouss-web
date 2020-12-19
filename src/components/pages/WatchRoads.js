@@ -33,7 +33,7 @@ const WatchRoads = () => {
         <div id="road-container">
     {roadNames ? roadNames.map((data) => 
         <RoadNameItem key={data.id} item={data} />
-        ): <h4>산책로 정보 불러오는 중..</h4>}
+        ): <div style={{display:'block', backgroundColor:'#efefef', height:window.innerHeight, width:window.innerWidth}}>산책로 정보 불러오는 중..</div>}
     </div>
 
     </div>)

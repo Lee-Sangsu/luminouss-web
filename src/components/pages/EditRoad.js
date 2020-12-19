@@ -1,10 +1,18 @@
 import React from 'react';
 import {useLocation} from 'react-router-dom';
+import RoadInfoView from 'components/molecules/ForWatchRoads/RoadInfoView';
+import EditRoadInfo from 'components/molecules/EditRoadInfo';
+
+
 
 const EditRoad = () => {
     const data = useLocation().state.item;
+
     return (
-        <span>산책로 정보 수정 {console.log(data)}</span>
+        <div id='edit-road'>
+            <RoadInfoView data={data} />
+            <EditRoadInfo data={data} />
+        </div>
     )
 };
 export default EditRoad;

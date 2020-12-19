@@ -1,0 +1,67 @@
+#watch-road {
+  display: flex;
+  width: 100%;
+  height: auto;
+  background-color: #efefef;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#edit-road {
+  display: flex;
+  width: 100%;
+  height: auto;
+  background-color: #efefef;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 10%;
+}
+
+#edit-container {
+  display: flex;
+  width: 30%;
+  height: 80%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 50%;
+  margin-top: 80px;
+  position: fixed;
+}
+
+#info-container {
+  display: flex;
+  width: 450px;
+  height: fit-content;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: black;
+  border: 3px solid black;
+  border-radius: 30px;
+  margin: 80px 0;
+}
+
+#road-name {
+  color: white;
+  padding-left: 30px;
+}
+
+#first-hr {
+  border: 2px solid white;
+  width: 446px;
+}
+
+#road-infos {
+  padding-left: 30px;
+}
+
+#middle-hr {
+  border: 1px solid white;
+  width: 400px;
+}
+
+#sub-topics,
+#road-explanation {
+  color: white;
+}
