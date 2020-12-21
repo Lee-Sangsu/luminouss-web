@@ -20,65 +20,37 @@ const AddRoadForm = () => {
 
   const handlePageChange = (pageNum) => {
     setPageNum(pageNum);
+    console.log(pageNum);
   };
     
     return (
-      <div style={{
-        display:'flex',
-        width:'100%',
-        height:'100%'
-
-      }}>
+      <div style={{display:'flex', width:'100%', height:'100%'}}>
 
         <Informations />
 
-        {leadBlock ?  <>
-          <ReactPageScroller 
-          containerWidth={window.innerWidth * 0.7} 
-          containerHeight={'100%'}
-          customPageNumber={pageNum}
-          pageOnChange={handlePageChange} > 
-            <AddRoadStart handlePageChange={handlePageChange} />
-
-            <Aroad />
-            <BroadEnv />
-            <Cfence handlePageChange={handlePageChange} />
-
-            <CheckExist handlePageChange={handlePageChange} setLeadBlock={setLeadBlock} />
-          
-            <Dleadblock />  
-            <Eothersup />
-            <Fstairs />
-            <Grest />
-            <Hpeople />
-            <Iaround />
-            <JwarnFeat />
-
-          </ReactPageScroller>
-      </>: 
-      <>
         <ReactPageScroller 
-          containerWidth={window.innerWidth * 0.8} 
-          containerHeight={'100%'}
-          customPageNumber={pageNum}
-          pageOnChange={handlePageChange} > 
-            <AddRoadStart handlePageChange={handlePageChange} />
+        containerWidth={window.innerWidth * 0.7} 
+        containerHeight={'100%'}
+        customPageNumber={pageNum}
+        pageOnChange={handlePageChange}
+        animationTimer={1500} > 
+          <AddRoadStart handlePageChange={handlePageChange} />
 
-            <Aroad />
-            <BroadEnv />
-            <Cfence handlePageChange={handlePageChange} />
+          <Aroad />
+          <BroadEnv />
+          <Cfence handlePageChange={handlePageChange} />
 
-            <CheckExist handlePageChange={handlePageChange} setLeadBlock={setLeadBlock} />
-              
-              <Eothersup />
-              <Fstairs />
-              <Grest />
-              <Hpeople />
-              <Iaround />
-              <JwarnFeat />
+          <CheckExist handlePageChange={handlePageChange} setLeadBlock={setLeadBlock} />
+        
+          <Dleadblock leadBlock={leadBlock} />  
+          <Eothersup />
+          <Fstairs />
+          <Grest />
+          <Hpeople />
+          <Iaround />
+          <JwarnFeat />
 
-          </ReactPageScroller>
-      </>}
+        </ReactPageScroller>
       </div>
     );
 };

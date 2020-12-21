@@ -20,7 +20,7 @@ const CheckExist = ({handlePageChange, setLeadBlock}) => {
                 }}>O</button>
                 <button onClick={()=> {
                     setLeadBlock(false);
-                    handlePageChange(5);
+                    handlePageChange(6);
                 }}>X</button>
             </div>
         </div>

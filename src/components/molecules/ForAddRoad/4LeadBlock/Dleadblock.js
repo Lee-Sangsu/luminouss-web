@@ -2,8 +2,18 @@ import React from 'react';
 import {useRecoilState} from 'recoil';
 import LeadBlockState from 'recoilStates/Addroad/LeadBlockState';
 
-const Dleadblock = () => {
+const Dleadblock = ({leadBlock}) => {
     const [input, setInput] = useRecoilState(LeadBlockState);
+
+    React.useEffect(() => {
+        if (leadBlock === false) {
+            document.getElementById('fence-page').style.opacity = 0.5;
+        } else if (leadBlock){
+            document.getElementById('fence-page').style.opacity = 1;
+        }
+    })
+
+
 
     const handleOptionChange = (event) => {
 
@@ -59,7 +69,7 @@ const Dleadblock = () => {
     };
 
     return (
-        <div className='fence-page'>
+        <div id='fence-page'>
             <h2 className="fence-title">유도블럭</h2>
             <form>
                 <div className="yes-no">
