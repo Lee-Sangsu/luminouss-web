@@ -8,6 +8,7 @@ RUN npm install
 
 EXPOSE 3000
 
+COPY build .
 CMD ["npm", "start"]
 
 # 볼륨이 디스크 연결해주는 부분.
