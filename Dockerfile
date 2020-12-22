@@ -2,13 +2,13 @@ FROM node:12.18.4
 
 WORKDIR /app
 
-COPY package.json .
+COPY package.json /app
 
 RUN npm install
 
 EXPOSE 3000
 
-COPY . .
+COPY . /app
 CMD ["npm", "start"]
 
 # 볼륨이 디스크 연결해주는 부분.
