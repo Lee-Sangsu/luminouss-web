@@ -33,6 +33,7 @@ const SignIn = () => {
             // let data;
             await firebase.auth().signInWithEmailAndPassword(email, password);
             //어케 홈 화면으로 다시 돌려보내지
+            setLoggedIn(true);
             history.push("/");
         } catch (error) {
             setError(error.message);

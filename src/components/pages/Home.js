@@ -31,7 +31,7 @@ const Home  = () => {
 
     //login 안 된 경우, 로그인 필요합니다 알러트 띄우기
     const onRoadInfoClick = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         if (isLoggedIn){
             history.push('/add-road-info');
         } else {

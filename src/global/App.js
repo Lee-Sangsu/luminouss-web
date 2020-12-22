@@ -14,6 +14,7 @@ function App() {
       if (user) {
         setLoggedIn(true);
         setInit(true);
+        console.log('isLoggedIn');
       } else {
         setLoggedIn(false);
         setInit(true);

@@ -22,6 +22,7 @@ const Profile =  () => {
     if (user) {
       firebase.auth().signOut();
       history.push("/");
+      setLoggedIn(false);
     } else {
       console.log(Kakao.Auth.getAccessToken());
       Kakao.Auth.logout(function() {
