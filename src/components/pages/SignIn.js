@@ -5,7 +5,7 @@ import Kakao from 'kakaojs';
 import {useSetRecoilState} from 'recoil';
 import InitializeState from 'recoilStates/InitializeState';
 import useRecoilState from 'recoilStates/IsLoggedInState';
-
+import 'components/styles/SignIn.css';
 const SignIn = () => {
     const history = useHistory();
     const [email, setEmail] = useState("");
@@ -71,31 +71,28 @@ const SignIn = () => {
 
 
     return (
-    <div style={{
+    <div id="login-container" style={{
         display: 'flex',
         justifyContent: 'center',
         alignItems:'center',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        height: `${window.innerHeight - 75}px`,
+        backgroundColor:'#efefef'
     }}>
         <h2>로그인하고 새로운 산책로를 추가해보세요</h2>
-        <form onSubmit={onSubmit} style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems:'center',
-            flexDirection: 'column'
-        }}>
-            <h4>이메일</h4>
-            <input name="email" type="email" value={email} onChange={onChange} required></input>
-            <h4>비밀번호</h4>
-            <input name="password" type="password" value={password} onChange={onChange} required></input>
-            <input type="submit" value="로그인" style={{
-                marginTop: '20px',
-                width: '200px',
-                height: '30px'
-            }}></input>
+        <button id="kakao-login" onClick={loginWithKaKao}>카카오 로그인</button>
+        <form id="sign-in-form" onSubmit={onSubmit} >
+            <div id='input-texts'>
+                <h4 id="input-text">이메일</h4>
+                <input id="text-input" name="email" type="email" value={email} onChange={onChange} required></input>
+            </div>
+            <div id='input-texts'>
+                <h4 id="input-text">비밀번호</h4>
+                <input id="text-input" name="password" type="password" value={password} onChange={onChange} required></input>
+            </div>
+            <input id="sign-in-submit" type="submit" value="로그인" ></input>
             {error}
         </form>
-        <button onClick={loginWithKaKao}> kakao check</button>
         <h3>아직 계정이 없으신가요?</h3> <Link to="/sign-up">회원가입하기</Link>
     </div>
     );

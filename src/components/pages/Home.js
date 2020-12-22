@@ -31,12 +31,12 @@ const Home  = () => {
 
     //login 안 된 경우, 로그인 필요합니다 알러트 띄우기
     const onRoadInfoClick = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
         if (isLoggedIn){
             history.push('/add-road-info');
         } else {
             window.alert("산책로 정보를 추가하려면 로그인이 필요합니다.");
-            history.push('sign-in');
+            history.push('/sign-in');
         }
     };
 

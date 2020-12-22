@@ -40,24 +40,21 @@ const Register = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems:'center',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        height: `${window.innerHeight - 75}px`,
+        backgroundColor:'#efefef'
     }}>
         <h2>계정을 만들고 새로운 산책로를 추가해보세요</h2>
-        <form onSubmit={onSubmit} style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems:'center',
-            flexDirection: 'column'
-        }}>
-            <h4>이메일</h4>
-            <input name="email" type="email" value={email} onChange={onChange} required></input>
-            <h4>비밀번호</h4>
-            <input name="password" type="password" value={password} onChange={onChange} required></input>
-            <input type="submit" value="회원가입" style={{
-                marginTop: '20px',
-                width: '200px',
-                height: '30px'
-            }}></input>
+        <form onSubmit={onSubmit} id="sign-in-form">
+            <div id='input-texts'>
+                <h4 id="input-text">이메일</h4>
+                <input id="text-input" name="email" type="email" value={email} onChange={onChange} required></input>
+            </div>
+            <div id='input-texts'>
+                <h4 id="input-text">비밀번호</h4>
+                <input id="text-input" name="password" type="password" value={password} onChange={onChange} required></input>
+            </div>
+            <input type="submit" value="회원가입" id="sign-in-submit"></input>
             {error}
         </form>
         <h3>이미 계정이 있으신가요?</h3> <Link to="/sign-in">로그인하기</Link>
