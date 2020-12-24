@@ -7,11 +7,14 @@
 /coverage
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store
 .env
+
+Dockerfile
+docker-compose.yml
 
 npm-debug.log*
 yarn-debug.log*
