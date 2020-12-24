@@ -2,12 +2,45 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import useH1FadeIn from 'hooks/useH1FadeIn';
 import useH3FadeIn from 'hooks/useH3FadeIn';
+import firebase from 'global/fbase';
 
 
 const FirstIntroduction = ({ onRoadInfoClick, firstmoveScroll }) => {
     // 글자들 페이드인 효과
     const h1FadeIn = useH1FadeIn();
     const h3FadeIn = useH3FadeIn();
+
+    // const [downloadUrl, setDownloadUrl] = React.useState('');
+
+    const downloadPdf = async () => {
+        try {
+            const storage = firebase.storage();
+            const storageRef = storage.refFromURL('gs://luminouss-web.appspot.com/Interview.pdf');
+            const url = await storageRef.getDownloadURL();
+
+            // var xhr = new XMLHttpRequest();
+            // xhr.onload = () => {
+            //     blob = xhr.response;
+
+            // };
+            // xhr.open("GET",url);
+            // xhr.send();
+            
+            
+            const a = document.createElement('a');
+            // const fileUrl = await window.URL.createObjectURL(
+            //     new Blob([url])
+            // );
+            a.href= url;
+            // a.download = '산책로 정보 작성 가이드.pdf';
+            // document.body.append(a);
+            a.click();
+            // setTimeout(() => {
+            //     a.remove();
+            //     window.URL.revokeObjectURL(fileUrl);
+            // }, 200);
+        } catch(e){console.log(e);}
+    };
     return (
         <>
         <div id="first-container" style={{
@@ -67,6 +100,7 @@ const FirstIntroduction = ({ onRoadInfoClick, firstmoveScroll }) => {
                         </h4>
                     </Link>
                 </div>
+                <button onClick={downloadPdf}>산책로 정보 가이드 다운로드</button>
             </div>
             <div style={{
                 display:'flex',
