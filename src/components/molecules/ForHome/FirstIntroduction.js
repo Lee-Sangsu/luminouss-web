@@ -17,28 +17,11 @@ const FirstIntroduction = ({ onRoadInfoClick, firstmoveScroll }) => {
             const storage = firebase.storage();
             const storageRef = storage.refFromURL('gs://luminouss-web.appspot.com/Interview.pdf');
             const url = await storageRef.getDownloadURL();
-
-            // var xhr = new XMLHttpRequest();
-            // xhr.onload = () => {
-            //     blob = xhr.response;
-
-            // };
-            // xhr.open("GET",url);
-            // xhr.send();
-            
             
             const a = document.createElement('a');
-            // const fileUrl = await window.URL.createObjectURL(
-            //     new Blob([url])
-            // );
             a.href= url;
-            // a.download = '산책로 정보 작성 가이드.pdf';
-            // document.body.append(a);
+            a.setAttribute('download', true); 
             a.click();
-            // setTimeout(() => {
-            //     a.remove();
-            //     window.URL.revokeObjectURL(fileUrl);
-            // }, 200);
         } catch(e){console.log(e);}
     };
     return (
@@ -99,8 +82,8 @@ const FirstIntroduction = ({ onRoadInfoClick, firstmoveScroll }) => {
 정보를 추가해주세요`}
                         </h4>
                     </Link>
-                </div>
                 <button onClick={downloadPdf}>산책로 정보 가이드 다운로드</button>
+                </div>
             </div>
             <div style={{
                 display:'flex',

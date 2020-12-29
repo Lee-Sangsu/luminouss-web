@@ -3,6 +3,7 @@
 import React from 'react';
 import firebase from "global/fbase";
 import RoadNameItem from 'components/molecules/ForWatchRoads/RoadNameItem';
+import { Link } from 'react-router-dom';
 
 const WatchRoads = () => {
     const [roadNames, setRoadNames] = React.useState([]);
@@ -30,6 +31,11 @@ const WatchRoads = () => {
     return (
     <div id="road-entire">
         <h1>산책로 정보</h1>
+        <Link to="/add-road-info">
+            <h4>
+            산책로 등록
+            </h4>
+        </Link>
         <div id="road-container">
     {roadNames ? roadNames.map((data) => 
         <RoadNameItem key={data.id} item={data} />
