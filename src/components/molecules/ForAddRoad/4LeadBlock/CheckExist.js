@@ -12,7 +12,7 @@ const CheckExist = ({handlePageChange, setLeadBlock}) => {
             alignItems:'center',
             flexDirection:'column'
         }}>
-            <h3>산책로에 유도블럭이 있었나요?</h3>
+            <h3>산책로에 유도블록이 있었나요?</h3>
             <div>
                 <button onClick={()=>{
                     setLeadBlock(true);

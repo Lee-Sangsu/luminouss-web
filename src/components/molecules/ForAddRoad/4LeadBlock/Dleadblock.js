@@ -70,7 +70,7 @@ const Dleadblock = ({leadBlock}) => {
 
     return (
         <div id='fence-page'>
-            <h2 className="fence-title">유도블럭</h2>
+            <h2 className="fence-title">유도블록</h2>
             <form>
                 <div className="yes-no">
                     <h6 className='yes-no-yes'>그렇다</h6>
@@ -82,7 +82,7 @@ const Dleadblock = ({leadBlock}) => {
                     <input type="radio" value="no" name="first-no" checked={input.first === 0} onChange={handleOptionChange} /> 
                 </div>
                 <div className="questions-form">
-                    <h5 className='question'>유도블럭 위에 다른 다른 시설물이나 이동식 장애물들이 있었나요?</h5>
+                    <h5 className='question'>유도블록 위에 다른 시설물이나 이동식 장애물들이 있었나요?</h5>
                     <input className="yes-input" type="radio" value="yes" name="second-yes" checked={input.second === 2} onChange={handleOptionChange} />
                     <input type="radio" value="no" name="second-no" checked={input.second === 0} onChange={handleOptionChange} /> 
                 </div>
@@ -92,12 +92,12 @@ const Dleadblock = ({leadBlock}) => {
                     <input type="radio" value="no" name="third-no" checked={input.third === 0} onChange={handleOptionChange} /> 
                 </div>
                 <div className="questions-form">
-                    <h5 className='question'>바닥색과 유도블럭의 구분이 어려웠었나요?</h5>
+                    <h5 className='question'>바닥색과 유도블록의 구분이 어려웠었나요?</h5>
                     <input className="yes-input" type="radio" value="yes" name="fourth-yes" checked={input.fourth === 2} onChange={handleOptionChange} />
                     <input type="radio" value="no" name="fourth-no" checked={input.fourth === 0} onChange={handleOptionChange} /> 
                 </div>
                 <div className="questions-form">
-                    <h5 className='question'>중간에 길을 안내하는 선형블록이 끊겨 있었나요?</h5>
+                    <h5 className='question'>길은 안내하는 선형 점자블록이 중간에 끊겨 있었나요?</h5>
                     <input className="yes-input" type="radio" value="yes" name="fifth-yes" checked={input.fifth === 2} onChange={handleOptionChange} />
                     <input type="radio" value="no" name="fifth-no" checked={input.fifth === 0} onChange={handleOptionChange} /> 
                 </div>

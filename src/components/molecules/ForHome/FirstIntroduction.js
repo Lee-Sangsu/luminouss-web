@@ -10,8 +10,6 @@ const FirstIntroduction = ({ onRoadInfoClick, firstmoveScroll }) => {
     const h1FadeIn = useH1FadeIn();
     const h3FadeIn = useH3FadeIn();
 
-    // const [downloadUrl, setDownloadUrl] = React.useState('');
-
     const downloadPdf = async () => {
         try {
             const storage = firebase.storage();
@@ -69,12 +67,12 @@ const FirstIntroduction = ({ onRoadInfoClick, firstmoveScroll }) => {
                         borderRadius: '20px',
                         textAlign: 'center',
                         padding: '0px 80px',
-                        width:'53%'
+                        width:'45%'
                     }}>
                         <h4 style={{
                             fontSize: '18px',
                             whiteSpace:'pre',
-                            padding:'112% 0',
+                            padding:'90% 0',
                             marginBlockEnd:'0',
                             lineHeight:'300%'
                         }}>

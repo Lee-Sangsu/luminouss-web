@@ -25,11 +25,11 @@ const Eothersup = () => {
             alignItems:'center',
             flexDirection:'column'
         }}>
-            <h4>산책로 내부나 산책로 주변 횡단보도에 몇 개의 음성유도기가 있었나요?</h4>
+            <h4>산책로 내부나 산책로 주변 횡단보도에 음성유도기가 몇 개 있었나요?</h4>
             <label>
                 <input type="number" name="voice" onChange={onChange} value={voice} required />개
             </label>
-            <h4>산책로 내부에 몇 개의 점자 표지판이 있었나요?</h4>
+            <h4>산책로 내부에 점자 표지판이 몇 개 있었나요?</h4>
             <label>
                 <input type="number" name="braille" onChange={onChange} value={braille} required />개
             </label>

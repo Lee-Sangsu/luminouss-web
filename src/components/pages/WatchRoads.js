@@ -10,7 +10,7 @@ const WatchRoads = () => {
 
     const getWalkRoadInfo = async () => {
         try{
-            const resRef = await firebase.firestore().collection('WalkRoad').orderBy('road_name').limit(6);
+            const resRef = await firebase.firestore().collection('WalkRoad').orderBy('road_name').limit(7);
             (
                 await resRef.get()).forEach((doc) => {
                 const arrObj = {
@@ -37,6 +37,11 @@ const WatchRoads = () => {
             </h4>
         </Link>
         <div id="road-container">
+            <div id="road-box">
+                <Link to="/add-road-info" id="road-watch">
+                    <h2 id="road-box-name">새로운 산책로 등록</h2>
+                </Link>
+            </div>
     {roadNames ? roadNames.map((data) => 
         <RoadNameItem key={data.id} item={data} />
         ): <div style={{display:'block', backgroundColor:'#efefef', height:window.innerHeight, width:window.innerWidth}}>산책로 정보 불러오는 중..</div>}

@@ -21,7 +21,8 @@ const SearchResults = ( {data} ) => {
                 address_name: data.address_name,
                 latitude: data.y,
                 longitude: data.x,
-                category_group_name: data.category_group_name
+                category_group_name: data.category_group_name,
+                category:''
             },]
         );
         

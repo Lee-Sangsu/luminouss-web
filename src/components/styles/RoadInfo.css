@@ -65,3 +65,18 @@
 #road-explanation {
   color: white;
 }
+
+#info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#edit-click {
+  display: inline-block;
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  margin-left: 15px;
+  cursor: pointer;
+  z-index: 2;
+}

@@ -56,7 +56,7 @@ const SecondIntroduction = ({ divRef, onRoadInfoClick }) => {
                 <h4 id='semi-second-first-title'>
 {`
  시각장애인들은 산책을 즐겨하지만, 
- 산책로의 안전펜스, 유도블럭, 점자표지판 등 
+ 산책로의 안전펜스, 유도블록, 점자표지판 등 
  보조시설의 부재 때문에 불편함을 겪고 있습니다. 
 `}
                 </h4>

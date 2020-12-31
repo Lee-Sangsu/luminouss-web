@@ -21,7 +21,7 @@ const Iaround = () => {
           justifyContent:'center',
           alignItems:'center'
         }}>
-          <h4>산책로 근처에는 어떤 것들이 있었나요?</h4>
+          <h4>산책로 근처에는 어떤 음식점이나 카페들이 있었나요?</h4>
           <SearchAroundEnv placeholder="음식점 이름 등을 입력하세요" />
           <div id="aroundenv">
             {envSearchResults.slice(0, 5).map((data) => (

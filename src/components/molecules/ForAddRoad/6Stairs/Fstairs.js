@@ -19,11 +19,11 @@ const Fstairs = () => {
             alignItems:'center',
             flexDirection:'column'
         }}>
-            <h3>계단 특성</h3>
+            <h3>계단의 특성(높이, 폭, 재질, 경사 등) 입력해주세요</h3>
             <input style={{
                 width:'40%',
                 height:'30%'
-            }} type="text" onChange={onChange} value={stairs} required /> 
+            }} type="text" onChange={onChange} value={stairs} placeholder="" required /> 
         </div>
     )
 };
