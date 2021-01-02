@@ -75,6 +75,18 @@ const SetEntireStates = () => {
     } else {
         walking_people = `${people.time}에 ${people.peopleKind} ${people.population}`
     }
+
+    /* 카테고리랑 place_name 합쳐야 함.
+    var newAroundEnvList = [];
+
+    aroundEnvList.forEach((value) => {
+        const arrObj = {
+            ...value,
+            : 
+
+        }
+    }) 
+    */
     
     // var userUid =  firebase.auth().currentUser.uid;
     

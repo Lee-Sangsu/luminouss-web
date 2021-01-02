@@ -1,0 +1,12 @@
+#link-to-add-road {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: none;
+  transition: background 1s ease;
+  height: 30px;
+}
+
+#link-to-add-road:hover {
+  background: #ffc107;
+}

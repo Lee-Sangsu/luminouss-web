@@ -16,6 +16,7 @@ import EditRoad from 'components/pages/EditRoad';
 import {
   RecoilRoot
 } from 'recoil';
+import NewHome from 'components/pages/NewHome';
 
 const AppRouter = ({ isLoggedIn }) => {
     return (<RecoilRoot>
@@ -24,6 +25,9 @@ const AppRouter = ({ isLoggedIn }) => {
             <Switch>
               <Route exact path="/">
                 <Home isLoggedIn={isLoggedIn}/>
+              </Route>
+              <Route exact path="/new-home">
+                <NewHome />
               </Route>
               <Route path="/about-luminouss">
                 <About />

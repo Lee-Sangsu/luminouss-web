@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './global/App';
 import {RecoilRoot} from 'recoil';
+import 'components/styles/Font.css';
 
 ReactDOM.render(
   <React.StrictMode>
