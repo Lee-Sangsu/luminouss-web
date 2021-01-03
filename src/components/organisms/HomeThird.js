@@ -3,7 +3,9 @@ import AddRoadLink from 'components/atoms/AddRoadLink';
 
 const HomeThird = () => {
     return (
-        <div id="third-page" >
+        <div id="third-page" style={{
+            top:`${window.innerHeight}px`,
+        }} >
                     <div id="introduction" style={{
                         height:'55vh',
                         width:'100%',
