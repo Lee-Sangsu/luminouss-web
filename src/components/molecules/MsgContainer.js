@@ -4,13 +4,14 @@ import React from 'react';
 const MsgContainer = () => {
     return (
         <div id="msg-container" style={{
-            position:'absolute', zIndex:'2', left:'8%', top:'60%', width:'755px', height: '192px'
+            position:'absolute', zIndex:'9', left:'11%', top:'62%', width:'755px', height: '192px', transition: '0.7s ease-in'
         }}>
             <h1 style={{
                 fontSize:'64px',
                 fontStyle: 'normal',
                 fontWeight: 'bold',
                 lineHeight: '73px',
+                marginBlockEnd: '0.45em'
             }}>함께 걸어요, WalkWith</h1>
             <div style={{
                 width: '100%',

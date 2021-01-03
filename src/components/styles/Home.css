@@ -31,27 +31,28 @@
   margin-bottom: 50px;
 }
 
-.test {
+#test {
   opacity: 0;
   display: flex;
   background-color: black;
   width: 100%;
   height: 100vh;
   z-index: 2;
-  position: relative;
+  position: absolute;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  transition: opacity 1s ease-in-out;
+  transition: 1s ease-in-out;
   -webkit-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
   -ms-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
+  top: 0;
 }
 
-.test:hover {
+/* .test:hover {
   opacity: 1;
-}
+} */
 
 .first-test-box {
   margin-top: 100px;
