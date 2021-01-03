@@ -4,7 +4,7 @@ import React from 'react';
 const MsgContainer = () => {
     return (
         <div id="msg-container" style={{
-            position:'absolute', zIndex:'9', left:'11%', top:'62%', width:'755px', height: '192px', transition: '0.7s ease-in'
+            position:'absolute', zIndex:'5', left:'11%', top:'62%', width:'755px', height: '192px', transition: '0.7s ease-in'
         }}>
             <h1 style={{
                 fontSize:'64px',

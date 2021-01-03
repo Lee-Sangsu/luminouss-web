@@ -2,6 +2,7 @@ import React from'react';
 
 const GlobalNav = ({isFirstPage}) => {
     const isLoggedIn = true;
+
     
     const onClick = () =>  {
         document.getElementById("nav-menu").style.display = 'none';
@@ -30,6 +31,7 @@ const GlobalNav = ({isFirstPage}) => {
     return (
         <div id="header-nav">
             {isFirstPage ? <h3 id="our-logo" style={{display:'flex', width:window.innerWidth, justifyContent:'center', position:'absolute', zIndex:'-1', transition:'0.5s ease-in'}}>WalkWith</h3> : <></>}
+            {/* {isNotHome (recoilvalue) ? logo 왼쪽으로 : <></>} */}
             <h6 id="nav-menu" onClick={onClick} >MENU</h6>
             <div id="menu-container">
                 <h2 id="close-container" onClick={onCloseClick}>X</h2>
