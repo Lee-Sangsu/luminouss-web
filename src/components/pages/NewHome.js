@@ -2,8 +2,8 @@ import React from "react";
 import BackgroundCircles from 'components/molecules/BackgroundCircles';
 import MsgContainer from "components/molecules/MsgContainer";
 import GlobalNav from "global/GlobalNav";
-import Test from "components/molecules/ForHome/Test";
 import onSoundBtnClick from 'functions/onSoundBtnClick';
+import HomeThird from "components/organisms/HomeThird";
 
 const NewHome = () => {
     const [currentPage, setPage] = React.useState(0);
@@ -38,6 +38,21 @@ const NewHome = () => {
             });
 
             setPage(1);
+        } else if (currentPage === 3) {
+            // Appear Test View
+            [].forEach.call(arrows, function (el) {
+                el.style.borderColor = 'white';
+            });
+            document.getElementById("test").style.opacity = '1';
+            document.getElementById("test").style.zIndex = '2';
+            document.getElementById("entire-home").style.overflow = 'hidden';
+            document.getElementById("arrows").style.height = `${window.innerHeight}px`;
+            document.getElementById("header-nav").style.zIndex = '-1';
+
+            // Disappear Introduction & Footer
+            document.getElementById("third-page").style.top = `${window.innerHeight}px`;
+            
+            setPage(2);
         }
     };
 
@@ -69,8 +84,17 @@ const NewHome = () => {
             });
             setPage(2);
         } else if (currentPage === 2) {
+            // DisAppear Test View
+            document.getElementById("test").style.opacity = '0';
+            document.getElementById("test").style.zIndex = '-3';
+            document.getElementById("header-nav").style.zIndex = '6';
+            document.getElementById("arrows").style.zIndex = '8';
+            document.getElementById("arrows").style.height = '114px';
             // Appear Introduction & Footer
-            document.getElementById("entire-home").style.overflow = 'unset';
+            [].forEach.call(arrows, function (el) {
+                el.style.borderColor = 'black';
+            });
+            document.getElementById("third-page").style.top = '0';
             setPage(3);
         }
     };
@@ -83,15 +107,7 @@ const NewHome = () => {
             overflow: 'hidden'
         }}>
             <div id="arrows" style={{
-                height: window.innerHeight,
-                width: '10%',
-                marginLeft: '45%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                zIndex:8,
-                position: 'fixed'
+                height: window.innerHeight
             }} >
                {isFirstPage? <i className="arrow up" style={{opacity:'0', cursor: 'unset'}} /> : 
                 <i className="arrow up" onClick={homePageUpChange} /> 
@@ -107,16 +123,6 @@ const NewHome = () => {
                 <div id="block-img" style={{top:window.innerHeight*0.55}}></div>
             {/* </div> */}
 
-            {/* <div id="after-home">
-                <div style={{
-                    display:'flex',
-                    width: window.innerWidth,
-                    height: window.innerHeight*0.45,
-                    backgroundColor:'black'
-                }}>
-                    <i className="arrow down" onClick={moveScroll}></i>
-                </div>
-            </div> */}
                 <div id="test">
                     <div id="clova">
                         <img id="clova-img" src={require('images/CLOVA_dubbing_watermark_white.png').default} alt='클로바 더빙에서 제공된 음성입니다.' />
@@ -145,7 +151,9 @@ const NewHome = () => {
 
                     <h5 id="down-arrow">테스트가 종료되었습니다</h5>
                 </div>
-
+                
+                
+                <HomeThird />
         </div>
     )
 

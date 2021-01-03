@@ -5,7 +5,7 @@ const GlobalNav = ({isFirstPage}) => {
     
     const onClick = () =>  {
         document.getElementById("nav-menu").style.display = 'none';
-        document.getElementById("menu-container").style.width = '20%';
+        document.getElementById("menu-container").style.width = '100%';
         const menuItems = document.getElementsByClassName("menu-items");
         setTimeout(() =>{
             [].forEach.call(menuItems, function (el) {
@@ -15,14 +15,16 @@ const GlobalNav = ({isFirstPage}) => {
     };
 
     const onCloseClick = () => {
-        document.getElementById("menu-container").style.width = '0';
+        document.getElementById("menu-container").style.width = '0%';
         const menuItems = document.getElementsByClassName("menu-items");
         setTimeout(() =>{
             [].forEach.call(menuItems, function (el) {
                 el.style.display = 'none';
             });
         }, 200) 
-        document.getElementById("nav-menu").style.display = 'block';
+        setTimeout(() => {
+            document.getElementById("nav-menu").style.display = 'block';
+        }, 665)
     };
 
     return (
