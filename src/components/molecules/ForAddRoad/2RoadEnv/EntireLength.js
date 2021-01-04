@@ -12,8 +12,8 @@ const EntireLength = () => {
     }
     return (
         <>
-            <h3>산책로 전체 길이</h3>
-            <input type="number" name="road-length" onChange={onChange} value={length} required /> km
+            <h3 id="subsubtitle">산책로의 전체 길이</h3>
+            <input id="number-input" type="number" name="road-length" onChange={onChange} value={length} placeholder="산책로의 전체 길이를 입력해주세요" required /> km
         </>
     )
 };

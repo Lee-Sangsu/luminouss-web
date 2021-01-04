@@ -12,13 +12,13 @@ const CheckExist = ({handlePageChange, setLeadBlock}) => {
             alignItems:'center',
             flexDirection:'column'
         }}>
-            <h3>산책로에 유도블록이 있었나요?</h3>
-            <div>
-                <button onClick={()=>{
+            <h3 id='subtitle'>산책로에 유도블록이 있었나요?</h3>
+            <div style={{display:'flex', flexDirection:'row', marginTop:'20px'}}>
+                <button id="o-btn" onClick={()=>{
                     setLeadBlock(true);
                     handlePageChange(5);
                 }}>O</button>
-                <button onClick={()=> {
+                <button id="x-btn" onClick={()=> {
                     setLeadBlock(false);
                     handlePageChange(6);
                 }}>X</button>

@@ -82,10 +82,10 @@
   color: white;
   font-weight: 300;
   line-height: 64px;
-  padding-left: 7%;
+  padding-left: 13%;
   font-size: 20px;
   text-decoration: none;
-  margin-bottom: 16%;
+  margin-bottom: 6%;
 }
 
 #menu-insta {
@@ -96,7 +96,7 @@
 #menu-facebook {
   color: white;
   font-weight: 300;
-  padding-left: 7%;
+  padding-left: 13%;
   text-decoration: none;
   line-height: 40px;
 }

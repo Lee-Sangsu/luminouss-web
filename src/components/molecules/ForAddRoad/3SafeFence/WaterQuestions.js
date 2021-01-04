@@ -68,7 +68,7 @@ const WaterQuestions = () => {
             <form>
                 <div className="yes-no">
                     <h6 className='yes-no-yes'>있었음</h6>
-                    <h6>없었음</h6>
+                    <h6 className='yes-no-no'>없었음</h6>
                 </div>
                 <div className="questions-form">
                     <h5 className='question'>물가에 안전펜스가 있었나요?</h5>

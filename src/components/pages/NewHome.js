@@ -9,10 +9,6 @@ const NewHome = () => {
     const [currentPage, setPage] = React.useState(0);
     const [isFirstPage, setIsFirstPage] = React.useState(true);
 
-    React.useEffect(() => {
-        document.getElementById("nav").style.display= 'none';
-    }, []);
-
     const homePageUpChange = () => {
         const dCircles = document.getElementsByClassName("disappear-circles");
         const arrows = document.getElementsByClassName("arrow");
@@ -116,7 +112,7 @@ const NewHome = () => {
                <span className="arrow down" onClick={homePageDownChange} /> }
             </div>
 
-            <GlobalNav isFirstPage={isFirstPage} />
+            <GlobalNav isFirstPage={isFirstPage} isNotHome={false} />
             {/* <div id="before-home" onClick={homePageChange} style={{width:window.innerWidth*0.7, height:window.innerHeight, background:'none', position:'fixed', zIndex:'2'}}> */}
                 <MsgContainer />
                 <BackgroundCircles />
@@ -153,7 +149,7 @@ const NewHome = () => {
                 </div>
                 
                 
-                <HomeThird />
+                <HomeThird /> 
         </div>
     )
 

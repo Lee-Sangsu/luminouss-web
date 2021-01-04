@@ -1,6 +1,7 @@
 import React from 'react';
 import {useRecoilState} from 'recoil';
 import LeadBlockState from 'recoilStates/Addroad/LeadBlockState';
+import 'components/styles/Addroad/Aroad.css';
 
 const Dleadblock = ({leadBlock}) => {
     const [input, setInput] = useRecoilState(LeadBlockState);
@@ -69,41 +70,50 @@ const Dleadblock = ({leadBlock}) => {
     };
 
     return (
-        <div id='fence-page'>
-            <h2 className="fence-title">유도블록</h2>
-            <form>
-                <div className="yes-no">
-                    <h6 className='yes-no-yes'>그렇다</h6>
-                    <h6>아니다</h6>
-                </div>
-                <div className="questions-form">
-                    <h5 className='question'>선형블록이 횡단보도가 아닌 도로를 향해있었나요?</h5>
-                    <input className="yes-input" type="radio" value="yes" name="first-yes" checked={input.first === 2} onChange={handleOptionChange} />
-                    <input type="radio" value="no" name="first-no" checked={input.first === 0} onChange={handleOptionChange} /> 
-                </div>
-                <div className="questions-form">
-                    <h5 className='question'>유도블록 위에 다른 시설물이나 이동식 장애물들이 있었나요?</h5>
-                    <input className="yes-input" type="radio" value="yes" name="second-yes" checked={input.second === 2} onChange={handleOptionChange} />
-                    <input type="radio" value="no" name="second-no" checked={input.second === 0} onChange={handleOptionChange} /> 
-                </div>
-                <div className="questions-form">
-                    <h5 className='question'>횡단보도 앞에 점형블록이 설치 되어있지 않았나요?</h5>
-                    <input className="yes-input" type="radio" value="yes" name="third-yes" checked={input.third === 2} onChange={handleOptionChange} />
-                    <input type="radio" value="no" name="third-no" checked={input.third === 0} onChange={handleOptionChange} /> 
-                </div>
-                <div className="questions-form">
-                    <h5 className='question'>바닥색과 유도블록의 구분이 어려웠었나요?</h5>
-                    <input className="yes-input" type="radio" value="yes" name="fourth-yes" checked={input.fourth === 2} onChange={handleOptionChange} />
-                    <input type="radio" value="no" name="fourth-no" checked={input.fourth === 0} onChange={handleOptionChange} /> 
-                </div>
-                <div className="questions-form">
-                    <h5 className='question'>길은 안내하는 선형 점자블록이 중간에 끊겨 있었나요?</h5>
-                    <input className="yes-input" type="radio" value="yes" name="fifth-yes" checked={input.fifth === 2} onChange={handleOptionChange} />
-                    <input type="radio" value="no" name="fifth-no" checked={input.fifth === 0} onChange={handleOptionChange} /> 
-                </div>
-            </form>
+        <div style={{
+            display:'flex',
+            // marginLeft:'30%',
+            width:'100%',
+            height:'100%',
+            justifyContent:'center',
+            alignItems:'center',
+            flexDirection:'column'
+        }}>
+            <div id='fence-page' style={{marginLeft:0, width:'100%'}}>
+                <h2 className="fence-title">유도블록에 대한 질문입니다.</h2>
+                <form>
+                    <div className="yes-no">
+                        <h6 className='yes-no-yes'>그렇다</h6>
+                        <h6 className='yes-no-no'>아니다</h6>
+                    </div>
+                    <div className="questions-form">
+                        <h5 className='question'>선형블록이 횡단보도가 아닌 도로를 향해있었나요?</h5>
+                        <input className="yes-input" type="radio" value="yes" name="first-yes" checked={input.first === 2} onChange={handleOptionChange} />
+                        <input type="radio" value="no" name="first-no" checked={input.first === 0} onChange={handleOptionChange} /> 
+                    </div>
+                    <div className="questions-form">
+                        <h5 className='question'>유도블록 위에 다른 시설물이나 이동식 장애물들이 있었나요?</h5>
+                        <input className="yes-input" type="radio" value="yes" name="second-yes" checked={input.second === 2} onChange={handleOptionChange} />
+                        <input type="radio" value="no" name="second-no" checked={input.second === 0} onChange={handleOptionChange} /> 
+                    </div>
+                    <div className="questions-form">
+                        <h5 className='question'>횡단보도 앞에 점형블록이 설치 되어있지 않았나요?</h5>
+                        <input className="yes-input" type="radio" value="yes" name="third-yes" checked={input.third === 2} onChange={handleOptionChange} />
+                        <input type="radio" value="no" name="third-no" checked={input.third === 0} onChange={handleOptionChange} /> 
+                    </div>
+                    <div className="questions-form">
+                        <h5 className='question'>바닥색과 유도블록의 구분이 어려웠었나요?</h5>
+                        <input className="yes-input" type="radio" value="yes" name="fourth-yes" checked={input.fourth === 2} onChange={handleOptionChange} />
+                        <input type="radio" value="no" name="fourth-no" checked={input.fourth === 0} onChange={handleOptionChange} /> 
+                    </div>
+                    <div className="questions-form">
+                        <h5 className='question'>길은 안내하는 선형 점자블록이 중간에 끊겨 있었나요?</h5>
+                        <input className="yes-input" type="radio" value="yes" name="fifth-yes" checked={input.fifth === 2} onChange={handleOptionChange} />
+                        <input type="radio" value="no" name="fifth-no" checked={input.fifth === 0} onChange={handleOptionChange} /> 
+                    </div>
+                </form>
+            </div>
         </div>
-
     )
 };
 

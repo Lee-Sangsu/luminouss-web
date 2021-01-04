@@ -68,18 +68,29 @@ const SearchResults = ( { data } ) => {
         document.getElementById("road-head").style.display = 'block';
         document.getElementById("road-address").style.display = 'block';
     };
+
+    const [mouseIn, setMouseIn] = React.useState(false);
     
+    const colorThis =() => {
+        setMouseIn(true);
+    };
+
+    const backColor =() => {
+        setMouseIn(false);
+    };
 
     return (
-        <button onClick={onClick} style={{
-            width:"350px",
+        <button id="item-btn" onMouseEnter={colorThis} onMouseLeave={backColor} onClick={onClick} style={{
+            width:"388px",
             textAlign:"start",
             textIndent:"15px",
-            backgroundColor:'white',
-            // borderBottomWidth:'0px',
-            marginTop:'-2px',
-            borderRadius:'3px',
-            borderColor:'black'
+            borderBottomLeftRadius: '10px',
+            borderBottomRightRadius: '10px',
+            borderWidth: 0,
+            marginTop:'-3px',
+            backgroundColor: mouseIn ? 'white' : 'rgba(196, 196, 196, 1)',
+            cursor: mouseIn ? 'pointer': 'unset',
+            transition: '0.5s ease'
         }}>
             <h4 id='place-h4'>{data.place_name}</h4>
             <h6 id='place-h6'>{data.address_name}</h6>

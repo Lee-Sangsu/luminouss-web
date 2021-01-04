@@ -36,18 +36,18 @@ const AddRoadForm = () => {
         animationTimer={1500} > 
           <AddRoadStart handlePageChange={handlePageChange} />
 
-          <Aroad />
-          <BroadEnv />
+          <Aroad handlePageChange={handlePageChange} />
+          <BroadEnv handlePageChange={handlePageChange} />
           <Cfence handlePageChange={handlePageChange} />
 
           <CheckExist handlePageChange={handlePageChange} setLeadBlock={setLeadBlock} />
         
           <Dleadblock leadBlock={leadBlock} />  
-          <Eothersup />
-          <Fstairs />
-          <Grest />
-          <Hpeople />
-          <Iaround />
+          <Eothersup handlePageChange={handlePageChange} />
+          <Fstairs handlePageChange={handlePageChange} />
+          <Grest handlePageChange={handlePageChange} />
+          <Hpeople handlePageChange={handlePageChange} />
+          <Iaround handlePageChange={handlePageChange} />
           <JwarnFeat />
 
         </ReactPageScroller>

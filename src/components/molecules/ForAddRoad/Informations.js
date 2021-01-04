@@ -7,11 +7,6 @@ const Informations = () => {
 
     const a = SetEntireStates();
     const people = useRecoilValue(PeopleState);
-    
-    React.useEffect(() => {
-        document.getElementById('nav').style.display = 'none'
-    }, [])
-
 
     return (
     <div style={{

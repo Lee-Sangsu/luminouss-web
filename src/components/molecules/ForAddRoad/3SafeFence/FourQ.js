@@ -52,12 +52,12 @@ const FourQ = ({firstQ, secondQ, thirdQ, fourthQ}) => {
 
     return(
         <div className='fence-page'>
-            <h2 className="fence-title">안전펜스</h2>
+            <h2 className="fence-title">안전펜스에 대한 질문입니다.</h2>
             <h6 className="fence-notice">*다녀오신 산책로에 해당 장소가 없었다면 '있었음'을 눌러주세요</h6>
             <form>
                 <div className="yes-no">
                     <h6 className='yes-no-yes'>있었음</h6>
-                    <h6>없었음</h6>
+                    <h6 className="yes-no-no">없었음</h6>
                 </div>
                 <div className="questions-form">
                     <h5 className='question'>{firstQ}</h5>

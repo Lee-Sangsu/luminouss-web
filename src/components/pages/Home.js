@@ -17,14 +17,6 @@ const Home  = () => {
     const handlePageChange = number =>() => {
         setCurrentPage(number);
     };
-    
-    useEffect(() => {
-        if (currentPage === 0 || currentPage === 2) {
-            document.getElementById('nav').style.display = 'block';
-        } else if (currentPage === 1) {
-            document.getElementById('nav').style.display = 'none';
-        }
-    }, [currentPage])
 
     //prop 바뀌면 리렌더링 isLoggedIn state 바뀜
     const history = useHistory();

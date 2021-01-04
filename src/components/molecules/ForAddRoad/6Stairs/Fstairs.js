@@ -1,9 +1,10 @@
 import React from 'react';
 import StairsState from 'recoilStates/Addroad/StairsState';
 import { useRecoilState } from 'recoil';
+import SelectPavement from 'components/molecules/ForAddRoad/2RoadEnv/SelectPavement';
 
 
-const Fstairs = () => {
+const Fstairs = ({handlePageChange}) => {
     const [stairs, setStairs] = useRecoilState(StairsState);
 
     const onChange = (event) => {
@@ -19,11 +20,11 @@ const Fstairs = () => {
             alignItems:'center',
             flexDirection:'column'
         }}>
-            <h3>계단의 특성(높이, 폭, 재질, 경사 등) 입력해주세요</h3>
-            <input style={{
-                width:'40%',
-                height:'30%'
-            }} type="text" onChange={onChange} value={stairs} placeholder="" required /> 
+            <h3 id="subtitle">걷기 편한 정도에 관한 질문입니다.</h3>
+            <SelectPavement />
+            <h3 id="subtitle">계단의 특성에 대하여 답해주세요</h3>
+            <textarea id="stair-input" type="text" onChange={onChange} value={stairs} placeholder="높이, 폭, 재질, 경사 등에 대한 특성을 기재해주세요." required /> 
+            <button id="to-next-page" onClick={() => handlePageChange(8)}>확인</button>
         </div>
     )
 };

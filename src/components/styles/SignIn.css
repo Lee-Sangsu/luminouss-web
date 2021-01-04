@@ -1,10 +1,20 @@
+#sign-in-h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 720px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+}
+
 #sign-in-form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-top: 3%;
-  width: 24%;
+  width: 384px;
   height: auto;
 }
 
@@ -18,25 +28,63 @@
   margin: 20px 0;
 }
 
-#input-text {
-  margin-block-end: 0;
+#email-input,
+#pw-input {
+  background: #c4c4c4;
+  width: 100%;
+  height: 60px;
+  border-radius: 16px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  text-indent: 18px;
+  border-width: 0;
+  cursor: pointer;
+
+  color: white;
 }
 
-#text-input {
-  width: 60%;
-  height: 20px;
+#email-input::placeholder,
+#pw-input::placeholder {
+  color: #000000;
 }
 
 #sign-in-submit {
-  margin-top: 20px;
+  margin-top: 24px;
   width: 100%;
-  height: 35px;
+  height: 60px;
+  background: rgba(41, 117, 61, 1);
+  border-radius: 16px;
+  border-width: 0;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
 }
 
 #kakao-login {
-  margin-top: 20px;
-  width: 25%;
-  height: 35px;
-  background-color: yellow;
-  border: none;
+  margin-top: 50px;
+  width: 384px;
+  height: 60px;
+  background-color: #ffc107;
+  border-width: 0;
+  border-radius: 16px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#create-acc {
+  width: 344px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.7s ease;
+  color: #000000;
+}
+
+#create-acc:hover {
+  color: #ffc107;
 }

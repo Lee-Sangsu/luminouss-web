@@ -2,11 +2,17 @@
 #aroundenv {
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 388px;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 10px;
-  margin-top: 1.1%;
+  /* margin-top: 1.1%; */
+  margin-top: -20px;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 4px;
+  border-width: 0;
+  border-radius: 16px;
+  background: #c4c4c4;
 }
 
 #place-h4 {
@@ -26,4 +32,170 @@
   justify-content: flex-start;
   margin-left: 10px;
   margin-top: 2%;
+}
+
+#subtitle {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #232323;
+}
+
+#search-input {
+  background: #c4c4c4;
+  width: 384px;
+  height: 60px;
+  border-radius: 16px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  text-indent: 18px;
+  border-width: 0;
+  cursor: pointer;
+  position: absolute;
+
+  color: white;
+}
+#search-input::placeholder {
+  color: #000000;
+}
+
+#search-button {
+  z-index: 1;
+  width: 80px;
+  height: 62px;
+  position: absolute;
+  margin-left: 308px;
+  border-width: 0;
+  border-radius: 16px;
+  padding: 0;
+}
+
+#subsubtitle {
+  width: 344px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: start;
+  height: 20px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#number-input {
+  background: #c4c4c4;
+  width: 384px;
+  height: 60px;
+  border-radius: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-indent: 18px;
+  border-width: 0;
+  cursor: pointer;
+  color: white;
+}
+
+#number-input::placeholder {
+  color: #000000;
+}
+
+#count-input {
+  background: #c4c4c4;
+  width: 384px;
+  height: 60px;
+  border-radius: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-indent: 18px;
+  border-width: 0;
+  cursor: pointer;
+  color: white;
+}
+
+#count-input::placeholder {
+  color: #000000;
+}
+
+#supsubtitle {
+  width: 384px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: start;
+  height: 20px;
+  margin: 10px 0;
+}
+
+#pavement-input {
+  background: #c4c4c4;
+  width: 344px;
+  height: 35px;
+  border-radius: 16px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  text-indent: 18px;
+  border-width: 0;
+  cursor: pointer;
+  color: white;
+}
+
+#pavement-input::placeholder {
+  color: #000000;
+}
+
+#submit-button {
+  position: absolute;
+  margin-left: 280px;
+  z-index: 1;
+  width: 80px;
+  height: 37px;
+  border-width: 0;
+  border-radius: 16px;
+  padding: 0;
+  cursor: pointer;
+}
+
+#stair-input {
+  background: #c4c4c4;
+  width: 348px;
+  height: 194px;
+  border-radius: 16px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  text-indent: 5px;
+  border-width: 0;
+  cursor: text;
+  color: white;
+  padding: 18px 18px;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+#stair-input::placeholder {
+  color: #000000;
+}
+
+#rest {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#toilet,
+#bench {
+  margin-bottom: 30px;
+  margin-top: 30px;
 }

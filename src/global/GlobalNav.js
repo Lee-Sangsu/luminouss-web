@@ -1,6 +1,7 @@
 import React from'react';
+import 'components/styles/GlobalNavigation.css';
 
-const GlobalNav = ({isFirstPage}) => {
+const GlobalNav = ({isFirstPage, isNotHome}) => {
     const isLoggedIn = true;
 
     
@@ -30,8 +31,8 @@ const GlobalNav = ({isFirstPage}) => {
 
     return (
         <div id="header-nav">
-            {isFirstPage ? <h3 id="our-logo" style={{display:'flex', width:window.innerWidth, justifyContent:'center', position:'absolute', zIndex:'-1', transition:'0.5s ease-in'}}>WalkWith</h3> : <></>}
-            {/* {isNotHome (recoilvalue) ? logo 왼쪽으로 : <></>} */}
+            {isFirstPage && isNotHome === false ? <h3 id="our-logo" style={{display:'flex', width:window.innerWidth, justifyContent:'center', position:'absolute', zIndex:'-1', transition:'0.5s ease-in'}}>WalkWith</h3> : <></>}
+            {isNotHome ? <h3 id="our-logo" style={{display:'flex', width:window.innerWidth*0.1, marginRight:window.innerWidth*0.8, justifyContent:'flex-start', position:'absolute', transition:'0.5s ease-in'}}>WalkWith</h3> : <></>}
             <h6 id="nav-menu" onClick={onClick} >MENU</h6>
             <div id="menu-container">
                 <h2 id="close-container" onClick={onCloseClick}>X</h2>

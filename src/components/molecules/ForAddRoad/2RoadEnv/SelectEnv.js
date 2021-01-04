@@ -1,6 +1,6 @@
 import React from "react";
 import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
+// import 'components/styles/Dropdown.css';
 import { useRecoilState } from 'recoil';
 import EnvState from 'recoilStates/Addroad/EnvState';
 
@@ -24,12 +24,10 @@ const SelectEnv = () => {
             flexDirection:'column',
             alignItems:'center'
         }}>
-            <h3>산책로 환경</h3>
-            <div style={{
-                width:'200px'
-            }}>
-                <Dropdown className='road-env' options={options} onChange={onSelect} value={state} placeholder='환경' />
-            </div>
+            <h3 id="subsubtitle">환경</h3>
+
+            <Dropdown options={options} onChange={onSelect} value={state} placeholder='환경' />
+
         </div>
     )
 };

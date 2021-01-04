@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 import firebase from "global/fbase";
 import { useHistory, Link } from "react-router-dom";
+import {useSetRecoilState} from 'recoil';
+import InitializeState from 'recoilStates/InitializeState';
+import IsLoggedInState from 'recoilStates/IsLoggedInState';
+import disappearPlaceholder from 'functions/DisappearPlaceHolder';
+import Footer from "components/molecules/ForHome/Footer";
+import GlobalNav from "global/GlobalNav";
+import Subject from "components/molecules/Subject";
+
 
 const Register = () => {
     const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const setInit = useSetRecoilState(InitializeState);
+    const setLoggedIn = useSetRecoilState(IsLoggedInState);
 
     const onChange = (event) => { 
         const {
@@ -27,6 +37,8 @@ const Register = () => {
             // let data;
             await firebase.auth().createUserWithEmailAndPassword(email, password);
             //어케 홈 화면으로 다시 돌려보내지
+            setInit(true);
+            setLoggedIn(true);
             history.push("/");
         } catch (error) {
             setError(error.message);
@@ -35,31 +47,31 @@ const Register = () => {
     };
 
 
-    return (
+    return (<>
+    <GlobalNav isNotHome={true} />
     <div style={{
         display: 'flex',
         justifyContent: 'center',
         alignItems:'center',
         flexDirection: 'column',
-        height: `${window.innerHeight - 75}px`,
+        height: `${window.innerHeight}px`,
         backgroundColor:'#efefef'
     }}>
-        <h2>계정을 만들고 새로운 산책로를 추가해보세요</h2>
+        <Subject id="sign-in-h2" circleColor="rgba(41, 117, 61, 1)" circleId="sign-up-circle" text="계정을 만들고 새로운 산책로를 추가해보세요" />
         <form onSubmit={onSubmit} id="sign-in-form">
             <div id='input-texts'>
-                <h4 id="input-text">이메일</h4>
-                <input id="text-input" name="email" type="email" value={email} onChange={onChange} required></input>
+                <input id="email-input" placeholder="Email address" name="email" onFocus={disappearPlaceholder} type="email" value={email} onChange={onChange} required></input>
             </div>
             <div id='input-texts'>
-                <h4 id="input-text">비밀번호</h4>
-                <input id="text-input" name="password" type="password" value={password} onChange={onChange} required></input>
+                <input id="pw-input" placeholder="Password" name="password" onFocus={disappearPlaceholder} type="password" value={password} onChange={onChange} required></input>
             </div>
             <input type="submit" value="회원가입" id="sign-in-submit"></input>
             {error}
         </form>
-        <h3>이미 계정이 있으신가요?</h3> <Link to="/sign-in">로그인하기</Link>
+        <h3>이미 계정이 있으신가요?</h3> <Link to="/sign-in" id="create-acc">로그인하기</Link>
     </div>
-    );
+    <Footer />
+    </>);
 };
 
 export default Register;

@@ -4,15 +4,23 @@ import { useHistory, Link } from "react-router-dom";
 import Kakao from 'kakaojs';
 import {useSetRecoilState} from 'recoil';
 import InitializeState from 'recoilStates/InitializeState';
-import useRecoilState from 'recoilStates/IsLoggedInState';
+import IsLoggedInState from 'recoilStates/IsLoggedInState';
 import 'components/styles/SignIn.css';
+import 'components/styles/Footer.css';
+
+import Footer from "components/molecules/ForHome/Footer";
+import GlobalNav from "global/GlobalNav";
+import Subject from "components/molecules/Subject";
+import disappearPlaceholder from 'functions/DisappearPlaceHolder';
+
 const SignIn = () => {
     const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const setInit = useSetRecoilState(InitializeState);
-    const setLoggedIn = useSetRecoilState(useRecoilState);
+    const setLoggedIn = useSetRecoilState(IsLoggedInState);
+    
 
     const onChange = (event) => { 
         const {
@@ -34,6 +42,7 @@ const SignIn = () => {
             await firebase.auth().signInWithEmailAndPassword(email, password);
             //어케 홈 화면으로 다시 돌려보내지
             setLoggedIn(true);
+            setInit(true);
             history.push("/");
         } catch (error) {
             setError(error.message);
@@ -70,31 +79,33 @@ const SignIn = () => {
 
 
 
-    return (
+    return (<>
+    <GlobalNav isNotHome={true} />
     <div id="login-container" style={{
         display: 'flex',
         justifyContent: 'center',
         alignItems:'center',
         flexDirection: 'column',
-        height: `${window.innerHeight - 75}px`,
+        height: `${window.innerHeight}px`,
         backgroundColor:'#efefef'
     }}>
-        <h2>로그인하고 새로운 산책로를 추가해보세요</h2>
-        <button id="kakao-login" onClick={loginWithKaKao}>카카오 로그인</button>
+        <Subject id="sign-in-h2" circleColor="rgba(41, 117, 61, 1)" circleId="login-circle" text="로그인하고 새로운 산책로를 추가해보세요" />
+
         <form id="sign-in-form" onSubmit={onSubmit} >
             <div id='input-texts'>
-                <h4 id="input-text">이메일</h4>
-                <input id="text-input" name="email" type="email" value={email} onChange={onChange} required></input>
+                <input id="email-input" onFocus={disappearPlaceholder} name="email" type="email" value={email} onChange={onChange} placeholder="Email address" required></input>
             </div>
             <div id='input-texts'>
-                <h4 id="input-text">비밀번호</h4>
-                <input id="text-input" name="password" type="password" value={password} onChange={onChange} required></input>
+                <input id="pw-input" onFocus={disappearPlaceholder} name="password"  type="password" value={password} onChange={onChange} placeholder="Password" required></input>
             </div>
-            <input id="sign-in-submit" type="submit" value="로그인" ></input>
+            <input id="sign-in-submit" type="submit" value="Log In" ></input>
             {error}
         </form>
-        <h3>아직 계정이 없으신가요?</h3> <Link to="/sign-up">회원가입하기</Link>
+        <button id="kakao-login" onClick={loginWithKaKao}>카카오 로그인</button>
+        <h3>아직 계정이 없으신가요?</h3> <Link to="/sign-up" id="create-acc">회원가입하기</Link>
     </div>
+    <Footer />
+    </>
     );
 };
 

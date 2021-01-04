@@ -1,26 +1,25 @@
 #fence-page {
   display: flex;
   height: 100%;
-  width: 100%;
+  width: 70%;
+  margin-left: 30%;
   flex-direction: column;
   justify-content: center;
 }
 
 .fence-title {
   text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  width: 100%;
 }
 
 .fence-notice {
   margin-block-start: 0;
   text-align: center;
-}
-
-.yes-no {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 35.5%;
+  /* padding-right: 26%; */
+  font-size: 13px;
 }
 
 .questions-form {
@@ -28,17 +27,83 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 36%;
+  padding-right: 22%;
 }
 
 .question {
-  margin-right: 30px;
+  /* margin-right: 30px; */
+  width: 550px;
+  /* display: flex; */
+  text-align: start;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.yes-no {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20.7%;
 }
 
 .yes-no-yes {
-  margin-right: 4%;
+  margin-right: 1.7%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.yes-no-no {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 .yes-input {
   margin-right: 5%;
+}
+
+#o-btn,
+#x-btn {
+  width: 192px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-width: 2px;
+  border-color: black;
+  background-color: white;
+  transition: 0.3s ease-in;
+}
+
+#o-btn:hover,
+#x-btn:hover {
+  cursor: pointer;
+  background-color: #29753d;
+  color: white;
+}
+
+#o-btn {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 27px;
+  text-align: center;
+  margin-right: -1px;
+}
+
+#x-btn {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 27px;
+  text-align: center;
+  margin-left: -1px;
 }

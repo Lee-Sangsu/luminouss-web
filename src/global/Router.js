@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter,  Route, Switch } from "react-router-dom";
-import Navigation from './GlobalNavigation';
+// import Navigation from './GlobalNavigation';
 import Home from 'components/pages/Home';
 import About from 'components/pages/About';
 import Profile from 'components/pages/Profile';
@@ -12,6 +12,7 @@ import AboutSolution from 'components/organisms/AboutSolution';
 import WatchRoads from 'components/pages/WatchRoads';
 import WatchRoad from 'components/pages/WatchRoad';
 import EditRoad from 'components/pages/EditRoad';
+import NoMatchedRouteComponent from 'global/NoMatchedRouteComponent';
 
 import {
   RecoilRoot
@@ -21,33 +22,33 @@ import NewHome from 'components/pages/NewHome';
 const AppRouter = ({ isLoggedIn }) => {
     return (<RecoilRoot>
           <BrowserRouter >
-            <Navigation isLoggedIn={isLoggedIn}/>
+            {/* <Navigation isLoggedIn={isLoggedIn}/> */}
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/old-home">
                 <Home isLoggedIn={isLoggedIn}/>
               </Route>
-              <Route exact path="/new-home">
+              <Route exact path="/">
                 <NewHome />
               </Route>
-              <Route path="/about-luminouss">
+              <Route exact path="/about-luminouss">
                 <About />
               </Route>
-              <Route path='/about-luminouss-team'>
+              <Route exact path='/about-luminouss-team'>
                 <AboutTeam />
               </Route>
-              <Route path='/about-luminouss-solution'>
+              <Route exact path='/about-luminouss-solution'>
                 <AboutSolution />
               </Route>
-              <Route path="/my-profile">
+              <Route exact path="/my-profile">
                 <Profile />
               </Route>
-              <Route path="/sign-in">
+              <Route exact path="/sign-in">
                 <SignIn />
               </Route>
-              <Route path="/sign-up">
+              <Route exact path="/sign-up">
                 <Register />
               </Route>
-              <Route path="/add-road-info">
+              <Route exact path="/add-road-info">
                 <AddRoad />
               </Route>
               <Route exact path="/watch-roads">
@@ -59,6 +60,9 @@ const AppRouter = ({ isLoggedIn }) => {
               <Route path="/road-edit/:item?">
                 <EditRoad />
               </Route>
+              
+              {/* 404 */}
+              <Route component={NoMatchedRouteComponent}/> 
             </Switch>
           </BrowserRouter>
         </RecoilRoot>
