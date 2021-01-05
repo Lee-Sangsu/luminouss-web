@@ -42,7 +42,7 @@ const AddRoadForm = () => {
 
           <CheckExist handlePageChange={handlePageChange} setLeadBlock={setLeadBlock} />
         
-          <Dleadblock leadBlock={leadBlock} />  
+          <Dleadblock handlePageChange={handlePageChange} leadBlock={leadBlock} />  
           <Eothersup handlePageChange={handlePageChange} />
           <Fstairs handlePageChange={handlePageChange} />
           <Grest handlePageChange={handlePageChange} />

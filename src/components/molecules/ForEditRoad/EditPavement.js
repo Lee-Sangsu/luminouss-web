@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from 'react';
 import Dropdown from 'react-dropdown';
-import { useRecoilState } from 'recoil';
-import PavementState from 'recoilStates/Addroad/PavementState';
 
-const SelectPavement = () => {
-    const [state, setState] = useRecoilState(PavementState); 
-    const [exceptState, setExceptState] = useState('');
+const EditPavement = ({pavementState, setPavementState, stairs, setStairState}) => {
+
+    const [exceptState, setExceptState] = React.useState('');
 
     const options = [
         "시멘트",
@@ -15,38 +13,41 @@ const SelectPavement = () => {
         "기타"
     ];
     const onSelect = (event) => {
-        setState(event.value);
+        setPavementState(event.value);
     };
     const onChange = ({target: {name, value}}) => {
         if (name === "except value"){ 
             setExceptState(value);
-        } 
+        } else if (name === 'stairs'){
+            setStairState(value);
+        }
     };
 
     const onClick = () => {
-        setState(exceptState);
+        setPavementState(exceptState);
     };
-
     return (
         <div style={{
             display:'flex',
             flexDirection:'column',
             alignItems:'center'
         }}>
-            <h3 id="subsubtitle">포장 재질</h3>
+            <h3 id="subsubtitle">길의 포장 재질 수정하기</h3>
             <div style={{
                 display:'flex',
                 flexDirection:'column',
                 alignItems:'center'
             }}>
-                <Dropdown options={options} onChange={onSelect} value={state} placeholder="길 포장 재질" />
-                {state === options[4] ? <div style={{display:'flex', flexDirection:'row'}}>
+                <Dropdown options={options} onChange={onSelect} value={pavementState} placeholder="길 포장 재질" />
+                {pavementState === options[4] ? <div style={{display:'flex', flexDirection:'row'}}>
                  <input onChange={onChange} id="pavement-input" name="except value" value={exceptState} placeholder='포장 재질을 직접 입력해주세요' /> 
                  <button id="submit-button" onClick={onClick}>submit</button> 
                  </div>: <></>}
             </div>      
+            <h3 id="subtitle">계단의 특성 수정하기</h3>
+            <textarea id="stair-input" type="text" name="stairs" onChange={onChange} value={stairs} placeholder="높이, 폭, 재질, 경사 등에 대한 특성을 기재해주세요." required /> 
         </div>
     )
 };
 
-export default SelectPavement;
+export default EditPavement;

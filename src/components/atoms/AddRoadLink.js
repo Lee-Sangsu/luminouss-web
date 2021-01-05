@@ -32,8 +32,7 @@ const AddRoadLink = () => {
                     lineHeight:'20px',
                     marginRight: '10px'
 
-                }}>산책로 정보 추가하기</span>
-                <span>화살표</span>
+                }}>산책로 정보 추가하러 가기</span>
             </div>
         </Link>
     )

@@ -1,33 +1,16 @@
 import React from 'react';
 import 'components/styles/About/About-Team.css';
-import { Link } from 'react-router-dom';
-import 'components/styles/About/AboutNav.css';
+import GlobalNav from 'global/GlobalNav';
+import Subject from 'components/molecules/Subject';
+import Footer from 'components/molecules/ForHome/Footer';
 
 const AboutTeam = () => {
     return (
         <>
-        <nav>
-        <ul className="about-ul">
-            <li className='list'>
-                <Link to='/about-luminouss' id="vision" style={{
-                    color:'black'
-                }}> Vision&Mission </Link>
-            </li>
-            <li className='list'>
-                <Link to='/about-luminouss-team' id="team" style={{
-                    color:"green"
-                }}> Team </Link>
-            </li>
-            <li className='list'>
-                <Link  ink to='/about-luminouss-solution' id="solution" style={{
-                    color:"black"
-                }}> Solution </Link>
-            </li>
-        </ul>
-        </nav>
+        <GlobalNav sFirstPage={false} isNotHome={true} />
         <div id="team-container">
                 <div className="team-team">
-                    <img src={require("images/titles/team.png").default} alt="루미너스"></img>
+                <Subject id='team-page' circleColor='rgba(255, 193, 7, 1)' text="Team" />
                 </div>
                 <div className="team-faces-wrap">
                     <div className="team-face">
@@ -71,6 +54,7 @@ const AboutTeam = () => {
 
                     </div>
                 </div>
+                <Footer />
             </div>
         </>
     )

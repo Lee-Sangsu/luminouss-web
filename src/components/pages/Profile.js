@@ -4,7 +4,8 @@ import {useHistory} from 'react-router-dom';
 import Kakao from 'kakaojs';
 import {useSetRecoilState} from 'recoil';
 import InitializeState from 'recoilStates/InitializeState';
-import useRecoilState from 'recoilStates/IsLoggedInState';
+import IsLoggedInState from 'recoilStates/IsLoggedInState';
+import GlobalNav from 'global/GlobalNav';
 
 
 //updateProfile({displayName 추가 만들기})
@@ -15,7 +16,7 @@ const Profile =  () => {
   const history = useHistory();
 
   const setInit = useSetRecoilState(InitializeState);
-  const setLoggedIn = useSetRecoilState(useRecoilState);
+  const setLoggedIn = useSetRecoilState(IsLoggedInState);
 
   const user = firebase.auth().currentUser;
   const onLogOutClick = () => {
@@ -63,8 +64,9 @@ const Profile =  () => {
   }, [getRoadInfoCurrentUser, user])*/
 
   return (
-    <>
-      <h2>프로필</h2> 
+    <div style={{width:'100%', height:'100%', top:0}}>
+      <GlobalNav isFirstPage={false} isNotHome={true} />
+      <h2 style={{width:'100%', height:`${window.innerHeight-90}px`, display:'flex', justifyContent:'center', alignItems:'center', marginBlockStart:0}}>Profile</h2> 
       {/* {arr ? arr.map((data) => <div key={data.id} style={{
           marginTop:"20px",
           marginBottom:"30px"
@@ -72,7 +74,7 @@ const Profile =  () => {
           <h4>{data.roadName}</h4>
       </div> ):<h5>산책로 정보 불러오는 중..</h5>} */}
       <button onClick={onLogOutClick}>Log Out</button>
-    </>
+    </div>
   );
 };
 

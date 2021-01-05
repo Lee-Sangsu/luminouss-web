@@ -31,16 +31,28 @@ const SearchResults = ( {data} ) => {
         document.getElementById("aroundenv").style.display = 'none';
     };
 
+    const [mouseIn, setMouseIn] = React.useState(false);
+    
+    const colorThis =() => {
+        setMouseIn(true);
+    };
+
+    const backColor =() => {
+        setMouseIn(false);
+    };
+
     return (
-        <button onClick={onClick} style={{
-            width:"350px",
+        <button id="item-btn" onClick={onClick} onMouseEnter={colorThis} onMouseLeave={backColor} style={{
+            width:"388px",
             textAlign:"start",
             textIndent:"15px",
-            backgroundColor:'white',
-            // borderBottomWidth:'0px',
-            marginTop:'-2px',
-            borderRadius:'3px',
-            borderColor:'black'
+            borderBottomLeftRadius: '10px',
+            borderBottomRightRadius: '10px',
+            borderWidth: 0,
+            marginTop:'-3px',
+            backgroundColor: mouseIn ? 'white' : 'rgba(196, 196, 196, 1)',
+            cursor: mouseIn ? 'pointer': 'unset',
+            transition: '0.5s ease'
         }}>
             <div style={{display:'flex', flexDirection:'row', alignItems:"center"}}>
                 <h3>{data.place_name}</h3>

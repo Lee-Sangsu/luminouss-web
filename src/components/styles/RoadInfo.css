@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   height: auto;
-  background-color: #efefef;
+  background-color: white;
   flex-direction: row;
   justify-content: center;
 }
@@ -11,10 +11,11 @@
   display: flex;
   width: 100%;
   height: auto;
-  background-color: #efefef;
+  background-color: white;
   flex-direction: row;
   justify-content: flex-start;
   padding-left: 10%;
+  z-index: 7;
 }
 
 #edit-container {
@@ -22,16 +23,17 @@
   width: 30%;
   height: 80%;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  padding-left: 50%;
+  padding-left: 45%;
   margin-top: 80px;
   position: fixed;
+  z-index: 7;
 }
 
 #info-container {
   display: flex;
-  width: 450px;
+  width: 486px;
   height: fit-content;
   justify-content: flex-start;
   flex-direction: column;
@@ -40,20 +42,32 @@
   border: 3px solid black;
   border-radius: 30px;
   margin: 80px 0;
+  z-index: 1;
 }
 
 #road-name {
   color: white;
-  padding-left: 30px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 28px;
+}
+
+.road-name-container {
+  width: 445px;
+  padding-left: 41px;
+  padding-top: 78px;
 }
 
 #first-hr {
-  border: 2px solid white;
-  width: 446px;
+  border: 1px solid #c3c3c3;
+  margin-left: -3px;
+  width: 490px;
 }
 
 #road-infos {
-  padding-left: 30px;
+  padding-left: 41px;
+  width: 90%;
 }
 
 #middle-hr {
@@ -66,9 +80,24 @@
   color: white;
 }
 
+#road-explanation {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+}
+
+#sub-topics {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+}
+
 #info {
   display: flex;
   flex-direction: row;
+  width: 445px;
+  /* padding-left: 41px; */
+  justify-content: space-between;
   align-items: center;
 }
 #edit-click {
@@ -79,4 +108,52 @@
   margin-left: 15px;
   cursor: pointer;
   z-index: 2;
+}
+
+#info-edit-img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 7px;
+  padding: 10px 10px;
+  border-width: 0px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+#click-icon-plz {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+  /* or 133% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+#edit-road-plz {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 370px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+#text-input {
+  background: #c4c4c4;
+  width: 344px;
+  height: 35px;
+  border-radius: 16px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  text-indent: 18px;
+  border-width: 0;
+  cursor: text;
+  color: white;
 }

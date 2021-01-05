@@ -194,8 +194,47 @@ input[type="number"]::-webkit-inner-spin-button {
   align-items: center;
 }
 
-#toilet,
+/* #toilet,
 #bench {
   margin-bottom: 30px;
   margin-top: 30px;
+} */
+
+#toilet-input,
+#bench-input {
+  display: none;
+  margin-bottom: 10px;
+}
+#toilet-input > label > input,
+#bench-input > label > input {
+  width: 200px;
+  height: 60px;
+  background: #c4c4c4;
+  border-radius: 16px;
+  border-width: 0ch;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  text-indent: 5px;
+}
+#feature-input {
+  background: #c4c4c4;
+  width: 348px;
+  height: 84px;
+  border-radius: 16px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  text-indent: 5px;
+  border-width: 0;
+  cursor: text;
+  color: white;
+  padding: 18px 18px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+#feature-input::placeholder {
+  color: #000000;
 }

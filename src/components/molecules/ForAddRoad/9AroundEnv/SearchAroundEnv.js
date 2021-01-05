@@ -49,26 +49,13 @@ const SearchAroundEnv = ( {placeholder} ) => {
   return (
     <div style={{
       display:"flex",
-      width:"340px",
-      height:"35px"
+      width:"384px",
+      height:"60px",
+      position:'relative'
     }}>
-      <input name="just" onChange={onChange} value={input} placeholder={placeholder} style={{
-        display:"flex",
-        width:'340px',
-        height:"35px",
-        position:"absolute",
-        textIndent:'10px'
-      }} required/>
-      <button style={{
-        display:'block',
-        zIndex:"1",
-        position:"absolute",
-        width:"80px",
-        marginLeft:"270px",
-        height:"41px",
-        padding:'0'
-      }} onClick={onClick}> Search </button>
-    </div>
+      <input id="search-input" name="just" onChange={onChange} value={input} placeholder={placeholder} required/>
+      <button id="search-button"  onClick={onClick}> Search </button>
+    </div> 
   );
 };
 

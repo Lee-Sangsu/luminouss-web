@@ -5,17 +5,34 @@
   padding: 0;
   width: 100%;
   height: auto;
-  background-color: #efefef;
   align-items: center;
+  background-color: white;
+}
+
+#about-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  padding-left: 10%;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  margin: 0;
+  padding-block-start: 137px;
+  padding-block-end: 65px;
+  background-color: #c3c3c3;
 }
 
 .introduction {
   display: inline-flex;
+  background-color: #c3c3c3;
   flex-direction: column;
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 400px;
-  justify-content: center;
+  height: 479px;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -24,23 +41,39 @@
 }
 
 .team-name {
-  width: auto;
-  height: 70px;
+  width: 792px;
+  height: 100px;
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 82px;
+  margin: 0;
+  text-align: center;
+
+  color: #232323;
 }
 
 .team-vision-mean {
   text-align: center;
+  width: 55%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
 }
 
 .logo-image {
   display: inline-flex;
   flex-direction: row;
   width: 100%;
-  height: 180px;
+  height: 232px;
   justify-content: center;
   align-items: center;
-  margin-top: 480px;
+  /* margin-top: 480px; */
   background-color: white;
+}
+
+.logo-image > img {
+  width: 180px;
+  height: 106px;
 }
 
 img {
@@ -54,16 +87,24 @@ img {
   display: inline-flex;
   flex-direction: row;
   width: 100%;
-  height: 300px;
+  height: 403px;
   /* margin-top: 580px; */
   justify-content: center;
   align-items: center;
 }
 
 .problem-tit .prob-tit {
-  width: 200px;
-  height: auto;
+  width: 740px;
+  height: 220px;
   position: absolute;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .problem-tit .prob-pic {
   width: 100%;
@@ -81,33 +122,51 @@ img {
   background-color: white;
 }
 
-.team-vision-mean {
-  text-align: center;
-}
-
 pre {
   letter-spacing: 1px;
-  line-height: 200%;
-  font-size: 17px;
-  font-weight: 300;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
   font-family: "NanumSquareRoundL", sans-serif;
   text-decoration: none;
+  width: 792px;
+  /* word-wrap: normal; */
+  white-space: normal;
 }
 
 .solution-tit {
   display: inline-flex;
   flex-direction: row;
   width: 100%;
-  height: 300px;
+  height: 372px;
   /* margin-top: 580px; */
   justify-content: center;
   align-items: center;
 }
 
-.solution-tit .sol-tit {
-  width: 200px;
-  height: auto;
+.sol-tit {
+  /* width: 219px;
+  height: 51px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute; */
+  width: 740px;
+  height: 220px;
   position: absolute;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 72px;
+  line-height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .solution-tit .sol-pic {
   width: 100%;
@@ -118,48 +177,10 @@ pre {
   display: inline-flex;
   flex-direction: row;
   width: 100%;
-  height: 500px;
+  height: 348px;
   justify-content: center; /*around로 바꿔야 해*/
-  align-content: center;
-  background-color: white;
-}
-
-.solution-body-wrap {
-  display: flex;
-  position: relative;
-  width: 1180px;
-  height: 100%;
   align-items: center;
-  justify-content: center;
-  margin-left: 100px;
-}
-
-.image-space {
-  display: inline-flex;
-  position: relative;
-  width: 220px;
-  height: auto;
-  margin-right: 100px;
-}
-
-.solution-body-text {
-  display: inline-block;
-  position: relative;
-  width: 600px;
-  height: auto;
-  margin-left: 80px;
-}
-
-.solution-body-text > img {
-  width: auto;
-  height: 50px;
-  padding-bottom: 5px;
-}
-.is-flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: flex-start;
+  background-color: white;
 }
 
 .explaining-wrap {
@@ -168,4 +189,47 @@ pre {
 
 .explaining-wrap > pre {
   text-align: left;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+#ux-ui {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#ux-tit {
+  /* display: flex; */
+  width: 219px;
+  height: 51px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 41px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+#radius-box {
+  /* display: flex; */
+  background: #29753d;
+  border: 0.5px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 16px;
+  width: 260px;
+  height: 16px;
+}
+
+#app-ui {
+  /* display: flex; */
+  width: 1172px;
+  height: 770px;
+  background-color: #232323;
+  margin: 120px 0;
 }

@@ -8,13 +8,13 @@ import SearchAroundEnv from 'components/molecules/ForAddRoad/9AroundEnv/SearchAr
 import EnvSearchState from 'recoilStates/Addroad/searched/EnvSearchState';
 import EnvSearchResults from 'components/molecules/ForAddRoad/9AroundEnv/EnvSearchResult';
 
-const Iaround = () => {
+const Iaround = ({handlePageChange}) => {
     const aroundList = useRecoilValue(AroundEnvListState);
     const envSearchResults = useRecoilValue(EnvSearchState);
 
     return (
         <div style={{
-          display:'flex',
+         display:'flex',
           height:'100%',
           flexDirection:'column',
           width:'100%',
@@ -34,6 +34,7 @@ const Iaround = () => {
               <AroundEnvItem key={aroundEnvItem.id} item={aroundEnvItem} />
             ))}
           </div>
+          <button id="to-next-page" onClick={() => handlePageChange(11)}>확인</button>
         </div>
     )
 };

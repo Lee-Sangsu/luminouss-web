@@ -39,7 +39,8 @@ const SelectCategory = ({item}) => {
 
 
     return (<>
-        <Dropdown className='restaurant-category' options={options} onChange={onChange} value={category} placeholder='음식점 카테고리' />
+        <h3 id="subsubtitle">음식점 카테고리</h3>
+        <Dropdown className='restaurant-category' options={options} onChange={onChange} value={category} placeholder='선택' />
 
         {category === options[options.length-1] ? <>
             <input id="etc-input" onChange={(e) => setInput(e.target.value)} value={input} placeholder="카테고리를 입력해주세요" />

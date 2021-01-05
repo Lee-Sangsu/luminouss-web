@@ -18,12 +18,7 @@ const WarningInput = ( {placeholder} ) => {
 }; 
 return (
   <>
-    <input name="just" onChange={onChange} value={warning} placeholder={placeholder} style={{
-      width:'350px',
-      height:'100px',
-      textIndent: '20px',
-      wordBreak:'break-all'
-    }} required/>
+    <textarea name="just" onChange={onChange} value={warning} placeholder={placeholder} id='feature-input' required/>
   </>
 );
 };

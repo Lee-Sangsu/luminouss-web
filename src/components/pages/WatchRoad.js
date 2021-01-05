@@ -8,7 +8,7 @@ const WatchRoad = () => {
     const data = useLocation().state.item;
     return (
         <div id="watch-road">
-            <RoadInfoView data={data} />
+            <RoadInfoView isJustEdit={false} data={data} />
         </div>
     )
 };

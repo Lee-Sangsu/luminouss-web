@@ -2,7 +2,7 @@ import React from "react";
 import {useRecoilState} from 'recoil';
 import FeatureState from 'recoilStates/Addroad/FeatureState';
 
-const FeaturesInput = ( {placeholder} ) => {
+const FeaturesInput = ( ) => {
     const [feature, setFeature] = useRecoilState(FeatureState);
 
 
@@ -18,12 +18,7 @@ const FeaturesInput = ( {placeholder} ) => {
   }; 
   return (
     <>
-      <input name="just" onChange={onChange} value={feature} placeholder={placeholder} style={{
-        width:'350px',
-        height:'60px',
-        textIndent: '20px',
-        wordBreak:'break-all'
-      }} required/>
+      <textarea name="just" onChange={onChange} value={feature}  id='feature-input' required/>
     </>
   );
 };

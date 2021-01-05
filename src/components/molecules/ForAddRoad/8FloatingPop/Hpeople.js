@@ -4,7 +4,7 @@ import { useState } from "react";
 import {useRecoilState} from 'recoil';
 import PeopleState from 'recoilStates/Addroad/PeopleState';
 
-const Hpeople = () => {
+const Hpeople = ({handlePageChange}) => {
   const [people, setPeople] = useRecoilState(PeopleState);
   const [peopleKind, setPeopleKind] = useState('');
   const [population, setPopulation] = useState('');
@@ -56,13 +56,14 @@ const Hpeople = () => {
         justifyContent:'center',
         alignItems:'center'
       }}>
-        <h4>다녀오신 시간대에 유동 인구는 얼마나 있었나요?</h4>
-        <h5>시간대:</h5>
+        <h4 id='subtitle'>유동인구에 대한 질문입니다.</h4>
+        <h5 id='subsubtitle'>시간대:</h5>
         <Dropdown className='population' options={timeOptions} onChange={onTimeChange} value={time} placeholder='시간대' />
-        <h5>가장 많았던 사람들 유형:</h5>
+        <h5 id='subsubtitle'>가장 많았던 사람들 유형:</h5>
         <Dropdown className='people-kind' options={kindOptions} onChange={onPeopleKindChange} value={peopleKind} placeholder='사람 유형' />
-        <h5>봤던 사람의 수:</h5>
+        <h5 id='subsubtitle'>봤던 사람의 수:</h5>
         <Dropdown className="populations" options={popOptions} onChange={onPopulationChange} value={population} placeholder='사람 수' />
+        <button id="to-next-page" onClick={() => handlePageChange(10)}>확인</button>
       </div>
   )
 };

@@ -26,7 +26,7 @@ const Eothersup = ({handlePageChange}) => {
             flexDirection:'column'
         }}>
             <h3 id="subtitle">보조시설에 대한 질문입니다.</h3>
-            <h4 id="supsubtitle">산책로 내부나 산책로 주변 횡단보도에 음성안내기가 몇 개 있었나요?</h4>
+            <h4 id="supsubtitle">산책로 내부나 산책로 주변 횡단보도에 음성유도기가 몇 개 있었나요?</h4>
             <label>
                 <input id="number-input" type="number" name="voice" onChange={onChange} value={voice} placeholder="개수를 입력하세요" required style={{margin: '30px 0'}}/>개
             </label>

@@ -3,7 +3,7 @@ import {useRecoilState} from 'recoil';
 import LeadBlockState from 'recoilStates/Addroad/LeadBlockState';
 import 'components/styles/Addroad/Aroad.css';
 
-const Dleadblock = ({leadBlock}) => {
+const Dleadblock = ({handlePageChange, leadBlock}) => {
     const [input, setInput] = useRecoilState(LeadBlockState);
 
     React.useEffect(() => {
@@ -72,7 +72,7 @@ const Dleadblock = ({leadBlock}) => {
     return (
         <div style={{
             display:'flex',
-            // marginLeft:'30%',
+            // marginLeft:'10%',
             width:'100%',
             height:'100%',
             justifyContent:'center',
@@ -112,6 +112,11 @@ const Dleadblock = ({leadBlock}) => {
                         <input type="radio" value="no" name="fifth-no" checked={input.fifth === 0} onChange={handleOptionChange} /> 
                     </div>
                 </form>
+                <div style = {{
+                    width: '100%', justifyContent:'center', display: 'flex'
+                }}>
+                    <button id="to-next-page" onClick={() =>     handlePageChange(6)}>확인</button>
+                </div>
             </div>
         </div>
     )

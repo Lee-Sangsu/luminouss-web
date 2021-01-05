@@ -51,19 +51,14 @@ const JwarnFeat = () => {
           justifyContent:'center',
           alignItems:'center'
         }}>
-          <h4>걸을 때 주의사항</h4>
-          <WarningInput placeholder="걸을 때 주의사항을 적어주세요" />
+          <h3 style={{marginBottom:'30px'}} id="subtitle">특징 및 주의사항을 기재해주세요.</h3>
           
-          <h4>산책로 특징</h4>
-          <FeaturesInput placeholder="산책로의 특징을 적어주세요" />
-          <button onClick={confirmSubmit} style={{
-            width:'200px',
-            height:'40px',
-            borderWidth:'3px',
-            marginTop:'15px',
-            fontSize: '15px',
-            fontWeight: '500'
-          }}> 정보 등록하기 </button>
+          <h4 id="subsubtitle">산책로 특징</h4>
+          <FeaturesInput />
+
+          <h4 id="subsubtitle">걸을 때 주의사항</h4>
+          <WarningInput  />
+          <button onClick={confirmSubmit} id="to-next-page"> 정보 등록하기 </button>
         </div>
     )
 };

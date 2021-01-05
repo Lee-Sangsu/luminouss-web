@@ -28,7 +28,7 @@ const AppRouter = ({ isLoggedIn }) => {
                 <Home isLoggedIn={isLoggedIn}/>
               </Route>
               <Route exact path="/">
-                <NewHome />
+                <NewHome isLoggedIn={isLoggedIn} />
               </Route>
               <Route exact path="/about-luminouss">
                 <About />

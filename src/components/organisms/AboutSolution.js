@@ -1,7 +1,6 @@
 import React from 'react';
 import 'components/styles/About/About-Solution.css';
 import { Link } from 'react-router-dom';
-import 'components/styles/About/AboutNav.css';
 
 
 const AboutSolution = () => {
@@ -27,7 +26,7 @@ const AboutSolution = () => {
         </ul>
         </nav>
             <div id="comm-container">
-                <img className="comm-cardnews-tit" src={require("images/titles/cardnews.png").default} alt="카드뉴스" />
+                {/* <img className="comm-cardnews-tit" src={require("images/titles/cardnews.png").default} alt="카드뉴스" /> */}
                 <pre>
     {`비장애인들이 시각장애인들의 특성을 잘 모르고, 이해하지 못해 벌어지는 '시각장애
     인들에 대한 인식 부족 문제'를 해결하기 위한 컨텐츠를 제작합니다. 시각장애인들

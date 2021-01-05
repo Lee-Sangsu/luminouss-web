@@ -1,5 +1,6 @@
 import React from "react";
 import AddRoadForm from 'components/organisms/AddRoadForm';
+import GlobalNav from "global/GlobalNav";
 
 
 const AddRoad = () => {
@@ -12,6 +13,7 @@ const AddRoad = () => {
       height: '100%'
     }}>
       <AddRoadForm />
+      <GlobalNav isFirstPage={false} isNotHome={false} />
     </div>
   );
 };
