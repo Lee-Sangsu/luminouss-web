@@ -82,16 +82,16 @@
 
 #arrows {
   width: 10%;
-  margin-left: 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  z-index: 8;
-  position: fixed;
 }
 
 .arrow {
+  z-index: 8;
+  margin-left: 49%;
+  position: fixed;
   border: solid black;
   border-width: 0 7px 7px 0;
   width: 10px;
@@ -112,6 +112,7 @@
   -webkit-transform: rotate(45deg);
   margin-bottom: 20px;
   cursor: pointer;
+  margin-top: 90vh;
 }
 
 #block-img {

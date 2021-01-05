@@ -102,15 +102,15 @@ const NewHome = () => {
             width: window.innerWidth,
             overflow: 'hidden'
         }}>
-            <div id="arrows" style={{
+            {/* <div id="arrows" style={{
                 height: window.innerHeight
-            }} >
+            }} > */}
                {isFirstPage? <i className="arrow up" style={{opacity:'0', cursor: 'unset'}} /> : 
                 <i className="arrow up" onClick={homePageUpChange} /> 
                }
                {currentPage === 3 ? <span className="arrow down" onClick={homePageDownChange} style={{opacity:'0', cursor: 'unset'}} />  :
                <span className="arrow down" onClick={homePageDownChange} /> }
-            </div>
+            {/* </div> */}
 
             <GlobalNav isFirstPage={isFirstPage} isNotHome={false} />
             {/* <div id="before-home" onClick={homePageChange} style={{width:window.innerWidth*0.7, height:window.innerHeight, background:'none', position:'fixed', zIndex:'2'}}> */}
