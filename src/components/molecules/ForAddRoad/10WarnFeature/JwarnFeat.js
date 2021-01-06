@@ -42,7 +42,7 @@ const JwarnFeat = () => {
     }
   };
   const abort = () => console.log('abort'); 
-  const confirmSubmit = useConfirm("You sure?", submitConfirm, abort);
+  const confirmSubmit = useConfirm("등록 하시겠습니까?", submitConfirm, abort);
     return (
         <div style={{
           display:'flex',

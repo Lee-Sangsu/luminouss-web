@@ -17,6 +17,9 @@ import Informations from 'components/molecules/ForAddRoad/Informations';
 const AddRoadForm = () => {
   const [ pageNum, setPageNum ] = React.useState(0);
   const [leadBlock, setLeadBlock] = React.useState(false);
+  React.useEffect(() => {
+    setTimeout(()=>{document.getElementById("header-nav").style.zIndex = 0;},100); 
+  }, [])
 
   const handlePageChange = (pageNum) => {
     setPageNum(pageNum);
@@ -33,7 +36,7 @@ const AddRoadForm = () => {
         containerHeight={'100%'}
         customPageNumber={pageNum}
         pageOnChange={handlePageChange}
-        animationTimer={1500} > 
+        animationTimer={1500}  > 
           <AddRoadStart handlePageChange={handlePageChange} />
 
           <Aroad handlePageChange={handlePageChange} />

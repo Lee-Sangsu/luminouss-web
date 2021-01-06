@@ -19,7 +19,7 @@ const Aroad = ({handlePageChange}) => {
           justifyContent:'center',
           alignItems:'center'
         }}>
-          <h3 id="subtitle">새로운 산책로을 검색하고 위치를 추가해주세요</h3>
+          <h3 id="subtitle">새로운 산책로를 검색하고 위치를 추가해주세요</h3>
           <RoadNameInput placeholder="산책로 이름" />
           <InputAddress />
           <div id="search-results">
