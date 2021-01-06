@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.a8502eca.chunk.css",
-    "main.js": "/static/js/main.5639e04e.chunk.js",
-    "main.js.map": "/static/js/main.5639e04e.chunk.js.map",
+    "main.css": "/static/css/main.b73a8d99.chunk.css",
+    "main.js": "/static/js/main.df71c4b6.chunk.js",
+    "main.js.map": "/static/js/main.df71c4b6.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7ed7b6d1.js",
     "runtime-main.js.map": "/static/js/runtime-main.7ed7b6d1.js.map",
     "static/js/2.b708ecbe.chunk.js": "/static/js/2.b708ecbe.chunk.js",
     "static/js/2.b708ecbe.chunk.js.map": "/static/js/2.b708ecbe.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.a8502eca.chunk.css.map": "/static/css/main.a8502eca.chunk.css.map",
+    "static/css/main.b73a8d99.chunk.css.map": "/static/css/main.b73a8d99.chunk.css.map",
     "static/js/2.b708ecbe.chunk.js.LICENSE.txt": "/static/js/2.b708ecbe.chunk.js.LICENSE.txt",
     "static/media/FirstVoice.mp3": "/static/media/FirstVoice.4263b7ea.mp3",
     "static/media/Font.css": "/static/media/NanumSquareRoundR.f062cb52.ttf",
@@ -27,7 +27,7 @@
   "entrypoints": [
     "static/js/runtime-main.7ed7b6d1.js",
     "static/js/2.b708ecbe.chunk.js",
-    "static/css/main.a8502eca.chunk.css",
-    "static/js/main.5639e04e.chunk.js"
+    "static/css/main.b73a8d99.chunk.css",
+    "static/js/main.df71c4b6.chunk.js"
   ]
 }
