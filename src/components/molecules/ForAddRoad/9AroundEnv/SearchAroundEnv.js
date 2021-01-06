@@ -3,6 +3,7 @@ import {useSetRecoilState} from 'recoil';
 import axios from 'axios';
 import kakaoAuthKey from 'global/KakaoAuthKey';
 import EnvSearchState from 'recoilStates/Addroad/searched/EnvSearchState';
+import swal from 'sweetalert';
 
 const SearchAroundEnv = ( {placeholder} ) => {
     const setSearchState = useSetRecoilState(EnvSearchState);
@@ -41,7 +42,7 @@ const SearchAroundEnv = ( {placeholder} ) => {
     //   document.getElementById("road-head").style.display = 'none';
     //   document.getElementById("road-address").style.display = 'none';
     } else {
-      window.alert('검색어를 입력해주세요.');
+      swal('검색어를 입력해주세요.');
     }
     
   };

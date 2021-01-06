@@ -21,7 +21,7 @@ const RoadNameItem = ({ item }) => {
             <Link id="road-edit" onClick={initState} to={{ pathname:`/road-edit/item?id=${item.id}`, state:{
                 item: item
             }}}>
-                <img id="road-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" />
+                <img id="road-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" />
             </Link>
         </div>
         <h2 id="road-item-name">{item.road_name}</h2></div>

@@ -15,13 +15,13 @@ const RoadInfoView = ({data, isJustEdit}) => {
         <div id='info-container'>
             <div id='info' className='road-name-container'>
                 <h1 id='road-name'>{data.road_name}</h1>
-                {isJustEdit?<img id="info-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('road-name')} />:<></>}
+                {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('road-name')} />:<></>}
             </div>
             <hr id="first-hr" />
             <div id='road-infos'>
                 <div id= "info" >
                     <h3 id='sub-topics'>종류 및 길이</h3>
-                    {isJustEdit?<img id="info-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('env')} />:<></>}
+                    {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('env')} />:<></>}
                 </div>
                     <h5 id='road-explanation'>{`환경:${data.road_env}`}</h5>
                     <h5 id='road-explanation'>{`산책로 전체 길이: ${data.entire_length}km`}</h5>
@@ -34,7 +34,7 @@ const RoadInfoView = ({data, isJustEdit}) => {
             <div id='road-infos'>
                <div id="info">
                 <h3 id='sub-topics'>주소</h3>
-                   {isJustEdit?<img id="info-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('address')} />:<></>}
+                   {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('address')} />:<></>}
                 </div> 
                    <h5 id='road-explanation'>{`${data.address_name}에 위치해 있습니다.`}</h5>
             </div>
@@ -53,19 +53,19 @@ const RoadInfoView = ({data, isJustEdit}) => {
                 <h3 id='sub-topics'>보조시설</h3>
                <div id="info">
                    <h5 id='road-explanation'>{`음성유도기 점수: ${data.voice_induction}점`}</h5>
-                   {isJustEdit?<img id="info-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('leadVoice')} />:<></>}
+                   {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('leadVoice')} />:<></>}
                 </div> 
                <div id="info">
                    <h5 id='road-explanation'>{`유도블록 점수: ${data.side_walk_block}점`}</h5>
-                   {isJustEdit?<img id="info-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('leadBlock')} />:<></>}
+                   {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('leadBlock')} />:<></>}
                 </div> 
                <div id="info">
                    <h5 id='road-explanation'>{`점자표지판 점수: ${data.braille_notice}점`}</h5>
-                   {isJustEdit?<img id="info-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('notice')} />:<></>}
+                   {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('notice')} />:<></>}
                 </div> 
                <div id="info">
                    <h5 id='road-explanation'>{`안전펜스 점수: ${data.safety_fence}점`}</h5>
-                   {isJustEdit?<img id="info-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('fence')} />:<></>}
+                   {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('fence')} />:<></>}
                 </div> 
             </div>
 
@@ -74,7 +74,7 @@ const RoadInfoView = ({data, isJustEdit}) => {
             <div id='road-infos'>
                <div id="info">
                     <h3 id='sub-topics'>걷기 편한 정도</h3>
-                   {isJustEdit?<img id="info-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('pavement')} />:<></>}
+                   {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('pavement')} />:<></>}
                 </div> 
                 <h5 id='road-explanation'>{`길의 포장 재질: ${data.pavement}`}</h5>
                 <h5 id='road-explanation'>{`계단 특성: ${data.stair_feature}`}</h5>
@@ -85,7 +85,7 @@ const RoadInfoView = ({data, isJustEdit}) => {
             <div id='road-infos'>
                <div id="info">
                 <h3 id='sub-topics'>산책로 시설 및 환경</h3>
-                {isJustEdit?<img id="info-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('rest')} />:<></>}
+                {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('rest')} />:<></>}
                 </div> 
                    <h5 id='road-explanation'>{`화장실: ${data.toilet}`}</h5>                  
                    <h5 id='road-explanation'>{`벤치와 쉬는 공간: ${data.bench_and_rest}`}</h5>
@@ -96,7 +96,7 @@ const RoadInfoView = ({data, isJustEdit}) => {
             <div id='road-infos'>
                <div id="info">
                    <h3 id="sub-topics">유동인구</h3>
-                   {isJustEdit?<img id="info-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('people')} />:<></>}
+                   {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('people')} />:<></>}
                 </div> 
                    <h5 id='road-explanation'>{`${data.walking_people}`}</h5>                
             </div>
@@ -106,7 +106,7 @@ const RoadInfoView = ({data, isJustEdit}) => {
             <div id='road-infos'>
                 <div id="info">
                     <h3 id='sub-topics'>주변 환경</h3>
-                    {isJustEdit?<img id="info-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('aroundEnv')} />:<></>}
+                    {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('aroundEnv')} />:<></>}
                 </div>
                 {data.around_env_list.map((doc) => <div key={doc.id} id='around-env'>
                     <h5 id='road-explanation'>{`${doc.category_group_name} ${doc.place_name}`}</h5>         
@@ -119,7 +119,7 @@ const RoadInfoView = ({data, isJustEdit}) => {
             <div id='road-infos'>
                <div id="info">
                 <h3 id='sub-topics'>특징 및 주의사항</h3>
-                {isJustEdit?<img id="info-edit-img" src={require('images/pencil.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('feature')} />:<></>}
+                {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('feature')} />:<></>}
                 </div> 
                 <h5 id='road-explanation'>{`산책로의 특징: ${data.feature}`}</h5>         
                 <h5 id='road-explanation'style={{marginBottom:'121px'}}>{`걸을 때 주의사항: ${data.warning}`}</h5>

@@ -17,6 +17,7 @@ import StairsState from 'recoilStates/Addroad/StairsState';
 import ToiletState from 'recoilStates/Addroad/ToiletState';
 import VoiceState from 'recoilStates/Addroad/VoiceState';
 import WarningState from 'recoilStates/Addroad/WarningState';
+import firebase from 'global/fbase';
 
 
 const SetEntireStates = () => {
@@ -43,6 +44,14 @@ const SetEntireStates = () => {
     var leadBlockScore = 0;
     var brailleScore = 0;
     var fenceScore = 0;
+
+    var user;
+
+    if (window.localStorage.getItem('user') === 'EmailUser') {
+        user = firebase.auth().currentUser.uid;
+    } else {
+        user = JSON.parse(window.localStorage.getItem('user')).id;
+    }
 
 
     var y;
@@ -110,7 +119,8 @@ const SetEntireStates = () => {
         bench_and_rest: bench,
         walking_people: walking_people,
         feature:  feature,
-        around_env_list:  aroundEnvList
+        around_env_list:  aroundEnvList,
+        user_uid: user
     };
     return EntireState;
 };

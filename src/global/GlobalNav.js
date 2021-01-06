@@ -1,14 +1,10 @@
 import React from'react';
 import 'components/styles/GlobalNavigation.css';
-import {useRecoilValue} from 'recoil';
-import IsLoggedInState from 'recoilStates/IsLoggedInState';
+
+import { Link, useHistory } from 'react-router-dom';
 
 
 const GlobalNav = ({isFirstPage, isNotHome}) => {
-
-    const isLoggedIn = useRecoilValue(IsLoggedInState);
-
-    
     const onClick = () =>  {
         document.getElementById("nav-menu").style.display = 'none';
         document.getElementById("header-nav").style.zIndex = '10';
@@ -35,23 +31,33 @@ const GlobalNav = ({isFirstPage, isNotHome}) => {
         }, 665)
     };
 
+    const history = useHistory();
+    const goToHome = () => {
+        history.push('/');
+    };
+
     return (
         <div id="header-nav">
-            {isFirstPage && isNotHome === false ? <h3 id="our-logo" style={{display:'flex', width:window.innerWidth, justifyContent:'center', position:'absolute', zIndex:'-1', transition:'0.5s ease-in'}}>WalkWith</h3> : <></>}
-            {isNotHome ? <h3 id="our-logo" style={{display:'flex', width:window.innerWidth*0.9, justifyContent:'flex-start', position:'absolute', transition:'0.5s ease-in'}}>WalkWith</h3> : <></>}
+            {isFirstPage && isNotHome === false ?<div style={{display:'flex', width:window.innerWidth*0.55, justifyContent:'flex-start', zIndex:'-1', position:'absolute',}}> 
+                <img onClick={goToHome} id="our-logo" src={require('images/WalkWith.png').default} alt="루미너스" style={{cursor:'pointer',  width:'180px', height:'27px', transition:'0.5s ease-in'}}></img> 
+            </div>
+                 : <></>}
+            {isNotHome ?<div style={{display:'flex', width:window.innerWidth*0.9, justifyContent:'flex-start', zIndex:'-1', position:'absolute'}}>
+                <img onClick={goToHome} id="our-logo" src={require('images/WalkWith.png').default} alt="루미너스" style={{cursor:'pointer', width:'180px', height:'27px', transition:'0.5s ease-in'}}></img>
+            </div> : <></>}
             <h6 id="nav-menu" onClick={onClick} >MENU</h6>
             <div id="menu-container">
                 <h2 id="close-container" onClick={onCloseClick}>X</h2>
-                {isLoggedIn ? 
-                <a href="/my-profile" id="menu-a" className="menu-items">내 프로필</a>
+                {window.localStorage.getItem('user') ? 
+                <Link to="/my-profile" id="menu-a" className="menu-items">내 프로필</Link>
                 :
-                <a href="/sign-in" id="menu-a" className="menu-items">회원가입/로그인</a>
+                <Link to="/sign-in" id="menu-a" className="menu-items">회원가입/로그인</Link>
                 }
-                <a href="/watch-roads" id="menu-a" className="menu-items">산책로 정보</a>
-                <a href="/about-luminouss" id="menu-a" className="menu-items">About Us</a>
-                <a href="/about-luminouss-team" id="menu-a" className="menu-items">TEAM</a>
-                <a href="https://www.instagram.com/luminouss.official/" id="menu-insta" className="menu-items">Instargram</a>
-                <a href="https://www.facebook.com/Luminouss-100148985264742" id="menu-facebook" className="menu-items">Facebook</a>
+                <Link to="/watch-roads" id="menu-a" className="menu-items">산책로 정보</Link>
+                <Link to="/about-luminouss" id="menu-a" className="menu-items">About Us</Link>
+                <Link to="/about-luminouss-team" id="menu-a" className="menu-items">TEAM</Link>
+                <Link to="https://www.instagram.com/luminouss.official/" id="menu-insta" className="menu-items">Instargram</Link>
+                <Link to="https://www.facebook.com/Luminouss-100148985264742" id="menu-facebook" className="menu-items">Facebook</Link>
             </div>
         </div>
     )

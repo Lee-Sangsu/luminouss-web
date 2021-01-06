@@ -3,7 +3,6 @@ import firebase from "global/fbase";
 import { useHistory, Link } from "react-router-dom";
 import {useSetRecoilState} from 'recoil';
 import InitializeState from 'recoilStates/InitializeState';
-import IsLoggedInState from 'recoilStates/IsLoggedInState';
 import disappearPlaceholder from 'functions/DisappearPlaceHolder';
 import Footer from "components/molecules/ForHome/Footer";
 import GlobalNav from "global/GlobalNav";
@@ -16,7 +15,6 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const setInit = useSetRecoilState(InitializeState);
-    const setLoggedIn = useSetRecoilState(IsLoggedInState);
 
     const onChange = (event) => { 
         const {
@@ -36,9 +34,8 @@ const Register = () => {
         try {
             // let data;
             await firebase.auth().createUserWithEmailAndPassword(email, password);
-            //어케 홈 화면으로 다시 돌려보내지
             setInit(true);
-            setLoggedIn(true);
+            
             history.push("/");
         } catch (error) {
             setError(error.message);

@@ -4,7 +4,7 @@ import { useHistory, Link } from "react-router-dom";
 import Kakao from 'kakaojs';
 import {useSetRecoilState} from 'recoil';
 import InitializeState from 'recoilStates/InitializeState';
-import IsLoggedInState from 'recoilStates/IsLoggedInState';
+
 import 'components/styles/SignIn.css';
 import 'components/styles/Footer.css';
 
@@ -19,7 +19,7 @@ const SignIn = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const setInit = useSetRecoilState(InitializeState);
-    const setLoggedIn = useSetRecoilState(IsLoggedInState);
+
     
 
     const onChange = (event) => { 
@@ -41,7 +41,7 @@ const SignIn = () => {
             // let data;
             await firebase.auth().signInWithEmailAndPassword(email, password);
             //어케 홈 화면으로 다시 돌려보내지
-            setLoggedIn(true);
+            window.localStorage.setItem('user', 'EmailUser')
             setInit(true);
             history.push("/");
         } catch (error) {
@@ -57,9 +57,13 @@ const SignIn = () => {
                 Kakao.API.request({
                     url: '/v2/user/me',
                     success: function(res) {
-                     console.log(JSON.stringify(res))
+                    //  console.log(JSON.stringify(res))
                      setInit(true);
-                     setLoggedIn(true);
+
+                     window.localStorage.setItem('user', JSON.stringify({
+                         id: res.id,
+                         nickname: res.properties.nickname
+                     }));
                      history.push("/");
                     },
                     fail: function(error) {

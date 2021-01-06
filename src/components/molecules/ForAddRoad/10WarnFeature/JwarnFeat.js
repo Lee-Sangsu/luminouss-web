@@ -6,6 +6,7 @@ import SetEntireStates from 'functions/SetEntireStates';
 import firebase from 'global/fbase';
 import {useHistory} from 'react-router-dom';
 import * as uuid from 'uuid';
+import swal from 'sweetalert';
 
 const JwarnFeat = () => {
   const history = useHistory();
@@ -30,14 +31,14 @@ const JwarnFeat = () => {
       && a.walking_people
       && a.feature) {
         await firebase.firestore().collection("WalkRoad").doc(uuid.v4()).set(a)
-        window.alert("Document successfully written!");              
+        swal("Document successfully written!");              
         history.push('/');
       } else { 
-        window.alert("입력 정보가 충분하지 않습니다.");
+        swal("입력 정보가 충분하지 않습니다.");
       }
     }
     catch (documentError) {
-      window.alert(documentError);
+      swal(documentError);
     }
   };
   const abort = () => console.log('abort'); 

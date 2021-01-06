@@ -7,6 +7,41 @@
   font-weight: bold;
   font-size: 36px;
 }
+#profile-h1 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  /* height: 100px; */
+  margin-block-start: 0;
+}
+
+#profile-h2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  height: 257px;
+  margin-block-start: 0;
+}
+#logout {
+  margin-top: 54px;
+  width: 384px;
+  height: 60px;
+  background: rgba(41, 117, 61, 1);
+  border-radius: 16px;
+  border-width: 0;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+}
 
 #sign-in-form {
   display: flex;

@@ -4,7 +4,7 @@ import RoadNameState from 'recoilStates/Addroad/RoadNameState';
 import axios from 'axios';
 import kakaoAuthKey from 'global/KakaoAuthKey';
 import SearchedResultState from 'recoilStates/Addroad/searched/SearchedResultState'
-
+import swal from 'sweetalert';
 
 const RoadNameInput = ( {placeholder} ) => {
     const setSearchState = useSetRecoilState(SearchedResultState);
@@ -44,7 +44,7 @@ const RoadNameInput = ( {placeholder} ) => {
       document.getElementById("road-head").style.display = 'none';
       document.getElementById("road-address").style.display = 'none';
     } else {
-      window.alert('검색어를 입력해주세요.');
+      swal('검색어를 입력해주세요.');
     }
     
   };

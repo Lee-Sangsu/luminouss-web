@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   background: none;
-  transition: background 1s ease;
+  transition: 1s ease;
   height: 30px;
 }
 

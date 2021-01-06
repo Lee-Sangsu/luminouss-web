@@ -121,7 +121,7 @@
   width: 100%;
   height: 45vh;
   position: absolute;
-  background-color: yellow;
+  /* background-color: yellow; */
   transition: 0.9s ease;
   z-index: -3;
 }

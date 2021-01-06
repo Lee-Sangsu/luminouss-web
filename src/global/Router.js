@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter,  Route, Switch } from "react-router-dom";
 // import Navigation from './GlobalNavigation';
-import Home from 'components/pages/Home';
+// import Home from 'components/pages/Home';
 import About from 'components/pages/About';
 import Profile from 'components/pages/Profile';
 import AddRoad from "components/pages/AddRoad";
@@ -19,16 +19,13 @@ import {
 } from 'recoil';
 import NewHome from 'components/pages/NewHome';
 
-const AppRouter = ({ isLoggedIn }) => {
+const AppRouter = () => {
     return (<RecoilRoot>
           <BrowserRouter >
             {/* <Navigation isLoggedIn={isLoggedIn}/> */}
             <Switch>
-              <Route exact path="/old-home">
-                <Home isLoggedIn={isLoggedIn}/>
-              </Route>
               <Route exact path="/">
-                <NewHome isLoggedIn={isLoggedIn} />
+                <NewHome />
               </Route>
               <Route exact path="/about-luminouss">
                 <About />

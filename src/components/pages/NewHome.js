@@ -4,6 +4,7 @@ import MsgContainer from "components/molecules/MsgContainer";
 import GlobalNav from "global/GlobalNav";
 import onSoundBtnClick from 'functions/onSoundBtnClick';
 import HomeThird from "components/organisms/HomeThird";
+import "components/styles/Home.css";
 
 const NewHome = () => {
     const [currentPage, setPage] = React.useState(0);
@@ -16,6 +17,7 @@ const NewHome = () => {
             // 원래 처음 화면으로 돌리고, 이 버튼은 사라지게 하라
             document.getElementById("circle3").style.backgroundColor = 'rgba(41, 117, 61, 1)';
             document.getElementById("block-img").style.opacity = '0';
+            document.getElementById("test").style.flex= 'none';
             document.getElementById("msg-container").style.top = '62%';
             [].forEach.call(dCircles, function (el) {
                 el.style.opacity = '1';
@@ -28,7 +30,7 @@ const NewHome = () => {
             document.getElementById("msg-container").style.top = `100px`;
             document.getElementById("test").style.opacity = '0';
             document.getElementById("header-nav").style.zIndex = 6;
-            document.getElementById("arrows").style.zIndex = '8';
+            // document.getElementById("arrows").style.zIndex = '8';
             [].forEach.call(arrows, function (el) {
                 el.style.borderColor = 'black';
             });
@@ -42,7 +44,7 @@ const NewHome = () => {
             document.getElementById("test").style.opacity = '1';
             document.getElementById("test").style.zIndex = '2';
             document.getElementById("entire-home").style.overflow = 'hidden';
-            document.getElementById("arrows").style.height = `${window.innerHeight}px`;
+            // document.getElementById("arrows").style.height = `${window.innerHeight}px`;
             document.getElementById("header-nav").style.zIndex = '-1';
 
             // Disappear Introduction & Footer
@@ -60,6 +62,7 @@ const NewHome = () => {
             document.getElementById("msg-container").style.top = '100px';
             document.getElementById("our-logo").style.opacity = '0';
             document.getElementById("block-img").style.opacity = '1';
+            document.getElementById("test").style.display = 'flex';
 
             [].forEach.call(dCircles, function (el) {
                 el.style.opacity = '0';
@@ -74,7 +77,7 @@ const NewHome = () => {
             document.getElementById("msg-container").style.top = `-50vh`;
             document.getElementById("test").style.opacity = '1';
             document.getElementById("header-nav").style.zIndex = '-1';
-            document.getElementById("arrows").style.zIndex = '3';
+
             [].forEach.call(arrows, function (el) {
                 el.style.borderColor = 'white';
             });
@@ -84,8 +87,8 @@ const NewHome = () => {
             document.getElementById("test").style.opacity = '0';
             document.getElementById("test").style.zIndex = '-3';
             document.getElementById("header-nav").style.zIndex = '6';
-            document.getElementById("arrows").style.zIndex = '8';
-            document.getElementById("arrows").style.height = '114px';
+            // document.getElementById("arrows").style.zIndex = '8';
+            // document.getElementById("arrows").style.height = '114px';
             // Appear Introduction & Footer
             [].forEach.call(arrows, function (el) {
                 el.style.borderColor = 'black';
@@ -116,7 +119,7 @@ const NewHome = () => {
             {/* <div id="before-home" onClick={homePageChange} style={{width:window.innerWidth*0.7, height:window.innerHeight, background:'none', position:'fixed', zIndex:'2'}}> */}
                 <MsgContainer />
                 <BackgroundCircles />
-                <div id="block-img" style={{top:window.innerHeight*0.55}}></div>
+                <img id="block-img" src={require('images/block-img.jpg').default} alt="유도블록 사진" style={{top:window.innerHeight*0.55}}></img>
             {/* </div> */}
 
                 <div id="test">

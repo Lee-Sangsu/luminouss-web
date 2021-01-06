@@ -3,10 +3,11 @@
 import React from 'react';
 import firebase from "global/fbase";
 import RoadNameItem from 'components/molecules/ForWatchRoads/RoadNameItem';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import GlobalNav from 'global/GlobalNav';
 import Subject from 'components/molecules/Subject';
 import Footer from 'components/molecules/ForHome/Footer';
+import swal from 'sweetalert';
 
 const WatchRoads = () => {
     const [roadNames, setRoadNames] = React.useState([]);
@@ -25,6 +26,18 @@ const WatchRoads = () => {
         } catch(e){console.log(e);}
 
     };
+
+     const history = useHistory();
+
+    const checkLogin = (event) => {
+        event.preventDefault();
+        if (window.localStorage.getItem('user')){
+            history.push('/add-road-info');
+        } else {
+            swal("산책로 정보를 추가하려면 로그인이 필요합니다.");
+            history.push('/sign-in');
+        }
+    }
      
     // 화면 켜질때 딱 한번만 array에 담는걸 어떻게 할까.. 
     React.useEffect(() => {
@@ -38,7 +51,7 @@ const WatchRoads = () => {
         <Subject id='roads-info' circleColor='rgba(255, 193, 7, 1)' text="산책로 정보" />
         <div id="road-container">
             <div id="new-road-box" >
-                <Link to="/add-road-info" id="road-watch">
+                <Link to="/add-road-info" onClick={checkLogin} id="road-watch">
                     <h2 id="road-box-name">새로운 산책로 등록</h2>
                 </Link>
             </div>

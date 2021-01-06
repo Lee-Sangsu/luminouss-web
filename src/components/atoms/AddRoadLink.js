@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './LinkToAddRoad.css';
-import { useRecoilValue } from 'recoil';
-import IsLoggedInState from 'recoilStates/IsLoggedInState';
+// import { useRecoilValue } from 'recoil';
+// import IsLoggedInState from 'recoilStates/IsLoggedInState';
+import swal from 'sweetalert';
 
 const AddRoadLink = () => {
-    const isLoggedIn = useRecoilValue(IsLoggedInState);
+    // const isLoggedIn = useRecoilValue(IsLoggedInState);
     const history = useHistory();
 
     const checkLogin = (event) => {
         event.preventDefault();
-        if (isLoggedIn){
+        if (window.localStorage.getItem('user')){
             history.push('/add-road-info');
         } else {
-            window.alert("산책로 정보를 추가하려면 로그인이 필요합니다.");
+            swal("산책로 정보를 추가하려면 로그인이 필요합니다.");
             history.push('/sign-in');
         }
     }
@@ -30,7 +31,7 @@ const AddRoadLink = () => {
                     fontWeight:'bold',
                     fontSize:'18px',
                     lineHeight:'20px',
-                    marginRight: '10px'
+                    margin: '0 10px'
 
                 }}>산책로 정보 추가하러 가기</span>
             </div>

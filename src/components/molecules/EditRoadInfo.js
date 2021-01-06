@@ -4,7 +4,7 @@ import firebase from 'global/fbase';
 import EditRoadInfoState from 'recoilStates/EditRoadInfoState';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import Subject from 'components/molecules/Subject';
-
+import swal from 'sweetalert';
 import EditFeature from './ForEditRoad/EditFeature';
 import EditAddress from './ForEditRoad/EditAddress';
 import EditRest from './ForEditRoad/EditRest';
@@ -41,6 +41,8 @@ const EditRoadInfo = ({data}) => {
     const [envState, setEnvState] = React.useState(`${data.road_env}`);
     const [length, setLength] = React.useState(`${data.entire_length}`);
     const [roadName, setRoadName] =  React.useState(`${data.road_name}`);
+    const [toilet, setToilet] =  React.useState(`${data.toilet}`);
+    const [bench, setBench] =  React.useState(`${data.bench_and_rest}`);
     
     const onChange = (event) => {
         event.preventDefault();
@@ -106,10 +108,12 @@ const EditRoadInfo = ({data}) => {
             safety_fence: fenceScore,
             road_env:envState,
             entire_length:length,
-            road_name:roadName
+            road_name:roadName,
+            bench_and_rest: bench,
+            toilet:toilet
         })
         .then(function() {
-            window.alert("Document successfully updated!");
+            swal("Document successfully updated!");
             history.push('/watch-roads');
         })
         .catch(function(error) {
@@ -187,7 +191,7 @@ const EditRoadInfo = ({data}) => {
     } else if (wannaEdit === "rest") {
         return (
             <div id='edit-container'>
-                <EditRest />
+                <EditRest setBench={setBench} setToilet={setToilet} />
                 <button id="to-next-page" onClick={() => setWannaEdit('no-anymore')}>확인</button>
             </div>
         );
