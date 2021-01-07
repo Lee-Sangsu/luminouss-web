@@ -118,7 +118,7 @@ const Grest = ({handlePageChange}) => {
           </div>
         </div>
         {benchIsExist ? <div id="second-bench"> <div className="questions-form">
-          <h3 id='bench' className='question'>산책로에 있는 화장실을 셀 수 있었나요?</h3>
+          <h3 id='bench' className='question'>산책로에 있는 벤치와 같은 휴식 공간 등을 셀 수 있었나요?</h3>
           <input className="yes-input" type="radio" value="yes" name="second-b-yes" checked={benchMQuestion === true} onChange={onChange} />
           <input type="radio" value="no" name="second-b-no" checked={benchMQuestion === false} onChange={onChange} /> 
         </div></div>:<></>}

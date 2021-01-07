@@ -31,7 +31,7 @@ const JwarnFeat = () => {
       && a.walking_people
       && a.feature) {
         await firebase.firestore().collection("WalkRoad").doc(uuid.v4()).set(a)
-        swal("Document successfully written!");              
+        swal("성공적으로 등록되었습니다!");              
         history.push('/');
       } else { 
         swal("입력 정보가 충분하지 않습니다.");
