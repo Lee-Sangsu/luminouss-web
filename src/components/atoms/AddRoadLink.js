@@ -4,6 +4,7 @@ import './LinkToAddRoad.css';
 // import { useRecoilValue } from 'recoil';
 // import IsLoggedInState from 'recoilStates/IsLoggedInState';
 import swal from 'sweetalert';
+// import SendSMS from 'functions/SendSMS';
 
 const AddRoadLink = () => {
     // const isLoggedIn = useRecoilValue(IsLoggedInState);
@@ -12,10 +13,14 @@ const AddRoadLink = () => {
     const checkLogin = (event) => {
         event.preventDefault();
         if (window.localStorage.getItem('user')){
-            history.push('/add-road-info');
+            // swal("문자 받아라 이녀석").then(() => {
+            //     SendSMS();
+                history.push('/add-road-info');
+            // });
         } else {
-            swal("산책로 정보를 추가하려면 로그인이 필요합니다.");
-            history.push('/sign-in');
+            swal("산책로 정보를 추가하려면 로그인이 필요합니다.").then(() => {
+                history.push('/sign-in');
+            })
         }
     }
 
