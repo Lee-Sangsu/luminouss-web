@@ -56,8 +56,8 @@ const GlobalNav = ({isFirstPage, isNotHome}) => {
                 <Link to="/watch-roads" id="menu-a" className="menu-items">산책로 정보</Link>
                 <Link to="/about-luminouss" id="menu-a" className="menu-items">About Us</Link>
                 <Link to="/about-luminouss-team" id="menu-a" className="menu-items">TEAM</Link>
-                <Link to="https://www.instagram.com/luminouss.official/" id="menu-insta" className="menu-items">Instargram</Link>
-                <Link to="https://www.facebook.com/Luminouss-100148985264742" id="menu-facebook" className="menu-items">Facebook</Link>
+                <a href="https://www.instagram.com/luminouss.official/" id="menu-insta" className="menu-items">Instargram</a>
+                <a href="https://www.facebook.com/Luminouss-100148985264742" id="menu-facebook" className="menu-items">Facebook</a>
             </div>
         </div>
     )
