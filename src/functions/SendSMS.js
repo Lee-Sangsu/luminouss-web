@@ -12,9 +12,12 @@ const SendSMS = (userName, userPhoneNum) => {
     var newLine = "\n";				// new line
     var method = "POST";				// method
     var url = `/services/${process.env.REACT_APP_NAVER_ID}/messages`;	// url (include query string)
+    console.log(url);
     var timestamp = `${now}`;			// current timestamp (epoch)
-    var accessKey = `${process.env.NAVER_ACCESS_KEY}`;			// access key id (from portal or Sub Account)
+    var accessKey = `B3Oqenq3SqhBEuQBxQl3`;	// access key id (from portal or Sub Account)
+    console.log(`${accessKey}`)
     var secretKey = `${process.env.REACT_APP_NAVER_SECRET_KEY}`;			// secret key (from portal or Sub Account)
+    console.log(secretKey)		
 
     var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, secretKey);
     hmac.update(method);
@@ -25,7 +28,6 @@ const SendSMS = (userName, userPhoneNum) => {
     hmac.update(newLine);
     hmac.update(accessKey);
     console.log(now);
-    console.log(accessKey);
     var hash = hmac.finalize();
 
     const signature = hash.toString(CryptoJS.enc.Base64);
@@ -35,11 +37,11 @@ const SendSMS = (userName, userPhoneNum) => {
         headers : {
             'Content-Type': 'application/json; charset=utf-8',
             'x-ncp-apigw-timestamp': `${now}`,
-            'x-ncp-iam-access-key': `${process.env.NAVER_ACCESS_KEY}`,
-            'x-ncp-apigw-signature-v2': `${signature}`,
+            'x-ncp-iam-access-key': `B3Oqenq3SqhBEuQBxQl3`,
+            'x-ncp-apigw-signature-v2': signature,
             'Access-Control-Allow-Origin': '*'
         },
-        body : {
+        data : {
             'type' : "SMS",
             'from' : '01058745988',
             'content' : `${userName}님, 문자 왔다`,
