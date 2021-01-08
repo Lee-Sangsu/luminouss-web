@@ -4,7 +4,9 @@ import './LinkToAddRoad.css';
 // import { useRecoilValue } from 'recoil';
 // import IsLoggedInState from 'recoilStates/IsLoggedInState';
 import swal from 'sweetalert';
-// import SendSMS from 'functions/SendSMS';
+import SendSMS from 'functions/SendSMS';
+import firebase from 'global/fbase';
+
 
 const AddRoadLink = () => {
     // const isLoggedIn = useRecoilValue(IsLoggedInState);
@@ -15,6 +17,16 @@ const AddRoadLink = () => {
         if (window.localStorage.getItem('user')){
             // swal("문자 받아라 이녀석").then(() => {
             //     SendSMS();
+            var userName;
+            if (window.localStorage.getItem('user') === 'EmailUser'){
+                const user = firebase.auth().currentUser;
+                userName = user.email;
+            } else {
+                userName = JSON.parse(window.localStorage.getItem('user')).nickname;
+            }
+            const userPhonNum = '01052471879'
+
+                SendSMS(userName, userPhonNum)
                 history.push('/add-road-info');
             // });
         } else {

@@ -4,8 +4,8 @@ import SMSState from "recoilStates/SMSState";
 import CryptoJS from 'crypto-js';
 
 
-const SendSMS = (userName) => {
-    const setSMSState = useSetRecoilState(SMSState);
+const SendSMS = (userName, userPhoneNum) => {
+    // const setSMSState = useSetRecoilState(SMSState);
     const now = Date.now();
     
     var space = " ";				// one space
@@ -24,7 +24,8 @@ const SendSMS = (userName) => {
     hmac.update(timestamp);
     hmac.update(newLine);
     hmac.update(accessKey);
-
+    console.log(now);
+    console.log(accessKey);
     var hash = hmac.finalize();
 
     const signature = hash.toString(CryptoJS.enc.Base64);
@@ -32,14 +33,21 @@ const SendSMS = (userName) => {
 
     axios.post(`https://sens.apigw.ntruss.com/sms/v2/services/${process.env.REACT_APP_NAVER_ID}/messages`, {
         headers : {
-            'Content-Type': 'application/json',
-            'x-ncp-apigw-timestamp': `${now.getTime()}`,
-            'x-ncp-iam-access-key': `${process.env.REACT_APP_NAVER_SECRET_KEY}`,
-            'x-ncp-apigw-signature-v2': `${signature}`
+            'Content-Type': 'application/json; charset=utf-8',
+            'x-ncp-apigw-timestamp': `${now}`,
+            'x-ncp-iam-access-key': `${process.env.NAVER_ACCESS_KEY}`,
+            'x-ncp-apigw-signature-v2': `${signature}`,
+            'Access-Control-Allow-Origin': '*'
         },
         body : {
             'type' : "SMS",
-            
+            'from' : '01058745988',
+            'content' : `${userName}님, 문자 왔다`,
+            'messages': [
+                {
+                    'to': userPhoneNum
+                }
+            ]
         }
     }).then((res) => console.log(res)).catch((e) => console.log(e));
 
