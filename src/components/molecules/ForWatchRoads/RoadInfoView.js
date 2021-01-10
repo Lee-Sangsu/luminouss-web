@@ -1,5 +1,4 @@
 import React from 'react';
-import 'components/styles/RoadInfo.css';
 import EditRoadInfoState from 'recoilStates/EditRoadInfoState';
 import {useSetRecoilState} from 'recoil';
 

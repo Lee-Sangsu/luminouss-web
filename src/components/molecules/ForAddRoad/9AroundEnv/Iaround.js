@@ -13,14 +13,7 @@ const Iaround = ({handlePageChange}) => {
     const envSearchResults = useRecoilValue(EnvSearchState);
 
     return (
-        <div style={{
-         display:'flex',
-          height:'100%',
-          flexDirection:'column',
-          width:'100%',
-          justifyContent:'center',
-          alignItems:'center'
-        }}>
+        <div id='iaround-container'>
           <h4>산책로 근처에는 어떤 음식점이나 카페들이 있었나요?</h4>
           <SearchAroundEnv placeholder="음식점 이름 등을 입력하세요" />
           <div id="aroundenv">

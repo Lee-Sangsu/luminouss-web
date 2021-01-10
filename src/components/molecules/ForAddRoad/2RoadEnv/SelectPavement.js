@@ -28,17 +28,9 @@ const SelectPavement = () => {
     };
 
     return (
-        <div style={{
-            display:'flex',
-            flexDirection:'column',
-            alignItems:'center'
-        }}>
+        <div id="select-pavement">
             <h3 id="subsubtitle">포장 재질</h3>
-            <div style={{
-                display:'flex',
-                flexDirection:'column',
-                alignItems:'center'
-            }}>
+            <div id="pavement-dropdown">
                 <Dropdown options={options} onChange={onSelect} value={state} placeholder="길 포장 재질" />
                 {state === options[4] ? <div style={{display:'flex', flexDirection:'row'}}>
                  <input onChange={onChange} id="pavement-input" name="except value" value={exceptState} placeholder='포장 재질을 직접 입력해주세요' /> 

@@ -17,14 +17,7 @@ const Eothersup = ({handlePageChange}) => {
     };
 
     return (
-        <div style={{
-            display:'flex',
-            width:'100%',
-            height:'100%',
-            justifyContent:'center',
-            alignItems:'center',
-            flexDirection:'column'
-        }}>
+        <div id="other-sup-container">
             <h3 id="subtitle">보조시설에 대한 질문입니다.</h3>
             <h4 id="supsubtitle">산책로 내부나 산책로 주변 횡단보도에 음성유도기가 몇 개 있었나요?</h4>
             <label>

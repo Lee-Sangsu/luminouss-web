@@ -4,16 +4,9 @@ const CheckExist = ({handlePageChange, setLeadBlock}) => {
 
     //useRef 아용해서 다음 혹은 다다음 페이지로 넘기기
     return (
-        <div style={{
-            display:'flex',
-            width: '100%', 
-            height: '100%',
-            justifyContent:'center',
-            alignItems:'center',
-            flexDirection:'column'
-        }}>
+        <div id="check-exist">
             <h3 id='subtitle'>산책로에 유도블록이 있었나요?</h3>
-            <div style={{display:'flex', flexDirection:'row', marginTop:'20px'}}>
+            <div id="ox-btns">
                 <button id="o-btn" onClick={()=>{
                     setLeadBlock(true);
                     handlePageChange(5);

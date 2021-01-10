@@ -34,17 +34,9 @@ const InputAddress = () => {
 
     //isEmpty check 해서 state ''면 에러 배텅
     return (
-        <div id='road-res-entire' style={{
-            marginTop:'30px',
-            marginBottom:'30px',
-            display:'none'
-        }}>
-            <h3 id="road-head" style={{
-            display: "none"
-          }}>산책로 위치: </h3>
-            <h5 id='road-address' style={{
-                display: "none"
-            }}>{add.address_name}</h5>
+        <div id='road-res-entire'>
+            <h3 id="road-head">산책로 위치: </h3>
+            <h5 id='road-address'>{add.address_name}</h5>
             {address[0] ? (
                 <>
                 <h5 id='address-area'> {`산책로가 ${address[0].area} 외에 다른 행정 구역에 걸쳐져 있나요?`} </h5>

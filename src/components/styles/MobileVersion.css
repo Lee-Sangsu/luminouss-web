@@ -1,0 +1,456 @@
+@media only screen and (max-width: 500px) {
+  @font-face {
+    font-family: "NanumSquareRoundR";
+    src: url("/src/fonts/NanumSquareRoundR.ttf");
+  }
+
+  h3 {
+    font-size: 17px;
+    margin-block-end: 0.5em;
+  }
+
+  h5 {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    font-size: 13px;
+  }
+
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  button,
+  pre {
+    font-family: "NanumSquareRoundR", sans-serif;
+  }
+
+  img {
+    padding: 20px 0;
+  }
+
+  @keyframes appearing-opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Global Navigation */
+  #header-nav {
+    width: 20%;
+    margin-left: 80%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: fixed;
+    z-index: 6;
+  }
+
+  #nav-menu {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    color: #000000;
+    margin-right: 21px;
+    height: 20px;
+  }
+
+  #menu-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #29753d;
+    justify-content: flex-start;
+    width: 0%;
+    transition: 0.4s ease-out;
+    position: absolute;
+    border-left: 0.5px groove white;
+  }
+
+  #close-container {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    color: #000000;
+    margin-right: 21px;
+    height: 20px;
+    margin-block-start: 2.33em;
+    margin-block-end: 2.33em;
+  }
+
+  /* NewHome */
+
+  #block-img {
+    width: 100%;
+    height: 192.66px;
+    position: absolute;
+    z-index: -2;
+  }
+
+  #test {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    position: absolute;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    transition: 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+  }
+
+  /* #third-page {
+    display: none;
+  } */
+
+  .arrow {
+    z-index: 8;
+    margin-left: 48%;
+    position: absolute;
+    border: solid black;
+    border-width: 0 7px 7px 0;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    margin-top: 20px;
+  }
+
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin-bottom: 20px;
+    cursor: pointer;
+    margin-top: 90vh;
+  }
+
+  /* MsgContainer */
+  #msg-container {
+    position: absolute;
+    z-index: 5;
+    left: 5%;
+    top: 74px;
+    width: 332px;
+    height: 336px;
+    transition: 0.7s ease-in;
+  }
+
+  #msg-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 68px;
+    margin-block-end: 0.45em;
+  }
+
+  #main-msg {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+    width: 332px;
+    margin-right: 56px;
+    margin-block-end: 40px;
+  }
+  #menu-a {
+    color: white;
+    font-weight: 300;
+    line-height: 64px;
+    padding-left: 13%;
+    font-size: 20px;
+    text-decoration: none;
+    margin-bottom: 6%;
+  }
+
+  #menu-insta {
+    margin-top: 40%;
+  }
+
+  #menu-insta,
+  #menu-facebook {
+    color: white;
+    font-weight: 300;
+    padding-left: 13%;
+    text-decoration: none;
+    line-height: 40px;
+  }
+
+  .menu-items {
+    transition: color 0.5s ease-out;
+    word-wrap: none;
+  }
+  #menu-insta:hover,
+  #menu-facebook:hover,
+  #menu-a:hover {
+    color: rgba(255, 193, 7, 1);
+  }
+
+  /* HomeThird */
+  #introduction-container {
+    height: 265px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #c3c3c3;
+  }
+
+  #down-our-intro {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 27px;
+    text-align: center;
+    width: 100%;
+  }
+
+  #btns {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #brand-book,
+  #see-now {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 156px;
+    height: 42px;
+    background: #c4c4c4;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 16px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 27px;
+    color: #000000;
+    transition: 0.5s ease-in;
+  }
+
+  #brand-book:hover,
+  #see-now:hover {
+    background: rgba(41, 117, 61, 1);
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Footer */
+  #footer-white {
+    height: 343px;
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  #footer-left-pre {
+    margin: 0;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 27px;
+  }
+
+  #address-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 47px;
+  }
+
+  #address-infos {
+    /* width: 100px; */
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  #address-things {
+    display: flex;
+    width: 36px;
+    margin-right: 63px;
+    height: 84px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  #btn-text,
+  #address-thing,
+  #address-info {
+    margin: 0;
+  }
+
+  #copy-rights {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  /* Addroad Link */
+  #link-to-add-road {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background: none;
+    transition: 1s ease;
+    height: 30px;
+    width: 269px;
+    margin-top: 8px;
+  }
+
+  /* #link-to-add-road:hover {
+    background: #ffc107;
+  } */
+
+  #link-text {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 27px;
+  }
+
+  /* Profile */
+  #profile-h2 {
+    padding-block-start: 74px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 94%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 27px;
+    margin-left: 6%;
+  }
+  #profile-hr-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #profile-hr {
+    width: 120px;
+    height: 8px;
+    margin-top: 20px;
+    background-color: #232323;
+  }
+  #profile-h1 {
+    padding-left: 24%;
+  }
+
+  #logout {
+    width: 332px;
+    height: 51.88px;
+    background: #29753d;
+    border-radius: 16px;
+    border-width: 0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  /* WatchRoads */
+  #roads-info {
+    padding-block-start: 74px;
+    width: 94%;
+    margin: 0;
+    margin-left: 6%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  #road-container {
+    z-index: 7;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 6%;
+    width: 88%;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 33px;
+  }
+
+  #new-road-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid black;
+    align-items: center;
+    width: 332px;
+    height: 130px;
+    /* margin-right: 20px; */
+    border-radius: 16px;
+    transition: 0.7s ease-in;
+    background-color: white;
+  }
+
+  #road-watch {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+  }
+
+  #road-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid black;
+    align-items: center;
+    width: 332px;
+    height: 130px;
+    /* margin-right: 20px; */
+    border-radius: 16px;
+    transition: 0.7s ease-in;
+    background-color: rgba(196, 196, 196, 1);
+  }
+}

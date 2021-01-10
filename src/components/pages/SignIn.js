@@ -5,9 +5,6 @@ import Kakao from 'kakaojs';
 import {useSetRecoilState} from 'recoil';
 import InitializeState from 'recoilStates/InitializeState';
 
-import 'components/styles/SignIn.css';
-import 'components/styles/Footer.css';
-
 import Footer from "components/molecules/ForHome/Footer";
 import GlobalNav from "global/GlobalNav";
 import Subject from "components/molecules/Subject";

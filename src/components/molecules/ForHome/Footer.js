@@ -1,6 +1,5 @@
 import React from 'react';
 import AddRoadLink from 'components/atoms/AddRoadLink';
-import 'components/styles/Footer.css';
 
 const Footer = () => {
     return (

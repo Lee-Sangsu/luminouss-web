@@ -1,5 +1,4 @@
 import React from 'react';
-import 'components/styles/Addroad/WaterQuestion.css';
 import {useRecoilState} from 'recoil';
 import FenceState from 'recoilStates/Addroad/FenceState';
 

@@ -1,16 +1,17 @@
 import React from 'react';
 
-const SmallCircle = ({color, id, className}) => {
+const SmallCircle = ({size, color, id, className}) => {
     return (
         <div style={{
-            width: '35px',
-            height: '35px',
+            width: `${size}`,
+            height: `${size}`,
+            marginRight:'7px',
             overflow: 'hidden'
         }}>
             <div id={id} className={className} style={{
                 backgroundColor: color,
-                width: '35px',
-                height: '35px',
+                width: `${size}`,
+                height: `${size}`,
                 // border: `1px solid ${color}`,
                 borderRadius: '50%',
                 boxSizing: 'border-box',

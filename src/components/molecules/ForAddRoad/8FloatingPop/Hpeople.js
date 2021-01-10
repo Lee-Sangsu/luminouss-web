@@ -48,14 +48,7 @@ const Hpeople = ({handlePageChange}) => {
   };
 
   return (
-      <div style={{
-        display:'flex',
-        height:'100%',
-        flexDirection:'column',
-        width:'100%',
-        justifyContent:'center',
-        alignItems:'center'
-      }}>
+      <div id="people-container">
         <h4 id='subtitle'>유동인구에 대한 질문입니다.</h4>
         <h5 id='subsubtitle'>시간대:</h5>
         <Dropdown className='population' options={timeOptions} onChange={onTimeChange} value={time} placeholder='시간대' />

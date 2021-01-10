@@ -6,7 +6,6 @@ import kakaoAuthKey from 'global/KakaoAuthKey';
 import AroundSubwayState from 'recoilStates/Addroad/AroundSubwayState';
 import distanceInKmBetweenEarthCoordinates from 'functions/GetDistance';
 import AddressAreaState from 'recoilStates/Addroad/AddressAreaState';
-import 'components/styles/Addroad/SearchResultList.css'
 
 let id = 0;
   
@@ -81,16 +80,8 @@ const SearchResults = ( { data } ) => {
 
     return (
         <button id="item-btn" onMouseEnter={colorThis} onMouseLeave={backColor} onClick={onClick} style={{
-            width:"388px",
-            textAlign:"start",
-            textIndent:"15px",
-            borderBottomLeftRadius: '10px',
-            borderBottomRightRadius: '10px',
-            borderWidth: 0,
-            marginTop:'-3px',
             backgroundColor: mouseIn ? 'white' : 'rgba(196, 196, 196, 1)',
-            cursor: mouseIn ? 'pointer': 'unset',
-            transition: '0.5s ease'
+            cursor: mouseIn ? 'pointer': 'unset'
         }}>
             <h4 id='place-h4'>{data.place_name}</h4>
             <h6 id='place-h6'>{data.address_name}</h6>

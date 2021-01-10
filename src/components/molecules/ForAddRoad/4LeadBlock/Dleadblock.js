@@ -1,7 +1,6 @@
 import React from 'react';
 import {useRecoilState} from 'recoil';
 import LeadBlockState from 'recoilStates/Addroad/LeadBlockState';
-import 'components/styles/Addroad/Aroad.css';
 
 const Dleadblock = ({handlePageChange, leadBlock}) => {
     const [input, setInput] = useRecoilState(LeadBlockState);
@@ -70,15 +69,7 @@ const Dleadblock = ({handlePageChange, leadBlock}) => {
     };
 
     return (
-        <div style={{
-            display:'flex',
-            // marginLeft:'10%',
-            width:'100%',
-            height:'100%',
-            justifyContent:'center',
-            alignItems:'center',
-            flexDirection:'column'
-        }}>
+        <div id="lead-block-container">
             <div id='fence-page' style={{marginLeft:0, width:'100%'}}>
                 <h2 className="fence-title">유도블록에 대한 질문입니다.</h2>
                 <form>

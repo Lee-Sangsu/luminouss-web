@@ -1,5 +1,4 @@
 import React from 'react';
-import 'components/styles/About/About-Solution.css';
 import { Link } from 'react-router-dom';
 
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import 'components/styles/Footer.css';
 import Footer from 'components/molecules/ForHome/Footer';
 import firebase from 'global/fbase';
 
@@ -27,18 +26,14 @@ const HomeThird = () => {
     };
 
     return (
-        <div id="third-page" style={{
-            top:`${window.innerHeight}px`,
-        }} >
-            <div id="introduction" style={{
-                height:'55vh',
-                width:'100%',
-                display:'flex',
-                flexDirection:'column',
-                justifyContent:'center',
-                alignItems:'center',
-                background: `#C3C3C3`
-            }}>
+        <div id="third-page" style={ window.innerWidth > 500 ? {
+            top: `${window.innerHeight}px`
+        }
+        : {
+            top:`${window.innerHeight * 2}px`,
+            position:'absolute',
+        }}>
+            <div id="introduction-container" style={window.innerWidth < 500?{width:window.innerWidth}:{}}>
                 <h1 id="down-our-intro">Download Our Introduction</h1>
                 <div id="btns">
                     <button onClick={openPdf} id="brand-book">

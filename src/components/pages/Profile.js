@@ -6,6 +6,7 @@ import {useRecoilState} from 'recoil';
 import InitializeState from 'recoilStates/InitializeState';
 import GlobalNav from 'global/GlobalNav';
 import Subject from 'components/molecules/Subject';
+import Footer from 'components/molecules/ForHome/Footer';
 
 
 //updateProfile({displayName 추가 만들기})
@@ -91,7 +92,7 @@ const Profile =  () => {
   }, [getRoadInfoCurrentUser, getRoadInfoKakaoCurrentUser])
 
   return (
-    <div style={{width:'100%', height:'100%', top:0}}>
+    <div style={{width:'100%', height:'100%', top:0, left:0}}>
       <GlobalNav isFirstPage={false} isNotHome={true} />
       {/* <h2 style={{width:'100%', height:`${window.innerHeight-90}px`, display:'flex', justifyContent:'center', alignItems:'center', marginBlockStart:0}}>Profile</h2>  */}
       {/* {arr ? arr.map((data) => <div key={data.id} style={{
@@ -106,13 +107,12 @@ const Profile =  () => {
       <Subject id="profile-h2" circleColor="rgba(41, 117, 61, 1)" circleId="sign-up-circle" text={`${JSON.parse(window.localStorage.getItem('user')).nickname}님의 프로필`} />
       }
 
-      <div style={{width:'100%', display:'flex', justifyContent:'center', alignItems:'center'}} >
-        <div style={{width:'120px', height:'8px', marginTop:'20px', backgroundColor:'#232323' }} ></div>
-
+      <div id="profile-hr-container">
+        <div id="profile-hr" ></div>
       </div>
 
 
-      <Subject id="profile-h2" circleColor="rgba(41, 117, 61, 1)" circleId="sign-up-circle" text={`등록 건수`} />
+      {window.innerWidth > 500 ? <Subject id="profile-h2" circleColor="rgba(41, 117, 61, 1)" circleId="sign-up-circle" text={`등록 건수`} /> : <h2 id="profile-h2" style={{paddingLeft:'18%', width:'76%'}}>등록 건수</h2>}
 
       {arr ? 
       <h1 id="profile-h1">{arr.length}</h1>
@@ -120,16 +120,16 @@ const Profile =  () => {
       <h1 id="profile-h1">0</h1>
       }
 
-      <div style={{width:'100%', display:'flex', justifyContent:'center', alignItems:'center'}} >
-        <div style={{width:'120px', height:'8px', marginTop:'20px', backgroundColor:'#232323' }} ></div>
-
+      <div id="profile-hr-container" >
+        <div id='profile-hr'></div>
       </div>
 
 
-      <div style={{width:'100%', display:'flex', justifyContent:'center', alignItems:'center'}} >
+      <div id="profile-hr-container" >
         <button id='logout' onClick={onLogOutClick}>Log Out</button>
 
       </div>
+      <Footer />
     </div>
   );
 };

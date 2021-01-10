@@ -20,8 +20,8 @@ const AroundEnvItem = ({item}) => {
     };
   
   return (
-    <div style={{width:'700px'}}>
-      <h4 style={{display:'inline-block', marginRight:'10px'}}>{`${item.category_group_name} ${item.place_name} ${item.category}`}</h4>
+    <div id="env-item-container">
+      <h4 id="env-item-info">{`${item.category_group_name} ${item.place_name} ${item.category}`}</h4>
       <button style={{display:'inline-block'}} onClick={deleteItem}>X</button>
       {item.category_group_name === "음식점" ? <SelectCategory item={item} /> : <></>}
     </div>

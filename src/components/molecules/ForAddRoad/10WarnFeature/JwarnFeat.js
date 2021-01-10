@@ -44,14 +44,7 @@ const JwarnFeat = () => {
   const abort = () => console.log('abort'); 
   const confirmSubmit = useConfirm("등록 하시겠습니까?", submitConfirm, abort);
     return (
-        <div style={{
-          display:'flex',
-          height:'100%',
-          flexDirection:'column',
-          width:'100%',
-          justifyContent:'center',
-          alignItems:'center'
-        }}>
+        <div id="warning-container">
           <h3 style={{marginBottom:'30px'}} id="subtitle">특징 및 주의사항을 기재해주세요.</h3>
           
           <h4 id="subsubtitle">산책로 특징</h4>

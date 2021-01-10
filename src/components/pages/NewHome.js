@@ -4,7 +4,6 @@ import MsgContainer from "components/molecules/MsgContainer";
 import GlobalNav from "global/GlobalNav";
 import onSoundBtnClick from 'functions/onSoundBtnClick';
 import HomeThird from "components/organisms/HomeThird";
-import "components/styles/Home.css";
 
 const NewHome = () => {
     const [currentPage, setPage] = React.useState(0);
@@ -98,30 +97,25 @@ const NewHome = () => {
         }
     };
 
-
-    return (
-        <div id="entire-home" style= {{
-            height: window.innerHeight,
-            width: window.innerWidth,
-            overflow: 'hidden'
-        }}>
-            {/* <div id="arrows" style={{
-                height: window.innerHeight
-            }} > */}
-               {isFirstPage? <i className="arrow up" style={{opacity:'0', cursor: 'unset'}} /> : 
-                <i className="arrow up" onClick={homePageUpChange} /> 
-               }
-               {currentPage === 3 ? <span className="arrow down" onClick={homePageDownChange} style={{opacity:'0', cursor: 'unset'}} />  :
-               <span className="arrow down" onClick={homePageDownChange} /> }
-            {/* </div> */}
-
-            <GlobalNav isFirstPage={isFirstPage} isNotHome={false} />
-            {/* <div id="before-home" onClick={homePageChange} style={{width:window.innerWidth*0.7, height:window.innerHeight, background:'none', position:'fixed', zIndex:'2'}}> */}
+    if(window.innerWidth > 500) {
+        return (
+            <div id="entire-home" style= {{
+                height: window.innerHeight,
+                width: window.innerWidth,
+                overflow: 'hidden'
+            }}>
+                {isFirstPage? <i className="arrow up" style={{opacity:'0', cursor: 'unset'}} /> : 
+                    <i className="arrow up" onClick={homePageUpChange} /> 
+                }
+                {currentPage === 3 ? <span className="arrow down" onClick={homePageDownChange} style={{opacity:'0', cursor: 'unset'}} />  :
+                <span className="arrow down" onClick={homePageDownChange} /> }
+    
+                <GlobalNav isFirstPage={isFirstPage} isNotHome={false} />
+    
                 <MsgContainer />
                 <BackgroundCircles />
                 <img id="block-img" src={require('images/block-img.jpg').default} alt="유도블록 사진" style={{top:window.innerHeight*0.55}}></img>
-            {/* </div> */}
-
+    
                 <div id="test">
                     <div id="clova">
                         <img id="clova-img" src={require('images/CLOVA_dubbing_watermark_white.png').default} alt='클로바 더빙에서 제공된 음성입니다.' />
@@ -147,14 +141,64 @@ const NewHome = () => {
     }</h4>    
                         <button id="third-sound-btn" onClick={onSoundBtnClick} />
                     </div> 
-
+    
                     <h5 id="down-arrow">테스트가 종료되었습니다</h5>
                 </div>
                 
                 
                 <HomeThird /> 
-        </div>
-    )
+            </div>
+        )
+    } else if (window.innerWidth <= 500) {
+        return (
+            <div id="entire-home">
+                {isFirstPage? <i className="arrow up" style={{opacity:'0', cursor: 'unset'}} /> : 
+                    <i className="arrow up" onClick={homePageUpChange} /> 
+                }
+                {currentPage === 3 ? <span className="arrow down" onClick={homePageDownChange} style={{opacity:'0', cursor: 'unset'}} />  :
+                <span className="arrow down" onClick={homePageDownChange} /> }
+    
+                <GlobalNav isFirstPage={isFirstPage} isNotHome={false} />
+    
+                <MsgContainer />
+                <img id="block-img" src={require('images/block-img.jpg').default} alt="유도블록 사진" style={{top:`${window.innerHeight*0.69}px`}}></img>
+    
+                <div id="test" style={{top:window.innerHeight}}>
+                    <div id="clova">
+                        <img id="clova-img" src={require('images/CLOVA_dubbing_watermark_white.png').default} alt='클로바 더빙에서 제공된 음성니다.' />
+                    </div>
+                    <div className="first-test-box">
+                        <h4 id='first-h4'>
+    {`이곳을 눌러 
+    소리를 들어보세요 ->`
+    }</h4>    
+                        <button id="first-sound-btn" onClick={onSoundBtnClick} />
+                    </div> 
+                    <div id="second-test-box">
+                        <h4 id='second-h4'>
+    {`이곳을 눌러 
+    소리를 들어보세요 ->`
+    }</h4>    
+                        <button id="second-sound-btn" onClick={onSoundBtnClick} />
+                    </div> 
+                    <div id="third-test-box">
+                        <h4 id='third-h4'>
+    {`이곳을 눌러 
+    소리를 들어보세요 ->`
+    }</h4>    
+                        <button id="third-sound-btn" onClick={onSoundBtnClick} />
+                    </div> 
+    
+                    <h5 id="down-arrow">테스트가 종료되었습니다</h5>
+                </div>
+                
+                
+                <HomeThird /> 
+            </div>
+        )
+    }
+
+
 
 };
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import 'components/styles/Addroad/AddRoadStart.css';
 import Subject from 'components/molecules/Subject';
 
 const AddRoadStart = ({handlePageChange}) => {

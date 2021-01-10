@@ -43,20 +43,12 @@ const SearchResults = ( {data} ) => {
 
     return (
         <button id="item-btn" onClick={onClick} onMouseEnter={colorThis} onMouseLeave={backColor} style={{
-            width:"388px",
-            textAlign:"start",
-            textIndent:"15px",
-            borderBottomLeftRadius: '10px',
-            borderBottomRightRadius: '10px',
-            borderWidth: 0,
-            marginTop:'-3px',
             backgroundColor: mouseIn ? 'white' : 'rgba(196, 196, 196, 1)',
             cursor: mouseIn ? 'pointer': 'unset',
-            transition: '0.5s ease'
         }}>
-            <div style={{display:'flex', flexDirection:'row', alignItems:"center"}}>
+            <div id="envitem-data">
                 <h3>{data.place_name}</h3>
-                <h5 style={{marginBlockStart:'1em', marginBlockEnd:'0.5em'}}>{data.category_group_name}</h5>
+                <h5 id="envitem-data-h5">{data.category_group_name}</h5>
             </div>
             <h5>{data.address_name}</h5>
         </button>

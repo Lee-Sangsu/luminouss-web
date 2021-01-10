@@ -48,12 +48,7 @@ const SearchAroundEnv = ( {placeholder} ) => {
   };
 
   return (
-    <div style={{
-      display:"flex",
-      width:"384px",
-      height:"60px",
-      position:'relative'
-    }}>
+    <div id="search-around-env">
       <input id="search-input" name="just" onChange={onChange} value={input} placeholder={placeholder} required/>
       <button id="search-button"  onClick={onClick}> Search </button>
     </div> 

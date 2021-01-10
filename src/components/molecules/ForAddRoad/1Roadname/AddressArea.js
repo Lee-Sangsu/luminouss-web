@@ -23,9 +23,9 @@ const AddressArea = ({item}) => {
     };
   
   return (
-    <div style={{width:'700px'}}>
-      <h4 style={{display:'inline-block', marginRight:'10px'}}>{item.area}</h4>
-      <button style={{display:'inline-block'}} onClick={deleteItem}>X</button>
+    <div id="add-area">
+      <h4 id="item-area">{item.area}</h4>
+      <button id="delete-item-btn" onClick={deleteItem}>X</button>
     </div>
   );
 };

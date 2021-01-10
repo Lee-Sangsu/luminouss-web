@@ -1,6 +1,5 @@
 import React from "react";
 import Dropdown from 'react-dropdown';
-// import 'components/styles/Dropdown.css';
 import { useRecoilState } from 'recoil';
 import EnvState from 'recoilStates/Addroad/EnvState';
 
@@ -19,11 +18,7 @@ const SelectEnv = () => {
     };
 
     return (
-        <div style={{
-            display:'flex',
-            flexDirection:'column',
-            alignItems:'center'
-        }}>
+        <div id="select-env" >
             <h3 id="subsubtitle">환경</h3>
 
             <Dropdown options={options} onChange={onSelect} value={state} placeholder='환경' />

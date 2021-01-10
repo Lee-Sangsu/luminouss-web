@@ -1,5 +1,5 @@
 import React from 'react';
-import 'components/styles/Addroad/WaterQuestion.css';
+
 const EditLeadBlock = ({setBlockInput, blockInput}) => {
 
     const handleOptionChange = (event) => {

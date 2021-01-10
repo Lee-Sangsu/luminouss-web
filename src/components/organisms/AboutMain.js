@@ -1,5 +1,4 @@
 import React from 'react';
-import 'components/styles/About/About-main.css';
 import Subject from 'components/molecules/Subject';
 import Footer from 'components/molecules/ForHome/Footer';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import 'components/styles/WatchRoads.css';
 import EditRoadInfoState from 'recoilStates/EditRoadInfoState';
 import {useSetRecoilState} from 'recoil';
 

@@ -27,17 +27,9 @@ const EditPavement = ({pavementState, setPavementState, stairs, setStairState}) 
         setPavementState(exceptState);
     };
     return (
-        <div style={{
-            display:'flex',
-            flexDirection:'column',
-            alignItems:'center'
-        }}>
+        <div id="edit-pavement-container">
             <h3 id="subsubtitle">길의 포장 재질 수정하기</h3>
-            <div style={{
-                display:'flex',
-                flexDirection:'column',
-                alignItems:'center'
-            }}>
+            <div id="edit-pavement-container">
                 <Dropdown options={options} onChange={onSelect} value={pavementState} placeholder="길 포장 재질" />
                 {pavementState === options[4] ? <div style={{display:'flex', flexDirection:'row'}}>
                  <input onChange={onChange} id="pavement-input" name="except value" value={exceptState} placeholder='포장 재질을 직접 입력해주세요' /> 

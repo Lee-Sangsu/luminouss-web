@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import './LinkToAddRoad.css';
 // import { useRecoilValue } from 'recoil';
 // import IsLoggedInState from 'recoilStates/IsLoggedInState';
 import swal from 'sweetalert';
@@ -27,7 +26,7 @@ const AddRoadLink = () => {
             const userPhonNum = '01052471879'
 
                 SendSMS(userName, userPhonNum)
-                history.push('/add-road-info');
+                // history.push('/add-road-info');
             // });
         } else {
             swal("산책로 정보를 추가하려면 로그인이 필요합니다.").then(() => {
@@ -43,14 +42,7 @@ const AddRoadLink = () => {
             height: '30px'
         }}>
             <div id="link-to-add-road">
-                <span style={{
-                    fontStyle:'normal',
-                    fontWeight:'bold',
-                    fontSize:'18px',
-                    lineHeight:'20px',
-                    margin: '0 10px'
-
-                }}>산책로 정보 추가하러 가기</span>
+                <span id="link-text">산책로 정보 추가하러 가기</span>
             </div>
         </Link>
     )
