@@ -42,11 +42,6 @@ const Profile =  () => {
     }
   };
 
-  //currentUser updateProfile({displayName : input(state로)}) 이름 없을 때에는 null {userName ? <프로필> : <empty>}
-
-
-  
-
   const getRoadInfoCurrentUser = React.useCallback(async () => {
     try {
       const road = await firebase.firestore().collection('WalkRoad').where('user_uid', '==', `${user.uid}`).get()

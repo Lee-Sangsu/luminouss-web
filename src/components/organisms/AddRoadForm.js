@@ -29,10 +29,10 @@ const AddRoadForm = () => {
     return (
       <div style={{display:'flex', width:'100%', height:'100%'}}>
 
-        <Informations />
+        {window.innerWidth > 500 ? <Informations /> : <></>}
 
         <ReactPageScroller 
-        containerWidth={window.innerWidth * 0.7} 
+        containerWidth={window.innerWidth > 500 ?  window.innerWidth * 0.7 : window.innerWidth} 
         containerHeight={'100%'}
         customPageNumber={pageNum}
         pageOnChange={handlePageChange}

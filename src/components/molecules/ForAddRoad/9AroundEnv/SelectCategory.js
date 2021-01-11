@@ -44,7 +44,7 @@ const SelectCategory = ({item}) => {
 
         {category === options[options.length-1] ? <>
             <input id="etc-input" onChange={(e) => setInput(e.target.value)} value={input} placeholder="카테고리를 입력해주세요" />
-            <button onClick={onClick}>입력</button>
+            <button id="etc-btn" onClick={onClick}>입력</button>
             </>:
             <></>
         }    

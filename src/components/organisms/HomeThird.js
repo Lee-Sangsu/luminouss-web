@@ -33,7 +33,7 @@ const HomeThird = () => {
             top:`${window.innerHeight * 2}px`,
             position:'absolute',
         }}>
-            <div id="introduction-container" style={window.innerWidth < 500?{width:window.innerWidth}:{}}>
+            <div id="introduction-container" style={window.innerWidth < 500?{width:'100%'}:{}}>
                 <h1 id="down-our-intro">Download Our Introduction</h1>
                 <div id="btns">
                     <button onClick={openPdf} id="brand-book">
