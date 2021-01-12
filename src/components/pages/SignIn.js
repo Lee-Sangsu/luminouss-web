@@ -9,6 +9,7 @@ import Footer from "components/molecules/ForHome/Footer";
 import GlobalNav from "global/GlobalNav";
 import Subject from "components/molecules/Subject";
 import disappearPlaceholder from 'functions/DisappearPlaceHolder';
+import swal from "sweetalert";
 
 const SignIn = () => {
     const history = useHistory();
@@ -43,7 +44,7 @@ const SignIn = () => {
             history.push("/");
         } catch (error) {
             setError(error.message);
-            console.log(error.message);
+            swal(error.message);
         }
     };
     const loginWithKaKao = () => {
@@ -84,13 +85,13 @@ const SignIn = () => {
     <GlobalNav isNotHome={true} />
     <div id="login-container" style={{
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: window.innerWidth > 500 ? 'center':'flex-start',
         alignItems:'center',
         flexDirection: 'column',
         height: `${window.innerHeight}px`,
         backgroundColor:'#efefef'
     }}>
-        <Subject id="sign-in-h2" circleColor="rgba(41, 117, 61, 1)" circleId="login-circle" text="로그인하고 새로운 산책로를 추가해보세요" />
+        {window.innerWidth > 500 ? <Subject id="sign-in-h2" circleColor="rgba(41, 117, 61, 1)" circleId="login-circle" text="로그인하고 새로운 산책로를 추가해보세요" /> : <Subject id="sign-in-h2" circleColor="rgba(41, 117, 61, 1)" circleId="login-circle" text="로그인" /> }
 
         <form id="sign-in-form" onSubmit={onSubmit} >
             <div id='input-texts'>
@@ -100,7 +101,7 @@ const SignIn = () => {
                 <input id="pw-input" onFocus={disappearPlaceholder} name="password"  type="password" value={password} onChange={onChange} placeholder="Password" required></input>
             </div>
             <input id="sign-in-submit" type="submit" value="Log In" ></input>
-            {error}
+            {/* {error} */}
         </form>
         <button id="kakao-login" onClick={loginWithKaKao}>카카오 로그인</button>
         <h3>아직 계정이 없으신가요?</h3> <Link to="/sign-up" id="create-acc">회원가입하기</Link>

@@ -11,25 +11,23 @@ import swal from 'sweetalert';
 const JwarnFeat = () => {
   const history = useHistory();
   const a = SetEntireStates();
+  const jsonA = JSON.parse(JSON.stringify(a));
+  
   const submitConfirm = async () => {
     // recoil value 다 가져와서 firestore에 한번에 저장, -> try catch
 
+    
     try {
-      if (a.road_name 
-      && a.road_env 
-      && a.entire_length 
-      && a.address_name 
-      && a.around_subway 
-      && a.voice_induction  
-      && a.braille_notice
-      && a.safety_fence
-      && a.pavement
-      && a.stair_feature
-      && a.warning
-      && a.toilet
-      && a.bench_and_rest
-      && a.walking_people
-      && a.feature) {
+      if (jsonA.road_name  
+        && jsonA.road_env  
+        && jsonA.entire_length  
+        && jsonA.address_name  
+        && jsonA.around_subway  
+        && jsonA.voice_induction   
+        && jsonA.braille_notice 
+        && jsonA.safety_fence 
+        && jsonA.pavement 
+        && jsonA.stair_feature ) {
         await firebase.firestore().collection("WalkRoad").doc(uuid.v4()).set(a)
         swal("성공적으로 등록되었습니다!");              
         history.push('/');

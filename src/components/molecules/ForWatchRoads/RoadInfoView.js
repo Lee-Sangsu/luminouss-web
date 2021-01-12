@@ -1,6 +1,7 @@
 import React from 'react';
 import EditRoadInfoState from 'recoilStates/EditRoadInfoState';
 import {useSetRecoilState} from 'recoil';
+import { useHistory } from 'react-router-dom';
 
 const RoadInfoView = ({data, isJustEdit}) => {
     const setWannaEdit = useSetRecoilState(EditRoadInfoState);
@@ -9,9 +10,18 @@ const RoadInfoView = ({data, isJustEdit}) => {
         
     //     wannaEdit(value);
     // };
+
+    const history = useHistory();
+
+    const goPreviousPage = () => {
+        history.push("/watch-roads");
+    };
     
     return (
         <div id='info-container'>
+            {window.innerWidth < 500 && isJustEdit===false ? <div id="arrow-div">
+                <i className="arrow left" onClick={goPreviousPage} />
+            </div> : <></>}
             <div id='info' className='road-name-container'>
                 <h1 id='road-name'>{data.road_name}</h1>
                 {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('road-name')} />:<></>}
@@ -121,7 +131,7 @@ const RoadInfoView = ({data, isJustEdit}) => {
                 {isJustEdit?<img id="info-edit-img" src={require('images/edit-icon.png').default} alt="산책로 정보 수정하기" onClick={() => setWannaEdit('feature')} />:<></>}
                 </div> 
                 <h5 id='road-explanation'>{`산책로의 특징: ${data.feature}`}</h5>         
-                <h5 id='road-explanation'style={{marginBottom:'121px'}}>{`걸을 때 주의사항: ${data.warning}`}</h5>
+                <h5 id='road-explanation'style={window.innerWidth>500?{marginBottom:'121px'}:{paddingBottom:'60px'}}>{`걸을 때 주의사항: ${data.warning}`}</h5>
             </div>
 
         </div>

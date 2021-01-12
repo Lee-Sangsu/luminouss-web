@@ -103,7 +103,7 @@
 
   #block-img {
     width: 100%;
-    height: 192.66px;
+    height: 23vh;
     position: absolute;
     z-index: -2;
   }
@@ -112,7 +112,7 @@
     background-color: black;
     width: 100%;
     height: 100vh;
-    z-index: 2;
+    z-index: 10;
     position: absolute;
     align-items: center;
     justify-content: flex-start;
@@ -124,6 +124,109 @@
     -o-transition: opacity 1s ease-in-out;
   }
 
+  .first-test-box {
+    margin-top: 100px;
+    width: 100%;
+    height: 100px;
+    position: relative;
+    z-index: 3;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: appearing-opacity;
+    animation-duration: 1s;
+  }
+
+  #clova {
+    display: flex;
+    height: 30px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  #clova-img {
+    height: 25px;
+    width: auto;
+    padding: 20px;
+  }
+
+  #first-sound-btn {
+    display: inline-flex;
+    height: 80px;
+    border-color: yellow;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    background: none;
+    width: 80%;
+    animation-name: appearing-opacity;
+    animation-duration: 1s;
+  }
+
+  #first-h4 {
+    flex-wrap: wrap;
+    white-space: pre;
+    margin: 0;
+    z-index: -1;
+    color: white;
+    position: absolute;
+    animation-name: appearing-opacity;
+    animation-duration: 1s;
+  }
+
+  #second-h4,
+  #third-h4 {
+    display: none;
+    flex-wrap: wrap;
+    white-space: pre;
+    margin: 0;
+    z-index: -1;
+    color: white;
+    position: absolute;
+    animation-name: appearing-opacity;
+    animation-duration: 1s;
+  }
+
+  #second-test-box,
+  #third-test-box {
+    display: none;
+    width: 100%;
+    height: 100px;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: appearing-opacity;
+    animation-duration: 1s;
+  }
+
+  #second-sound-btn,
+  #third-sound-btn {
+    display: none;
+    height: 80px;
+    border-color: yellow;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 3px;
+    background: none;
+    width: 80%;
+    animation-name: appearing-opacity;
+    animation-duration: 1s;
+  }
+
+  #down-arrow {
+    display: none;
+    text-align: center;
+    width: 100%;
+    z-index: 3;
+    color: white;
+    animation-name: appearing-opacity;
+    animation-duration: 0.8s;
+    cursor: pointer;
+  }
+
   #third-page {
     width: 100%;
   }
@@ -131,20 +234,26 @@
   .arrow {
     z-index: 8;
     margin-left: 48%;
-    position: absolute;
+    /* position: absolute; */
     border: solid black;
-    border-width: 0 7px 7px 0;
+    border-width: 0 5px 5px 0;
     width: 10px;
     height: 10px;
     display: inline-block;
-    padding: 10px;
+    padding: 8px;
     cursor: pointer;
   }
 
-  .up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-    margin-top: 20px;
+  .left {
+    border-width: 0 4px 4px 0;
+    width: 0.5px;
+    height: 0.5px;
+    border-color: white;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    margin: 0;
+    padding: 7px;
+    position: relative;
   }
 
   .down {
@@ -152,7 +261,7 @@
     -webkit-transform: rotate(45deg);
     margin-bottom: 20px;
     cursor: pointer;
-    margin-top: 90vh;
+    /* margin-top: 93vh; */
   }
 
   /* MsgContainer */
@@ -448,21 +557,54 @@
     line-height: 16px;
     text-decoration: none;
     color: #000000;
-    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   #road-box {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-end;
+    align-items: flex-end;
     border: 2px solid black;
-    align-items: center;
     width: 332px;
     height: 130px;
-    /* margin-right: 20px; */
+    margin-top: 20px;
     border-radius: 16px;
     transition: 0.7s ease-in;
     background-color: rgba(196, 196, 196, 1);
+  }
+
+  #road-edit {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* position: absolute; */
+    /* margin-top: 67px;
+    margin-left: 12%; */
+  }
+
+  #road-edit-img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    border-width: 0px;
+    border-radius: 20px;
+  }
+  #road-item-name {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    margin-top: 8px;
+    margin-left: 8px;
   }
 
   /* AddroadStart */
@@ -785,7 +927,8 @@
     font-size: 1.5em;
   }
 
-  .fence-page {
+  .fence-page,
+  .fence-page-e {
     /* flex-direction: row;
     justify-content: flex-end; */
     display: flex;
@@ -807,7 +950,8 @@
     font-size: 11px;
   }
 
-  .yes-no {
+  .yes-no,
+  .yes-no-e {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -825,7 +969,8 @@
     font-size: 11px;
   }
 
-  .questions-form {
+  .questions-form,
+  .questions-form-e {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -836,7 +981,8 @@
     margin-left: 0;
     margin-right: 3.5%;
   }
-  .question {
+  .question,
+  .question-e {
     width: 80%;
     margin-right: 5%;
     text-align: start;
@@ -1339,5 +1485,242 @@
     line-height: 27px;
     text-align: center;
     color: #ffc107;
+  }
+
+  /* SingIn */
+  #sign-in-h2 {
+    padding-block-start: 74px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 94%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 27px;
+    padding-left: 6%;
+  }
+  #sign-in-form {
+    margin-top: 80px;
+  }
+
+  #email-input,
+  #pw-input {
+    background: #c4c4c4;
+    border-radius: 16px;
+    border-width: 0;
+    width: 315px;
+    height: 52px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: white;
+    padding-left: 15px;
+  }
+
+  #email-input::placeholder,
+  #pw-input::placeholder {
+    color: #000000;
+  }
+
+  #pw-input,
+  #sign-in-submit {
+    margin-top: 32px;
+  }
+
+  #sign-in-submit {
+    width: 330px;
+    height: 52px;
+    background: #29753d;
+    border-radius: 16px;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    border-width: 0;
+    text-align: center;
+  }
+
+  #kakao-login {
+    width: 330px;
+    height: 52px;
+    background: #ffc107;
+    border-radius: 16px;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    border-width: 0;
+    text-align: center;
+    margin-top: 58px;
+  }
+
+  #create-acc {
+    font-style: normal;
+    font-weight: bold;
+    width: 300px;
+    text-align: start;
+    font-size: 15px;
+    line-height: 16px;
+    text-decoration: none;
+    transition: 0.7s ease;
+    color: #000000;
+  }
+  #create-acc:hover {
+    color: #ffc107;
+  }
+
+  #have-acc-q,
+  #login-container > h3 {
+    font-style: normal;
+    font-weight: bold;
+    width: 300px;
+    text-align: start;
+    font-size: 15px;
+    line-height: 16px;
+    text-decoration: none;
+    color: #000000;
+  }
+
+  /* WatchRoad */
+  #arrow-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 96%;
+    padding-top: 4%;
+    padding-left: 4%;
+    background-color: #000000;
+    height: 30px;
+  }
+
+  #info-container {
+    background-color: #000000;
+    /* opacity: 0; */
+    animation-name: appearing-opacity;
+    animation-duration: 0.7s;
+    height: max-content;
+    overflow-y: hidden;
+    border-radius: 28px;
+    margin-top: -28px;
+    padding-top: 28px;
+  }
+
+  .road-name-container,
+  #road-infos {
+    padding-left: 8%;
+  }
+
+  #road-name {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 28px;
+  }
+
+  #info {
+    display: flex;
+    flex-direction: row;
+    /* width: 100%; */
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+
+  #road-explanation,
+  #sub-topics {
+    color: white;
+  }
+
+  #road-explanation {
+    font-weight: normal;
+    font-size: 18px;
+    width: 84%;
+    word-break: keep-all;
+    line-height: 24px;
+  }
+
+  #sub-topics {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 27px;
+  }
+
+  #first-hr {
+    border: 1px solid #c3c3c3;
+    width: 100%;
+  }
+
+  #middle-hr {
+    margin-left: 8%;
+    width: 84%;
+    border: 1px solid #ffc107;
+  }
+
+  /* EditRoad */
+  #edit-road {
+    display: flex;
+    width: 100%;
+    flex-direction: column-reverse;
+    padding-block-start: 74px;
+  }
+
+  #edit-road-plz {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 94%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 27px;
+    padding-left: 6%;
+  }
+
+  #info-edit-img {
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+    padding: 5px 5px;
+    border-width: 0px;
+    border-radius: 20px;
+    background-color: white;
+  }
+
+  #click-icon-plz {
+    margin-bottom: 38px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    width: 76%;
+    margin-block-start: 0.5em;
+    /* margin-left: 12%; */
+  }
+
+  #edit-container {
+    /* z-index: 20; */
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 38px;
+    width: 100%;
+  }
+
+  #text-input {
+    background: #c4c4c4;
+    width: 300px;
+    height: 35px;
+    border-radius: 16px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    text-indent: 18px;
+    border-width: 0;
+    cursor: text;
+    color: white;
+    margin-bottom: 20px;
   }
 }

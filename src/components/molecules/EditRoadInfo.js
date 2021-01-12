@@ -113,7 +113,7 @@ const EditRoadInfo = ({data}) => {
             toilet:toilet
         })
         .then(function() {
-            swal("Document successfully updated!");
+            swal("정보가 성공적으로 수정되었습니다!");
             history.push('/watch-roads');
         })
         .catch(function(error) {

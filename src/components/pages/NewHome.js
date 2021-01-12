@@ -9,6 +9,11 @@ const NewHome = () => {
     const [currentPage, setPage] = React.useState(0);
     const [isFirstPage, setIsFirstPage] = React.useState(true);
 
+    const testRef = React.useRef();
+    const moveScroll = () => {
+        testRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
     const homePageUpChange = () => {
         const dCircles = document.getElementsByClassName("disappear-circles");
         const arrows = document.getElementsByClassName("arrow");
@@ -123,21 +128,21 @@ const NewHome = () => {
                     <div className="first-test-box">
                         <h4 id='first-h4'>
     {`이곳을 눌러 
-    소리를 들어보세요 ->`
+    소리를 들어보세요`
     }</h4>    
                         <button id="first-sound-btn" onClick={onSoundBtnClick} />
                     </div> 
                     <div id="second-test-box">
                         <h4 id='second-h4'>
     {`이곳을 눌러 
-    소리를 들어보세요 ->`
+    소리를 들어보세요`
     }</h4>    
                         <button id="second-sound-btn" onClick={onSoundBtnClick} />
                     </div> 
                     <div id="third-test-box">
                         <h4 id='third-h4'>
     {`이곳을 눌러 
-    소리를 들어보세요 ->`
+    소리를 들어보세요`
     }</h4>    
                         <button id="third-sound-btn" onClick={onSoundBtnClick} />
                     </div> 
@@ -152,39 +157,33 @@ const NewHome = () => {
     } else if (window.innerWidth <= 500) {
         return (
             <div id="entire-home">
-                {isFirstPage? <i className="arrow up" style={{opacity:'0', cursor: 'unset'}} /> : 
-                    <i className="arrow up" onClick={homePageUpChange} /> 
-                }
-                {currentPage === 3 ? <span className="arrow down" onClick={homePageDownChange} style={{opacity:'0', cursor: 'unset'}} />  :
-                <span className="arrow down" onClick={homePageDownChange} /> }
+                
     
                 <GlobalNav isFirstPage={isFirstPage} isNotHome={false} />
     
                 <MsgContainer />
                 <img id="block-img" src={require('images/block-img.jpg').default} alt="유도블록 사진" style={{top:`${window.innerHeight*0.69}px`}}></img>
+                <span className="arrow down" style={{marginTop:`${window.innerHeight*0.95}px`}} onClick={moveScroll} /> 
     
-                <div id="test" style={{top:window.innerHeight}}>
+                <div id="test" ref={testRef} style={{top:window.innerHeight}}>
                     <div id="clova">
                         <img id="clova-img" src={require('images/CLOVA_dubbing_watermark_white.png').default} alt='클로바 더빙에서 제공된 음성니다.' />
                     </div>
                     <div className="first-test-box">
                         <h4 id='first-h4'>
-    {`이곳을 눌러 
-    소리를 들어보세요 ->`
+    {`이곳을 눌러 소리를 들어보세요`
     }</h4>    
                         <button id="first-sound-btn" onClick={onSoundBtnClick} />
                     </div> 
                     <div id="second-test-box">
                         <h4 id='second-h4'>
-    {`이곳을 눌러 
-    소리를 들어보세요 ->`
+    {`이곳을 눌러 소리를 들어보세요`
     }</h4>    
                         <button id="second-sound-btn" onClick={onSoundBtnClick} />
                     </div> 
                     <div id="third-test-box">
                         <h4 id='third-h4'>
-    {`이곳을 눌러 
-    소리를 들어보세요 ->`
+    {`이곳을 눌러 소리를 들어보세요`
     }</h4>    
                         <button id="third-sound-btn" onClick={onSoundBtnClick} />
                     </div> 

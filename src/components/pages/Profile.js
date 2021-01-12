@@ -47,7 +47,7 @@ const Profile =  () => {
       const road = await firebase.firestore().collection('WalkRoad').where('user_uid', '==', `${user.uid}`).get()
 
       road.forEach(doc => {
-        // console.log(doc.data())
+        console.log(doc.data())
         const arrObj = {
           ...doc.data(),
           id: doc.id,
@@ -62,10 +62,9 @@ const Profile =  () => {
 
   const getRoadInfoKakaoCurrentUser = React.useCallback(async () => {
     try {
-      const road = await firebase.firestore().collection('WalkRoad').where('user_uid', '==', `${JSON.parse(window.localStorage.getItem('user')).id}`).get()
+      const road = await firebase.firestore().collection('WalkRoad').where('user_uid', '==', Number(JSON.parse(window.localStorage.getItem('user')).id)).get()
 
       road.forEach(doc => {
-
         const arrObj = {
           ...doc.data(),
           id: doc.id,
@@ -89,22 +88,16 @@ const Profile =  () => {
   return (
     <div style={{width:'100%', height:'100%', top:0, left:0}}>
       <GlobalNav isFirstPage={false} isNotHome={true} />
-      {/* <h2 style={{width:'100%', height:`${window.innerHeight-90}px`, display:'flex', justifyContent:'center', alignItems:'center', marginBlockStart:0}}>Profile</h2>  */}
-      {/* {arr ? arr.map((data) => <div key={data.id} style={{
-          marginTop:"20px",
-          marginBottom:"30px"
-      }}>
-      <h4>{data.roadName}</h4>
-    </div> ):<h5>산책로 정보 불러오는 중..</h5>} */}
+
       {window.localStorage.getItem('user') === 'EmailUser' ? 
       <Subject id="profile-h2" circleColor="rgba(41, 117, 61, 1)" circleId="sign-up-circle" text={`${user.email}님의 프로필`} />
       :
       <Subject id="profile-h2" circleColor="rgba(41, 117, 61, 1)" circleId="sign-up-circle" text={`${JSON.parse(window.localStorage.getItem('user')).nickname}님의 프로필`} />
       }
 
-      <div id="profile-hr-container">
+      {window.innerWidth > 500 ? <div id="profile-hr-container">
         <div id="profile-hr" ></div>
-      </div>
+      </div> : <></>}
 
 
       {window.innerWidth > 500 ? <Subject id="profile-h2" circleColor="rgba(41, 117, 61, 1)" circleId="sign-up-circle" text={`등록 건수`} /> : <h2 id="profile-h2" style={{paddingLeft:'18%', width:'76%'}}>등록 건수</h2>}
@@ -118,6 +111,14 @@ const Profile =  () => {
       <div id="profile-hr-container" >
         <div id='profile-hr'></div>
       </div>
+
+      {window.innerWidth > 500 ? <Subject id="profile-h2" circleColor="rgba(41, 117, 61, 1)" circleId="sign-up-circle" text={`리워드`} /> : <h2 id="profile-h2" style={{paddingLeft:'18%', width:'76%'}}>리워드</h2>}
+
+      {arr ? 
+      <h1 id="profile-h1">{arr.length * 200}p</h1>
+      :
+      <h1 id="profile-h1">0p</h1>
+      }
 
 
       <div id="profile-hr-container" >
