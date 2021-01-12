@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.b73a8d99.chunk.css",
-    "main.js": "/static/js/main.a8aac352.chunk.js",
-    "main.js.map": "/static/js/main.a8aac352.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.7ed7b6d1.js",
-    "runtime-main.js.map": "/static/js/runtime-main.7ed7b6d1.js.map",
-    "static/js/2.b708ecbe.chunk.js": "/static/js/2.b708ecbe.chunk.js",
-    "static/js/2.b708ecbe.chunk.js.map": "/static/js/2.b708ecbe.chunk.js.map",
+    "main.css": "/static/css/main.91caf815.chunk.css",
+    "main.js": "/static/js/main.cd12023f.chunk.js",
+    "main.js.map": "/static/js/main.cd12023f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2c50685e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2c50685e.js.map",
+    "static/js/2.9cae959f.chunk.js": "/static/js/2.9cae959f.chunk.js",
+    "static/js/2.9cae959f.chunk.js.map": "/static/js/2.9cae959f.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.b73a8d99.chunk.css.map": "/static/css/main.b73a8d99.chunk.css.map",
-    "static/js/2.b708ecbe.chunk.js.LICENSE.txt": "/static/js/2.b708ecbe.chunk.js.LICENSE.txt",
+    "static/css/main.91caf815.chunk.css.map": "/static/css/main.91caf815.chunk.css.map",
+    "static/js/2.9cae959f.chunk.js.LICENSE.txt": "/static/js/2.9cae959f.chunk.js.LICENSE.txt",
     "static/media/FirstVoice.mp3": "/static/media/FirstVoice.4263b7ea.mp3",
-    "static/media/Font.css": "/static/media/NanumSquareRoundR.f062cb52.ttf",
+    "static/media/MobileVersion.css": "/static/media/NanumSquareRoundR.f062cb52.ttf",
     "static/media/SecondVoice.mp3": "/static/media/SecondVoice.d618485b.mp3",
     "static/media/ThirdVoice.mp3": "/static/media/ThirdVoice.05f40713.mp3",
+    "static/media/appuimobile.png": "/static/media/appuimobile.d160970a.png",
     "static/media/block-img.jpg": "/static/media/block-img.ada303aa.jpg",
     "static/media/mobile-ui.png": "/static/media/mobile-ui.cf2b6235.png",
     "static/media/problem-back.jpg": "/static/media/problem-back.e0f00de3.jpg",
@@ -25,9 +26,9 @@
     "static/media/콜라.jpg": "/static/media/콜라.7fcb6c42.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7ed7b6d1.js",
-    "static/js/2.b708ecbe.chunk.js",
-    "static/css/main.b73a8d99.chunk.css",
-    "static/js/main.a8aac352.chunk.js"
+    "static/js/runtime-main.2c50685e.js",
+    "static/js/2.9cae959f.chunk.js",
+    "static/css/main.91caf815.chunk.css",
+    "static/js/main.cd12023f.chunk.js"
   ]
 }
