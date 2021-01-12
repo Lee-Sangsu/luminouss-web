@@ -30,14 +30,14 @@ const Grest = ({handlePageChange}) => {
       setToilet('없었다.');
       document.getElementById("first-toilet").style.display='none';
     } else if (event.target.name==="second-yes"){
-      setMQuestion(true);
+      setMQuestion(false);
       setToiletExist(false);
       document.getElementById("first-toilet").style.display='none';
       document.getElementById('toilet-input').style.display = 'block';
       document.getElementById('second-toilet').style.display = 'none';
       document.getElementById('toilet-yes-no').style.display = 'none';
     }  else if (event.target.name==="second-no"){
-      setMQuestion(false);
+      setMQuestion(true);
       setToiletExist(false);
       document.getElementById("first-toilet").style.display='none';
       document.getElementById('toilet-input').style.display = 'block';
@@ -51,23 +51,23 @@ const Grest = ({handlePageChange}) => {
       setBenchExist(false);
       setBench('없었다.');
     } else if (event.target.name==="second-b-yes"){
-      setBenchMQuestion(true);
+      setBenchMQuestion(false);
       document.getElementById("first-bench").style.display='none';
       document.getElementById('bench-input').style.display = 'block';
       document.getElementById('second-bench').style.display = 'none';
       document.getElementById('bench-yes-no').style.display = 'none';
 
     } else if (event.target.name==="second-b-no"){
-      setBenchMQuestion(false);
+      setBenchMQuestion(true);
       document.getElementById("first-bench").style.display='none';
       document.getElementById('bench-input').style.display = 'block';
       document.getElementById('second-bench').style.display = 'none';
       document.getElementById('bench-yes-no').style.display = 'none';
       
-    } else if (event.target.name==="bench-q"){
+    } else if (event.target.name==="bench-m"){
       setBenchNum(event.target.value);
       setBench(`${event.target.value}개 있습니다.`);
-    } else if (event.target.name==="bench-m"){
+    } else if (event.target.name==="bench-q"){
       setBenchNum(event.target.value);
       setBench(`${event.target.value}m 마다 하나씩 있습니다.`);
     }
@@ -90,8 +90,8 @@ const Grest = ({handlePageChange}) => {
         </div>
         {toiletIsExist ?<div id="second-toilet"> <div className="questions-form">
           <h3 id='toilet' className='question'>산책로에 있는 화장실을 셀 수 있었나요?</h3>
-          <input className="yes-input" type="radio" value="yes" name="second-yes" checked={mQuestion === true} onChange={onChange} />
-          <input type="radio" value="no" name="second-no" checked={mQuestion === false} onChange={onChange} /> 
+          <input className="yes-input" type="radio" value="yes" name="second-yes" checked={mQuestion === false} onChange={onChange} />
+          <input type="radio" value="no" name="second-no" checked={mQuestion === true} onChange={onChange} /> 
         </div></div>:<></>}
           {mQuestion ? 
           <div id='toilet-input'>
@@ -119,8 +119,8 @@ const Grest = ({handlePageChange}) => {
         </div>
         {benchIsExist ? <div id="second-bench"> <div className="questions-form">
           <h3 id='bench' className='question'>산책로에 있는 벤치와 같은 휴식 공간 등을 셀 수 있었나요?</h3>
-          <input className="yes-input" type="radio" value="yes" name="second-b-yes" checked={benchMQuestion === true} onChange={onChange} />
-          <input type="radio" value="no" name="second-b-no" checked={benchMQuestion === false} onChange={onChange} /> 
+          <input className="yes-input" type="radio" value="yes" name="second-b-yes" checked={benchMQuestion === false} onChange={onChange} />
+          <input type="radio" value="no" name="second-b-no" checked={benchMQuestion === true} onChange={onChange} /> 
         </div></div>:<></>}
 
         {benchMQuestion ? 
