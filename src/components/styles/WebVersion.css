@@ -2221,4 +2221,103 @@
     cursor: text;
     color: white;
   }
+
+  /* Form */
+  #form-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    padding: 0 5%;
+    background-color: aqua;
+  }
+
+  #form-header {
+    max-width: 722.31px;
+    margin-top: 12px;
+    background-color: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 24px;
+    padding-top: 22px;
+    position: relative;
+  }
+
+  #form-header-h1 {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+    color: #202124;
+  }
+
+  #form-header-pre {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    line-height: 25px;
+    color: #202124;
+    margin-top: 12px;
+    width: 100%;
+    word-break: keep-all;
+    white-space: pre-wrap;
+  }
+
+  #form-questions {
+    max-width: 722.32px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 93%;
+    padding: 24px;
+    padding-top: 22px;
+    position: relative;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background-color: white;
+  }
+
+  #form-question {
+    margin-bottom: 12px;
+    width: 100%;
+    font-weight: 400;
+    white-space: pre;
+    line-height: 40px;
+    color: #202124;
+  }
+
+  #form-input {
+    margin: 12px 0;
+    border-width: 0;
+    border-bottom-width: 2px;
+    height: 25px;
+    outline: none;
+  }
+  input:-internal-autofill-selected {
+    background-color: #fff;
+  }
+  #form-submit-container {
+    max-width: 722.32px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 90%;
+    padding: 24px;
+    padding-top: 22px;
+    padding-left: 0;
+    position: relative;
+    margin-bottom: 12px;
+  }
+  #form-submit {
+    height: 36px;
+    background-color: #1a73e8;
+    border-width: 0;
+    border-radius: 5px;
+    width: 72px;
+    color: #fff;
+  }
 }

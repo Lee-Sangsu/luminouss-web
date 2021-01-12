@@ -49,7 +49,7 @@ const AboutMain = () => {
             <div id="ux-ui">
                 <span id="ux-tit">Mobile UX/UI</span>
                 <span id="radius-box"></span>
-                <img src={require('images/mobile-ui.png').default} alt="모바일 화면" id="app-ui"></img>
+                <img src={window.innerWidth >500 ? require('images/mobile-ui.png').default: require('images/appuimobile.png').default} alt="모바일 화면" id="app-ui"></img>
             </div>
             <Footer />
         </div>

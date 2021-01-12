@@ -13,11 +13,12 @@ import WatchRoads from 'components/pages/WatchRoads';
 import WatchRoad from 'components/pages/WatchRoad';
 import EditRoad from 'components/pages/EditRoad';
 import NoMatchedRouteComponent from 'global/NoMatchedRouteComponent';
-
+import DownloadGuideBook from 'components/pages/DownloadGuideBook';
 import {
   RecoilRoot
 } from 'recoil';
 import NewHome from 'components/pages/NewHome';
+import Form from 'components/pages/Form';
 
 const AppRouter = () => {
     return (<RecoilRoot>
@@ -56,6 +57,12 @@ const AppRouter = () => {
               </Route>
               <Route path="/road-edit/:item?">
                 <EditRoad />
+              </Route>
+              <Route path="/download-our-guide">
+                <DownloadGuideBook />
+              </Route>
+              <Route path="/forms">
+                <Form />
               </Route>
               
               {/* 404 */}
