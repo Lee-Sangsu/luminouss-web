@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter,  Route, Switch } from "react-router-dom";
+import {HashRouter,  Route, Switch } from "react-router-dom";
 // import Navigation from './GlobalNavigation';
 // import Home from 'components/pages/Home';
 import About from 'components/pages/About';
@@ -22,7 +22,7 @@ import Form from 'components/pages/Form';
 
 const AppRouter = () => {
     return (<RecoilRoot>
-          <BrowserRouter >
+          <HashRouter >
             {/* <Navigation isLoggedIn={isLoggedIn}/> */}
             <Switch>
               <Route exact path="/">
@@ -68,7 +68,7 @@ const AppRouter = () => {
               {/* 404 */}
               <Route component={NoMatchedRouteComponent}/> 
             </Switch>
-          </BrowserRouter>
+          </HashRouter>
         </RecoilRoot>
       )
   };

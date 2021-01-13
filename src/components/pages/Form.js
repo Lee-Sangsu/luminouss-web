@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from 'global/fbase';
 import swal from 'sweetalert';
+import * as uuid from 'uuid';
 
 const Form = () => { 
     const [name, setName] = React.useState('');
@@ -34,6 +35,19 @@ const Form = () => {
         } catch(e){console.log(e);}
     };
 
+    const registerInputer = async () => {
+        try {
+            await firebase.firestore().collection("InputRegister").doc(uuid.v4()).set({
+                name,
+                place,
+                roadName,
+                date
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
     const formSubmit = () => {
         swal("산책로 가이드를 제공받으시겠습니까?", {
             buttons: {
@@ -47,17 +61,24 @@ const Form = () => {
         .then((provide) => {
             if (provide) {
                 if(name && place && roadName && date){
+                    registerInputer();
                     goToDownload();
-                    //신청 내용을 어따 넘기지?
                 } else {
-                    swal("정보가 부족합니다.", {
+                    swal("입력하신 정보가 충분하지 않습니다.", {
                         icon: "error",
                     });
                 }
             } else {
-                swal("신청이 완료되었습니다", {
-                    icon: "success",
-                });
+                if(name && place && roadName && date){
+                    registerInputer();
+                    swal("신청이 완료되었습니다", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("입력하신 정보가 충분하지 않습니다.", {
+                        icon: "error",
+                    });
+                }
                 //신청 내용을 어따 넘기지?
             }
         });
@@ -73,7 +94,11 @@ const Form = () => {
 여러분들이 입력하는 산책로 정보들이 모여 시각장애인들의 풍성한 여가생활을 만듭니다.  
 원하는 시간대에, 가고싶은 산책로 산책을 하며 산책로 정보를 입력해주시면 됩니다. 큰 부담없이 참여해주세요!
 
-참여하신 분 모두에게 5000원 상당의 기프티콘을 증정해 드립니다. 공차, 이디야, 스타벅스, GS25 등) `}
+참여하신 분 모두에게 5000원 상당의 기프티콘을 증정해 드립니다. (공차, 이디야, 스타벅스, GS25 등)
+
+산책로 답사 가이드가 준비되어 있으니 가이드를 참고하여 산책로 답사를 진행해주시기 바랍니다. 
+가이드 다운로드: `}
+<a href="https://luminouss.kr/#/download-our-guide">https://luminouss.kr/#/download-our-guide</a>
                 </pre>
             </div>
             

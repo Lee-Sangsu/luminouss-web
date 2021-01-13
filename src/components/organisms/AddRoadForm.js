@@ -23,7 +23,6 @@ const AddRoadForm = () => {
 
   const handlePageChange = (pageNum) => {
     setPageNum(pageNum);
-    console.log(pageNum);
   };
     
     return (

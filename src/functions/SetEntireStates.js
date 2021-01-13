@@ -69,7 +69,7 @@ const SetEntireStates = () => {
     if (braille >= 5) {
         brailleScore = 10;
     } else {
-        brailleScore = braille * 2;
+        brailleScore = braille * 2
     }
 
     if (voiceInduction >= 5) {
@@ -96,6 +96,14 @@ const SetEntireStates = () => {
         }
     }) 
     */
+
+    var onlyTextAddressArea = [];
+
+    addressArea.forEach((value) => {
+        onlyTextAddressArea.push(value.area);
+    });
+
+
     
     // var userUid =  firebase.auth().currentUser.uid;
     
@@ -104,7 +112,7 @@ const SetEntireStates = () => {
         road_env: env,
         entire_length: length,
         address_name: address.address_name,
-        address_area: addressArea,
+        address_area: onlyTextAddressArea,
         latitude: address.latitude,
         longitude: address.longitude,
         around_subway: aroundSubway,

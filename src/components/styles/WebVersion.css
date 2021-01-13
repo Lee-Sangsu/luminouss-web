@@ -502,13 +502,14 @@
 
   #search-button {
     z-index: 1;
-    width: 80px;
+    width: 82px;
     height: 62px;
     position: absolute;
     margin-left: 308px;
     border-width: 0;
     border-radius: 16px;
     padding: 0;
+    background-color: snow;
   }
 
   #subsubtitle {
@@ -2230,7 +2231,7 @@
     flex-direction: column;
     width: 90%;
     padding: 0 5%;
-    background-color: aqua;
+    background-color: rgb(240, 235, 248);
   }
 
   #form-header {

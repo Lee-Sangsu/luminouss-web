@@ -1732,6 +1732,7 @@
     flex-direction: column;
     width: 90%;
     padding: 0 5%;
+    background-color: rgb(240, 235, 248);
   }
 
   #form-header {
@@ -1778,6 +1779,7 @@
     border: 1px solid #dadce0;
     border-radius: 8px;
     margin-bottom: 12px;
+    background-color: white;
   }
 
   #form-question {
@@ -1787,6 +1789,8 @@
     font-weight: 400;
     line-height: 40px;
     color: #202124;
+    white-space: initial;
+    background-color: white;
   }
 
   #form-input {
@@ -1795,5 +1799,14 @@
     border-bottom-width: 2px;
     height: 25px;
     outline: none;
+  }
+
+  #form-submit {
+    height: 36px;
+    background-color: #1a73e8;
+    border-width: 0;
+    border-radius: 5px;
+    width: 72px;
+    color: #fff;
   }
 }

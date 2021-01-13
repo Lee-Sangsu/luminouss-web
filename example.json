@@ -2,11 +2,8 @@
   "road-name": "불광천",
   "road_env": "천변",
   "entire_length": 9,
-  "address": {
-    "address-name": "서울 서대문구 봉원동",
-    "latitude": "126.923778562273",
-    "longitude": "37.5568707448873"
-  },
+  "address-name": "서울 서대문구 봉원동",
+  "address_area": ["서대문구", "성북구"],
   "around-subway": [
     {
       "place-name": "증산역 6호선",
@@ -36,7 +33,9 @@
       "place_name": "운중동 카페",
       "address_name": "주소",
       "latitude": "126.923778562273",
-      "longitude": "37.5568707448873"
+      "longitude": "37.5568707448873",
+      "category": "(일식)"
     }
-  ]
+  ],
+  "user_uid": 1552594143
 }

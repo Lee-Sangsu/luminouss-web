@@ -1,10 +1,10 @@
 할 거:
 
-- Styling..
+- 유동인구 undefined.
 
 희종썜 피드백:
 
 - key값(= document 이름)에 한글을 입력하는게 위험할 수 았음(에러 발생 가능성)
   -> 필드로 산책로 이름 불러오고 키값들은(= 문서 이름) uuid 사용해서 넣거나 영문으로 표시하면 ㄱㅊ.
 
-- event.preventDefault() 스펠링 맞나 모르겠지만 이게 이벤트 씹는 함수
+- event.preventDefault() 이게 이벤트 씹는 함수
