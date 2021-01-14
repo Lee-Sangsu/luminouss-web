@@ -22,16 +22,19 @@ const EditPeople = ({people, setPeople}) => {
         setPeople({
           ...people, peopleKind: `${event.value}`
         });
+        console.log(JSON.stringify(people));
       };
       const onPopulationChange = (event) => {
         setPeople({
           ...people, population: `${event.value}`
         });
+        console.log(JSON.stringify(people));
       };
       const onTimeChange = (event) => {
         setPeople({
           ...people, time: `${event.value}` 
         });
+        console.log(JSON.stringify(people));
       };
     return (
         <div>

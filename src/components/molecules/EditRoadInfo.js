@@ -68,9 +68,11 @@ const EditRoadInfo = ({data}) => {
         var brailleScore = 0;
         var fenceScore = 0;
         if (people.population === '없었습니다') {
-            walking_people = `${people.time}에 유동인구가 ${people.population}`
+            walking_people = `${people.time}에 유동인구가 ${people.population}`;
+            console.log(walking_people);
         } else {
-            walking_people = `${people.time}에 ${people.peopleKind} ${people.population}`
+            walking_people = `${people.time}에 ${people.peopleKind} ${people.population}`;
+            console.log(walking_people);
         }
         if (braille >= 5) {
             brailleScore = 10;
