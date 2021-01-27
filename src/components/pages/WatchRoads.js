@@ -14,7 +14,7 @@ const WatchRoads = () => {
 
     const getWalkRoadInfo = async () => {
         try{
-            const resRef = await firebase.firestore().collection('WalkRoad').orderBy('road_name').limit(7);
+            const resRef = await firebase.firestore().collection('WalkRoad').orderBy('road_name').limit(40);
             (
                 await resRef.get()).forEach((doc) => {
                 const arrObj = {
