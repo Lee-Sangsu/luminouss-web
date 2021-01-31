@@ -54,10 +54,17 @@ const GlobalNav = ({isFirstPage, isNotHome}) => {
 
     return (
         <div id="header-nav">
-            {isFirstPage && isNotHome === false ?<div style={{display:'flex', width: window.innerWidth > 500 ? window.innerWidth *0.55:window.innerWidth *0.94, justifyContent:'flex-start', zIndex:'-1', position:'absolute',}}> 
+            {isFirstPage && isNotHome === false ?
+            <div style={{
+                display:'flex', 
+                width: window.innerWidth > 500 ? window.innerWidth *0.55:window.innerWidth *0.94, 
+                justifyContent:'flex-start', 
+                zIndex:'-1', 
+                position:'absolute',
+            }}> 
                 <img onClick={goToHome} id="our-logo" src={require('images/WalkWith.png').default} alt="워크위드" style={{cursor:'pointer',  width:'180px', height:'27px', transition:'0.5s ease-in'}}></img> 
             </div>
-                 : <></>}
+            : <></>}
             {isNotHome ?<div style={{display:'flex', width:window.innerWidth > 500 ?window.innerWidth*0.9:window.innerWidth *0.94, justifyContent:'flex-start', zIndex:'-1', position:'absolute'}}>
                 <img onClick={goToHome} id="our-logo" src={require('images/WalkWith.png').default} alt="워크위드" style={{cursor:'pointer', width:'180px', height:'27px', transition:'0.5s ease-in'}}></img>
             </div> : <></>}

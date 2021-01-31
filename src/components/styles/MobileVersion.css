@@ -49,8 +49,8 @@
 
   /* Global Navigation */
   #header-nav {
-    width: 20%;
-    margin-left: 80%;
+    width: 23%;
+    margin-left: 77%;
     height: 50px;
     display: flex;
     flex-direction: row;
@@ -101,11 +101,20 @@
 
   /* NewHome */
 
+  #home-first {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
   #block-img {
     width: 100%;
     height: 23vh;
-    position: absolute;
+    margin-top: 10%;
+    /* position: absolute; */
     z-index: -2;
+    opacity: 0.9;
   }
 
   #test {
@@ -266,11 +275,11 @@
 
   /* MsgContainer */
   #msg-container {
-    position: absolute;
+    /* position: absolute; */
     z-index: 5;
-    left: 5%;
-    top: 74px;
-    width: 332px;
+    margin-left: 4%;
+    margin-top: 60px;
+    width: 96%;
     height: 336px;
     transition: 0.7s ease-in;
   }
@@ -278,24 +287,24 @@
   #msg-title {
     font-style: normal;
     font-weight: bold;
-    font-size: 48px;
-    line-height: 68px;
+    font-size: 40px;
+    line-height: 60px;
     margin-block-end: 0.45em;
   }
 
   #main-msg {
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 32px;
-    width: 332px;
+    font-size: 16px;
+    line-height: 30px;
+    width: 89%;
     margin-right: 56px;
-    margin-block-end: 40px;
+    margin-block-end: 4%;
   }
   #menu-a {
     color: white;
     font-weight: 300;
-    line-height: 64px;
+    line-height: 250%;
     padding-left: 13%;
     font-size: 20px;
     text-decoration: none;
@@ -303,7 +312,7 @@
   }
 
   #menu-insta {
-    margin-top: 40%;
+    margin-top: 25%;
   }
 
   #menu-insta,
@@ -403,7 +412,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 47px;
+    margin-top: 10%;
   }
 
   #address-infos {
@@ -451,7 +460,7 @@
     background: none;
     transition: 1s ease;
     height: 30px;
-    width: 269px;
+    width: max-content;
     margin-top: 8px;
   }
 
@@ -1502,15 +1511,24 @@
     padding-left: 6%;
   }
   #sign-in-form {
-    margin-top: 80px;
+    margin-top: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
+  #input-texts {
+    width: 85%;
+    /* margin-left: 5%; */
+  }
   #email-input,
   #pw-input {
     background: #c4c4c4;
     border-radius: 16px;
     border-width: 0;
-    width: 315px;
+    /* margin-left: 5%; */
+    width: 95%;
     height: 52px;
     font-style: normal;
     font-weight: bold;
@@ -1531,7 +1549,8 @@
   }
 
   #sign-in-submit {
-    width: 330px;
+    /* margin-left: 5%; */
+    width: 85%;
     height: 52px;
     background: #29753d;
     border-radius: 16px;
@@ -1543,7 +1562,8 @@
   }
 
   #kakao-login {
-    width: 330px;
+    /* margin-left: 5%; */
+    width: 85%;
     height: 52px;
     background: #ffc107;
     border-radius: 16px;
@@ -1552,7 +1572,7 @@
     color: black;
     border-width: 0;
     text-align: center;
-    margin-top: 58px;
+    margin-top: 10%;
   }
 
   #create-acc {

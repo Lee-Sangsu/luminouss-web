@@ -53,7 +53,7 @@ const NewHome = () => {
 
             // Disappear Introduction & Footer
             document.getElementById("third-page").style.top = `${window.innerHeight}px`;
-            
+            document.getElementById("third-page").style.display = `none`;
             setPage(2);
         }
     };
@@ -97,7 +97,9 @@ const NewHome = () => {
             [].forEach.call(arrows, function (el) {
                 el.style.borderColor = 'black';
             });
+            document.getElementById("third-page").style.display = 'block';
             document.getElementById("third-page").style.top = '0';
+
             setPage(3);
         }
     };
@@ -157,13 +159,17 @@ const NewHome = () => {
     } else if (window.innerWidth <= 500) {
         return (
             <div id="entire-home">
-                
-    
                 <GlobalNav isFirstPage={isFirstPage} isNotHome={false} />
+
+                <div id="home-first">
+                    <MsgContainer />
+
+                    <img id="block-img" src={require('images/block-img.jpg').default} alt="유도블록 사진" style={{
+                        // top:`${window.innerHeight*0.64}px`
+                    }}></img>
+                </div>
     
-                <MsgContainer />
-                <img id="block-img" src={require('images/block-img.jpg').default} alt="유도블록 사진" style={{top:`${window.innerHeight*0.69}px`}}></img>
-                <span className="arrow down" style={{marginTop:`${window.innerHeight*0.95}px`}} onClick={moveScroll} /> 
+                {/* <span className="arrow down" style={{marginTop:`${window.innerHeight*0.95}px`}} onClick={moveScroll} />  */}
     
                 <div id="test" ref={testRef} style={{top:window.innerHeight}}>
                     <div id="clova">
