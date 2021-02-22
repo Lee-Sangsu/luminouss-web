@@ -1805,7 +1805,7 @@
   #form-question {
     margin-bottom: 12px;
     width: 100%;
-    white-space: pre;
+    white-space: normal;
     font-weight: 400;
     line-height: 40px;
     color: #202124;

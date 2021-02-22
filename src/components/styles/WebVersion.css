@@ -2286,7 +2286,7 @@
     margin-bottom: 12px;
     width: 100%;
     font-weight: 400;
-    white-space: pre;
+    white-space: normal;
     line-height: 40px;
     color: #202124;
   }

@@ -8,6 +8,7 @@ const Form = () => {
     const [place, setPlace] = React.useState('');
     const [roadName, setRoadName] = React.useState('');
     const [date, setDate] = React.useState('');
+    const [phoneNum, setPhoneNum] = React.useState('');
     
     const onChange = (event) => {
         // event.preventDefault();
@@ -19,6 +20,8 @@ const Form = () => {
             setRoadName(event.target.value);
         } else if (event.target.name === "date") {
             setDate(event.target.value);
+        } else if (event.target.name === "tel") {
+            setPhoneNum(event.target.value);
         }
     };
     
@@ -41,7 +44,8 @@ const Form = () => {
                 name,
                 place,
                 roadName,
-                date
+                date,
+                phoneNum
             });
         } catch (e) {
             console.log(e);
@@ -95,6 +99,7 @@ const Form = () => {
 원하는 시간대에, 가고싶은 산책로 산책을 하며 산책로 정보를 입력해주시면 됩니다. 큰 부담없이 참여해주세요!
 
 참여하신 분 모두에게 5000원 상당의 기프티콘을 증정해 드립니다. (공차, 이디야, 스타벅스, GS25 등)
+산책로 답사 신청 설문에 산책로 정보 입력 :`} <a href="https://luminouss.kr/#/">https://luminouss.kr/</a>{`
 
 산책로 답사 가이드가 준비되어 있으니 가이드를 참고하여 산책로 답사를 진행해주시기 바랍니다. 
 가이드 다운로드: `}
@@ -135,7 +140,19 @@ const Form = () => {
                     width: window.innerWidth < 500 ? '100%' : '50%',
                 }} name="date" type="date" value={date} onChange={onChange} placeholder="내 답변" />
             </div>
+            <div id="form-questions">
+                <h3 id="form-question">전화번호를 제공해주시면 해당 번호로 기프티콘을 드리겠습니다.</h3>
+                <input id="form-input" style={{
+                    width: window.innerWidth < 500 ? '100%' : '50%',
+                }} name="tel" type="tel" value={phoneNum} onChange={onChange} placeholder="010-xxxx-xxxx" />
+            </div>
 
+            <div id="form-questions">
+                <h3 id="form-question">
+{`산책로 정보는 루미너스 웹사이트 (`}<a href="https://luminouss.kr/#/">https://luminouss.kr/#/</a>{`)의
+ '산책로 정보 추가하기' 버튼을 눌러 입력해주세요.`
+}               </h3>
+            </div>
             <div id="form-submit-container">
                 <button id="form-submit" onClick={formSubmit}>제출</button>
             </div>
