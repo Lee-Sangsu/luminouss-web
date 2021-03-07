@@ -108,7 +108,7 @@ const Form = () => {
             </div>
             
             <div id="form-questions">
-                <h3 id="form-question">신청자의 성함은 무엇인가요?</h3>
+                <h3 id="form-question">신청자의 성함은 무엇인가요? (이벤트에 함께 참여하는 친구분이 있다면 친구분 성함도 적어주세요.)</h3>
                 <input id="form-input" style={{
                     width: window.innerWidth < 500 ? '100%' : '50%',
                 }} name="name" type="text" value={name} onChange={onChange} placeholder="내 답변" />
