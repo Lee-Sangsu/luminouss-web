@@ -19,6 +19,7 @@ import {
 } from 'recoil';
 import NewHome from 'components/pages/NewHome';
 import Form from 'components/pages/Form';
+import { RegisterStatus } from 'components/pages/RegisterStatus';
 
 const AppRouter = () => {
     return (<RecoilRoot>
@@ -51,6 +52,9 @@ const AppRouter = () => {
               </Route>
               <Route exact path="/watch-roads">
                 <WatchRoads />
+              </Route>
+              <Route exact path="/registrations">
+                <RegisterStatus />
               </Route>
               <Route path="/road/:item?">
                 <WatchRoad />
