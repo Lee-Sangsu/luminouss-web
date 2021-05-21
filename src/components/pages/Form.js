@@ -98,7 +98,7 @@ const Form = () => {
 여러분들이 입력하는 산책로 정보들이 모여 시각장애인들의 풍성한 여가생활을 만듭니다.  
 원하는 시간대에, 가고싶은 산책로 산책을 하며 산책로 정보를 입력해주시면 됩니다. 큰 부담없이 참여해주세요!
 
-산책로 답사 신청 설문에 산책로 정보 입력 :`} <a href="https://luminouss.kr/#/">https://luminouss.kr/</a>{`
+산책로 정보 입력 (웹사이트 주소) :`} <a href="https://luminouss.kr/#/">https://luminouss.kr/</a>{`
 
 산책로 답사 가이드가 준비되어 있으니 가이드를 참고하여 산책로 답사를 진행해주시기 바랍니다. 
 가이드 다운로드: `}
@@ -107,7 +107,7 @@ const Form = () => {
             </div>
             
             <div id="form-questions">
-                <h3 id="form-question">신청자의 성함은 무엇인가요? (이벤트에 함께 참여하는 친구분이 있다면 친구분 성함도 적어주세요.)</h3>
+                <h3 id="form-question">신청자의 성함은 무엇인가요?</h3>
                 <input id="form-input" style={{
                     width: window.innerWidth < 500 ? '100%' : '50%',
                 }} name="name" type="text" value={name} onChange={onChange} placeholder="내 답변" />
@@ -148,7 +148,7 @@ const Form = () => {
 
             <div id="form-questions">
                 <h3 id="form-question">
-{`산책로 정보는 루미너스 웹사이트 (`}<a href="https://luminouss.kr/#/">https://luminouss.kr/#/</a>{`)의
+{`산책로 정보는 루미너스 웹사이트 (`}<a href="https://luminouss.kr/#/">https://luminouss.kr</a>{`)의
  '산책로 정보 추가하기' 버튼을 눌러 입력해주세요.`
 }               </h3>
             </div>

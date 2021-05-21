@@ -13,6 +13,7 @@ import Iaround from 'components/molecules/ForAddRoad/9AroundEnv/Iaround';
 import JwarnFeat from 'components/molecules/ForAddRoad/10WarnFeature/JwarnFeat';
 import ReactPageScroller from 'react-page-scroller';
 import Informations from 'components/molecules/ForAddRoad/Informations';
+import { AskName } from "components/molecules/ForAddRoad/11AskName/AskName";
 
 const AddRoadForm = () => {
   const [ pageNum, setPageNum ] = React.useState(0);
@@ -50,7 +51,8 @@ const AddRoadForm = () => {
           <Grest handlePageChange={handlePageChange} />
           <Hpeople handlePageChange={handlePageChange} />
           <Iaround handlePageChange={handlePageChange} />
-          <JwarnFeat />
+          <JwarnFeat handlePageChange={handlePageChange} />
+          <AskName />
 
         </ReactPageScroller>
       </div>

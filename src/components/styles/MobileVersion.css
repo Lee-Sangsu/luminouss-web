@@ -629,7 +629,8 @@
   #rest,
   #people-container,
   #iaround-container,
-  #warning-container {
+  #warning-container,
+  #writer-name-container {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -702,7 +703,8 @@
     position: relative;
   }
 
-  #search-input {
+  #search-input,
+  #writer-input {
     background-color: #c4c4c4;
     width: 300px;
     height: 42px;
@@ -718,7 +720,8 @@
     color: white;
   }
 
-  #search-input::placeholder {
+  #search-input::placeholder,
+  #writer-input::placeholder {
     color: #000000;
   }
 

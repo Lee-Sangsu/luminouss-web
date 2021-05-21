@@ -1,38 +1,10 @@
 import React from "react";
 import WarningInput from 'components/molecules/ForAddRoad/10WarnFeature/WarningInput';
 import FeaturesInput from 'components/molecules/ForAddRoad/10WarnFeature/FeaturesInput';
-import useConfirm from 'hooks/useConfirm';
-import SetEntireStates from 'functions/SetEntireStates';
-import firebase from 'global/fbase';
-import {useHistory} from 'react-router-dom';
-import * as uuid from 'uuid';
-import swal from 'sweetalert';
 
-const JwarnFeat = () => {
-  const history = useHistory();
-  
-  const a = SetEntireStates();
-  const submitConfirm = async () => {
-    const jsonA = JSON.parse(JSON.stringify(a));
-    try {
-      if (jsonA.road_name  
-        && jsonA.road_env  
-        && jsonA.entire_length  
-        && jsonA.address_name) {
-        await firebase.firestore().collection("WalkRoad").doc(uuid.v4()).set(a)
-        swal("성공적으로 등록되었습니다!");              
-        history.push('/');
-      } else { 
-        swal("입력 정보가 충분하지 않습니다.");
-      }
-    }
-    catch (documentError) {
-      swal(documentError);
-    }
-  };
 
-  const abort = () => console.log('abort'); 
-  const confirmSubmit = useConfirm("등록 하시겠습니까?", submitConfirm, abort);
+const JwarnFeat = ({handlePageChange}) => {
+
   return (
       <div id="warning-container">
         <h3 style={{marginBottom:'30px'}} id="subtitle">특징 및 주의사항을 기재해주세요.</h3>
@@ -42,7 +14,8 @@ const JwarnFeat = () => {
 
         <h4 id="subsubtitle">걸을 때 주의사항</h4>
         <WarningInput  />
-        <button onClick={confirmSubmit} id="to-next-page"> 정보 등록하기 </button>
+        
+        <button id="to-next-page" onClick={() => handlePageChange(12)}>확인</button>
       </div>
   )
 };
