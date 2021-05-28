@@ -496,6 +496,21 @@
     color: white;
   }
 
+  #phone-input {
+    background: #c4c4c4;
+    width: 384px;
+    height: 60px;
+    border-radius: 16px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    text-indent: 18px;
+    margin-top: 1.5em;
+    border-width: 0;
+    cursor: pointer;
+    color: white;
+  }
+
   #search-input {
     background: #c4c4c4;
     width: 384px;
@@ -511,7 +526,8 @@
     color: white;
   }
   #search-input::placeholder,
-  #writer-input::placeholder {
+  #writer-input::placeholder,
+  #phone-input::placeholder {
     color: #000000;
   }
 

@@ -1,10 +1,11 @@
 할 거:
 
-- 유동인구 undefined.
-
-희종썜 피드백:
-
-- key값(= document 이름)에 한글을 입력하는게 위험할 수 았음(에러 발생 가능성)
-  -> 필드로 산책로 이름 불러오고 키값들은(= 문서 이름) uuid 사용해서 넣거나 영문으로 표시하면 ㄱㅊ.
-
-- event.preventDefault() 이게 이벤트 씹는 함수
+- 유동인구 undefined. [?]
+- 산책로 정보 writer, road_name => .csv [O]
+  - csv 내려받는 버튼 만들기 [0]
+  - 가장 최신에 내려받은 데이터와 비교하는 엑셀 기능 정리해서 보내주기 [x]
+- 산책로 정보 추가 페이지 전화번호.
+- /registrations 페이지
+  - 검색 기능 추가
+  - pagination
+  - 전화번호 regex

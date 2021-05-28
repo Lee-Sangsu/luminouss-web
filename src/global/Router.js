@@ -20,6 +20,7 @@ import {
 import NewHome from 'components/pages/NewHome';
 import Form from 'components/pages/Form';
 import { RegisterStatus } from 'components/pages/RegisterStatus';
+import { GetCSV } from 'components/pages/GetCSV';
 
 const AppRouter = () => {
     return (<RecoilRoot>
@@ -67,6 +68,9 @@ const AppRouter = () => {
               </Route>
               <Route path="/forms">
                 <Form />
+              </Route>
+              <Route path="/get-writers-csv">
+                <GetCSV />
               </Route>
               
               {/* 404 */}

@@ -19,6 +19,7 @@ import VoiceState from 'recoilStates/Addroad/VoiceState';
 import WarningState from 'recoilStates/Addroad/WarningState';
 import firebase from 'global/fbase';
 import WriterNameState from 'recoilStates/Addroad/WriterNameState';
+import PhoneNumState from 'recoilStates/Addroad/PhoneNumState';
 
 
 const SetEntireStates = () => {
@@ -41,7 +42,8 @@ const SetEntireStates = () => {
     const voiceInduction = useRecoilValue(VoiceState);
     const warning = useRecoilValue(WarningState);
     const writer = useRecoilValue(WriterNameState);
-    
+    const phoneNum = useRecoilValue(PhoneNumState);
+
     var voiceInductionScore = 0;
     var leadBlockScore = 0;
     var brailleScore = 0;
@@ -55,14 +57,12 @@ const SetEntireStates = () => {
         user = JSON.parse(window.localStorage.getItem('user')).id;
     }
 
-
     var y;
     for (y in fence) {
         fenceScore += fence[y];
     }
 
     var x;
-    // leadBlockScore = leadBlock.first + leadBlock.second + leadBlock.third + leadBlock.fourth  + leadBlock.fifth;
     for(x in leadBlock){
         leadBlockScore += leadBlock[x];
     }
@@ -105,8 +105,6 @@ const SetEntireStates = () => {
         onlyTextAddressArea.push(value.area);
     });
     
-    // var userUid =  firebase.auth().currentUser.uid;
-    
     const EntireState = {
         road_name: roadName,
         road_env: env,
@@ -129,7 +127,8 @@ const SetEntireStates = () => {
         feature:  feature,
         around_env_list:  aroundEnvList,
         user_uid: user,
-        writer: writer
+        writer: writer,
+        phone_number: phoneNum
     };
     return EntireState;
 };
