@@ -10,9 +10,9 @@ const NewHome = () => {
     const [isFirstPage, setIsFirstPage] = React.useState(true);
 
     const testRef = React.useRef();
-    const moveScroll = () => {
-        testRef.current.scrollIntoView({ behavior: 'smooth' });
-    };
+    // const moveScroll = () => {
+    //     testRef.current.scrollIntoView({ behavior: 'smooth' });
+    // };
 
     const homePageUpChange = () => {
         const dCircles = document.getElementsByClassName("disappear-circles");

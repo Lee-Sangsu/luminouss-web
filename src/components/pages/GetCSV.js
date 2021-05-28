@@ -14,15 +14,17 @@ export const GetCSV = () => {
             setLoad(true);    
             const resRef = await firebase.firestore().collection('WalkRoad').orderBy('writer');
             (await resRef.get()).forEach((doc) => {
+                const data = doc.data()
                 arr.push({
-                    writer: doc.data().writer,
-                    road_name: doc.data().road_name
+                    writer: data.writer,
+                    road_name: data.road_name,
+                    phone_num: data.phone_number ? data.phone_number : ''
                 })
             });  
-            csvStr += "작성자, 산책로 이름\r\n";
+            csvStr += "작성자, 산책로 이름, 전화번호\r\n";
 
             arr.forEach((value) => {
-                csvStr += `${value.writer},${value.road_name}\r\n`;
+                csvStr += `${value.writer},${value.road_name},${value.phone_num}\r\n`;
             })
     
             var downloadLink = document.createElement("a");

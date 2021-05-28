@@ -1,76 +1,136 @@
 import React from 'react';
 import firebase from "global/fbase";
+import { Registrations } from 'components/molecules/Registrations';
 
 export const RegisterStatus = () => {
     const [registration, setRegistration] = React.useState([]);
     const [loadFin, setLoadFin] = React.useState(false);
-    
-    
-    /*
-    var first = db.collection("InputRegister").limit(25);
-    
-    return first.get().then((documentSnapshots) => {
-    // Get the last visible document
-    var lastVisible = documentSnapshots.docs[documentSnapshots.docs.length-1];
-    console.log("last", lastVisible);
+	const [currentPage, setCurrentPage] = React.useState(1);  
+    const [query, setQuery] = React.useState('');
+    const [lastVisible, setLastVisible] = React.useState({});
+    const [firstVisible, setFirstVisible] = React.useState({});
 
-    // Construct a new query starting at this document,
-    // get the next 25 cities.
-    var next = db.collection("InputRegister").startAfter(lastVisible).limit(25);
-    });
+    const getOtherPage = async (destination) => {
+        try {
+            setLoadFin(false);
+            setRegistration([]);
+            if (destination === "next") {
+                const resRef = await firebase.firestore().collection('InputRegister').orderBy('date', 'desc').startAfter(lastVisible).limit(30);
+                const data = await resRef.get();
+                data.forEach((doc) => {
+                    setRegistration((prev) => [...prev, doc.data()]);
+                })
+                setFirstVisible(data.docs[0]);
+                setLastVisible(data.docs[data.docs.length-1]);
+                setCurrentPage(currentPage+1);
+            } else if (destination === "prev") {
+                if (currentPage === 1) {
+                    return ;
+                } else {
+                    const resRef = await firebase.firestore().collection('InputRegister').orderBy('date', 'desc').endBefore(firstVisible).limit(30);
+                    const data = await resRef.get();
+                    data.forEach((doc) => {
+                        setRegistration((prev) => [...prev, doc.data()]);
+                    })
+                    setFirstVisible(data.docs[0]);
+                    setLastVisible(data.docs[data.docs.length-1]);
+                    setCurrentPage(currentPage-1);
+                }
+            }
+            setLoadFin(true);
+            window.scrollTo(0,0);
+        } catch(e){console.log(e);}
+    }
 
-    */
+    const pagination = ({target}) => {
+        if (currentPage === 1 && target.name === "prev-btn"){
+            return;
+        } else if (target.name === "next-btn") {
+            getOtherPage('next');
+        } else {
+            getOtherPage('prev');
+
+        }
+    };
 
     const getWalkRoadInfo = async () => {
         try {
             setLoadFin(false);
-            const resRef = await firebase.firestore().collection('InputRegister');
+            setRegistration([]);
+            const resRef = await firebase.firestore().collection('InputRegister').orderBy('date', 'desc').limit(30);
+            const data = await resRef.get();
+            data.forEach((doc) => {
+                setRegistration((prev) => [...prev, doc.data()]);
+            })
+            setLastVisible(data.docs[data.docs.length-1]);
+            setLoadFin(true)
+        } catch(e){console.log(e);}
+    };
+    
+    // eslint-disable-next-line
+    React.useEffect(() => {
+        getWalkRoadInfo();
+    }, [])
+
+    async function onSearch() {
+        try {
+            setLoadFin(false);
+            setRegistration([]);
+            const resRef = await firebase.firestore().collection('InputRegister').where('name', '==', query);
             (await resRef.get()).forEach((doc) => {
                 const arrObj = {
                     // date name phoneNum place roadName
                     ...doc.data()
                 };
-                setRegistration((prev) => [arrObj, ...prev]);
-                setLoadFin(true)
+            setRegistration((prev) => [arrObj, ...prev]);
             })
-        } catch(e){console.log(e);}
-
+            setCurrentPage(1);    
+            setLoadFin(true);
+        } catch (e){console.log(e);}
     };
 
-    React.useEffect(() => {
-        getWalkRoadInfo();
-    }, [])
-
-    const h5style = {
-        margin: '20px',
+    const getH5Style = (width) => {
+        return {
+            margin: '20px',
+            width: width
+        }
     };
     const divStyle = {
         display: "flex",
         width: 'max-content',
         justifyContent: 'flex-start'
     };
+    const divCenterStyle = {
+        display:'flex', 
+        height:window.innerHeight, width:window.innerWidth, alignItems:'center', justifyContent: 'center'
+    };
 
     
     return (
         <div>
-            <div style={divStyle}>
-                <h5 style={{...h5style, width:'75px'}}>답사 마무리</h5>
-                <h5 style={{...h5style, width: '310px'}}>이름</h5>
-                <h5 style={{...h5style, width: '115px'}}>거주 지역</h5>
-                <h5 style={{...h5style, width: '226px'}}>산책로</h5>
-                <h5 style={h5style}>전화번호</h5>
+            <div style={{...divStyle, position:'fixed', backgroundColor:'gainsboro', marginTop:'-62px', width:'100%'}}>
+                <h5 style={{...getH5Style('90px'), textAlign: 'center'}}>답사 마무리 날짜</h5>
+                <h5 style={getH5Style('310px')}>이름</h5>
+                <h5 style={getH5Style('115px')}>거주 지역</h5>
+                <h5 style={getH5Style('226px')}>산책로</h5>
+                <h5 style={getH5Style('100px')}>전화번호</h5>
+                <div style={getH5Style()}>
+                    <input name="search" value={query} onChange={({target}) => setQuery(target.value)} placeholder="이름으로 검색" />
+                    <button onClick={onSearch}>Search</button>
+                    <button onClick={() => window.location.reload()}>전체 결과 보기</button>
+                </div>
             </div>
-            <hr />
-            {loadFin ? registration.map((data, index) => <div key={index} style={divStyle}>
-                <h5 style={{...h5style, width:'75px'}}>{data.date}</h5>
-                <h5 style={{...h5style, width: '310px'}}>{data.name}</h5>
-                <h5 style={{...h5style, width: '115px'}}>{data.place}</h5>
-                <h5 style={{...h5style, width: '226px'}}>{data.roadName}</h5>
-                <h5 style={h5style}>{data.phoneNum}</h5>
-            </div>
-            ): <div style={{display:'block', backgroundColor:'#efefef', height:window.innerHeight, width:window.innerWidth}}>
+            <div style={{marginBlockStart:'62px'}} />
+            {loadFin ? registration.map((data, index) => <>
+                <Registrations key={index} data={data} index={index} divStyle={divStyle} getH5Style={getH5Style} />
+            </>
+            ): <div style={divCenterStyle}>
                  정보 불러오는 중..
             </div>}
+            <div style={{...divCenterStyle, height: '50px', justifyContent:'space-evenly', backgroundColor:'gainsboro'}}>
+                <button name="prev-btn" onClick={pagination}>{`<`}</button>
+                <button name="next-btn" onClick={pagination}>{`>`}</button>
+            </div>
         </div>
     )
 };
