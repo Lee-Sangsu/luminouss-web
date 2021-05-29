@@ -46,7 +46,7 @@ export const AskName = () => {
 
     return (
         <div id="writer-name-container">
-            <h3 id="subtitle">기프티콘 제공을 위해서 입력하시는 분의 성함과 전화번호를 입력해주세요.</h3>
+            <h3 id="subtitle">정보 확인을 위해서 입력하시는 분의 성함과 전화번호를 입력해주세요.</h3>
             <input id="writer-input" name="name" onChange={onChange} value={writerName} placeholder="이름" />
             <input type="tel" id="phone-input" name="tel-num" onChange={onChange} value={telNum} placeholder="전화번호" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
 

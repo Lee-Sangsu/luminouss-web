@@ -4,15 +4,12 @@ import MsgContainer from "components/molecules/MsgContainer";
 import GlobalNav from "global/GlobalNav";
 import onSoundBtnClick from 'functions/onSoundBtnClick';
 import HomeThird from "components/organisms/HomeThird";
+import { PopUp } from "./PopUp";
 
 const NewHome = () => {
     const [currentPage, setPage] = React.useState(0);
     const [isFirstPage, setIsFirstPage] = React.useState(true);
-
     const testRef = React.useRef();
-    // const moveScroll = () => {
-    //     testRef.current.scrollIntoView({ behavior: 'smooth' });
-    // };
 
     const homePageUpChange = () => {
         const dCircles = document.getElementsByClassName("disappear-circles");
@@ -111,6 +108,9 @@ const NewHome = () => {
                 width: window.innerWidth,
                 overflow: 'hidden'
             }}>
+                {/* modal space */}
+                <PopUp />
+                {/*  */}
                 {isFirstPage? <i className="arrow up" style={{opacity:'0', cursor: 'unset'}} /> : 
                     <i className="arrow up" onClick={homePageUpChange} /> 
                 }
@@ -160,6 +160,7 @@ const NewHome = () => {
         return (
             <div id="entire-home">
                 <GlobalNav isFirstPage={isFirstPage} isNotHome={false} />
+                <PopUp />
 
                 <div id="home-first">
                     <MsgContainer />
@@ -168,8 +169,6 @@ const NewHome = () => {
                         // top:`${window.innerHeight*0.64}px`
                     }}></img>
                 </div>
-    
-                {/* <span className="arrow down" style={{marginTop:`${window.innerHeight*0.95}px`}} onClick={moveScroll} />  */}
     
                 <div id="test" ref={testRef} style={{top:window.innerHeight}}>
                     <div id="clova">

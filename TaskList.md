@@ -8,3 +8,4 @@
 - /registrations 페이지
   - pagination [O]
   - 검색 기능 추가 [O]
+- pop-up page [O]

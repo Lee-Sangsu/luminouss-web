@@ -21,6 +21,7 @@ import NewHome from 'components/pages/NewHome';
 import Form from 'components/pages/Form';
 import { RegisterStatus } from 'components/pages/RegisterStatus';
 import { GetCSV } from 'components/pages/GetCSV';
+import { PopUp } from 'components/pages/PopUp';
 
 const AppRouter = () => {
     return (<RecoilRoot>
@@ -71,6 +72,9 @@ const AppRouter = () => {
               </Route>
               <Route path="/get-writers-csv">
                 <GetCSV />
+              </Route>
+              <Route path="/veve">
+                <PopUp />
               </Route>
               
               {/* 404 */}
