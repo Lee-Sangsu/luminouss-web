@@ -14,7 +14,6 @@ const Register = () => {
     const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
     const setInit = useSetRecoilState(InitializeState);
 
     const onChange = (event) => { 
@@ -39,7 +38,6 @@ const Register = () => {
             
             history.push("/");
         } catch (error) {
-            setError(error.message);
             swal(error.message);
         }
     };

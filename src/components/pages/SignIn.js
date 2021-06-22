@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import firebase from "global/fbase";
 import { useHistory, Link } from "react-router-dom";
-import Kakao from 'kakaojs';
+// import Kakao from 'kakaojs';
 import {useSetRecoilState} from 'recoil';
 import InitializeState from 'recoilStates/InitializeState';
 
@@ -15,7 +15,6 @@ const SignIn = () => {
     const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
     const setInit = useSetRecoilState(InitializeState);
 
     
@@ -43,16 +42,15 @@ const SignIn = () => {
             setInit(true);
             history.push("/");
         } catch (error) {
-            setError(error.message);
             swal(error.message);
         }
     };
     const loginWithKaKao = () => {
-        Kakao.Auth.login({
+        window.Kakao.Auth.login({
             scope: 'profile',
             success: (res) => {
-                Kakao.Auth.setAccessToken(res.access_token);
-                Kakao.API.request({
+                window.Kakao.Auth.setAccessToken(res.access_token);
+                window.Kakao.API.request({
                     url: '/v2/user/me',
                     success: function(res) {
                     //  console.log(JSON.stringify(res))

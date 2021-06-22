@@ -19,9 +19,9 @@ export const PopUp = () => {
         window.sessionStorage.setItem('popup', 'no');
     };
 
-    return (<div id="pop-up" style={{height: window.innerHeight}}>
-        {/* modal */}
-        {popUp ? <> 
+    return (<>
+        {popUp ? 
+        <div id="pop-up" style={{height: window.innerHeight}}>
         <div id="pop-up-background" />
         <div id="pop-up-container">
             <div id="close-btn-div">
@@ -36,6 +36,7 @@ export const PopUp = () => {
                     <label id="never-open">다시 열지 않음</label>
                 </div>
             </div>
-        </div> </>: <div style={{display:'none'}}></div>}
-    </div>);
+        </div> </div> : <div style={{display:'none'}}></div>}
+        </>
+    );
 };

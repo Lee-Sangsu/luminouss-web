@@ -1,25 +1,18 @@
 import React from 'react';
 import firebase from 'global/fbase';
 import {useHistory} from 'react-router-dom';
-import Kakao from 'kakaojs';
-import {useRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 import InitializeState from 'recoilStates/InitializeState';
 import GlobalNav from 'global/GlobalNav';
 import Subject from 'components/molecules/Subject';
 import Footer from 'components/molecules/ForHome/Footer';
 
 
-//updateProfile({displayName 추가 만들기})
-
-
 const Profile =  () => {
   const [arr, setArr] = React.useState([]);
   const history = useHistory();
-  // React.useEffect(() => {
-  //   window.localStorage.getItem('user');
-  // }, [])
 
-  const [init, setInit] = useRecoilState(InitializeState);
+  const setInit = useSetRecoilState(InitializeState);
 
 
   const user = firebase.auth().currentUser;
@@ -31,9 +24,9 @@ const Profile =  () => {
       setInit(true);
       window.localStorage.removeItem('user');
     } else {
-      console.log(Kakao.Auth.getAccessToken());
-      Kakao.Auth.logout(function() {
-        console.log(Kakao.Auth.getAccessToken());
+      console.log(window.Kakao.Auth.getAccessToken());
+      window.Kakao.Auth.logout(function() {
+        console.log(window.Kakao.Auth.getAccessToken());
       });      
       setInit(true);
       window.localStorage.removeItem('user');
